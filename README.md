@@ -30,7 +30,7 @@ Vad vi behöver:
 * Testplatform
 * GUI
 * Busstidar
-    * Hämting av data från SL
+    * Hämting av data från SL. Yashar kollar
 * Prislistor
     * Koppling till iZettle
     * Hämting av prisar till Pi
