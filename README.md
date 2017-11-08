@@ -3,7 +3,7 @@ Kod till Raspberry Pi-en som driver skärmen i Konsulatet
 
 Vad vi vill ha på skärmen:
 
-* Busstidar, eventuelt med tidsjustering
+* Busstider, eventuelt med tidsjustering
 * Prislistor, gärna enkla att ändra. Koppla till iZettle?
 * Någon form för nyhetsflöde (facebook, hemsidan, instagram)
 * Roliga bilden
