@@ -12,13 +12,13 @@ Vad vi vill ha på skärmen:
 
 Vad vi har:
 
-* Busstidar
+* Busstider
     *
 * Prislistor
     *
 * Nyhetsflöde
     *
-* Roliga bilden
+* Roliga bilder
     *
 * Sektionskalender
     *
