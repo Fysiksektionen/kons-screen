@@ -36,8 +36,8 @@ Vad vi behöver:
     * Hämting av prisar till Pi
 * Nyhetsflöde
     * Hämting av data från lämplig källa
-* Roliga bilden
-    * Hämting av bilden
+* Roliga bilder
+    * Hämting av bilder
     * Slideshow-funktionalitet
 * Sektionskalender
     * Hämting av events
