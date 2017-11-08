@@ -30,14 +30,14 @@ Vad vi behöver:
 * Testplatform
 * GUI
 * Busstidar
-    * Hämting av data från SL
+    * Hämting av data från SL. Yashar kollar
 * Prislistor
     * Koppling till iZettle
     * Hämting av prisar till Pi
 * Nyhetsflöde
     * Hämting av data från lämplig källa
-* Roliga bilden
-    * Hämting av bilden
+* Roliga bilder
+    * Hämting av bilder
     * Slideshow-funktionalitet
 * Sektionskalender
     * Hämting av events
