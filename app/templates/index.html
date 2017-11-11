@@ -1,0 +1,29 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+h1 {font-size:130px;text-align: center;}
+p {font-size:30px;text-align: center;}
+</style>
+</head>
+
+<h1>Socket app</h1>
+<p>Fetches time from server every 10 seconds.</p>
+<h1 id="time"><h1>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket = io.connect('http://' + document.domain + ':' + location.port);
+    socket.on('connect', function() {
+        socket.emit('connected');
+        console.log("Connected.")
+        socket.emit("update")
+    });
+
+    socket.on('server response', function(msg) {
+        console.log("Server responded!")
+        console.log("Time is: " + msg.time)
+        $('#time').text("Time: " + msg.time);
+        socket.emit("update")  // grab another update, server will sleep for 10s.
+    });
+</script>
