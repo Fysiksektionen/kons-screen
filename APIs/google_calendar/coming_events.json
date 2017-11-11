@@ -1,0 +1,298 @@
+{
+    "nextPageToken": "EiUKGmNiZHRnYzZxczQ5OWdibGthczNobWF2b21vGICYhqXRs90C",
+    "items": [
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "sequence": 0,
+            "end": {
+                "date": "2017-11-18"
+            },
+            "updated": "2017-11-05T14:56:07.202Z",
+            "status": "confirmed",
+            "id": "7od2j42c6tvgkqs62omsda1c5g",
+            "etag": "\"3019787534404000\"",
+            "kind": "calendar#event",
+            "summary": "Kandidaturperiod",
+            "transparency": "transparent",
+            "start": {
+                "date": "2017-11-06"
+            },
+            "creator": {
+                "email": "gustav.gyback@gmail.com",
+                "displayName": "Gustav Gyback"
+            },
+            "created": "2017-11-01T10:56:37.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=N29kMmo0MmM2dHZna3FzNjJvbXNkYTFjNWcgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "7od2j42c6tvgkqs62omsda1c5g@google.com",
+            "location": "Konsulatet, Brinellv\u00e4gen 89"
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "end": {
+                "dateTime": "2017-11-12T03:00:00+01:00"
+            },
+            "updated": "2017-11-08T19:24:33.416Z",
+            "status": "confirmed",
+            "id": "2u3of4ipfsdpl1hgbjr4faqj50",
+            "etag": "\"3020338146832000\"",
+            "kind": "calendar#event",
+            "summary": "G\u00f6r-Det-Sj\u00e4lv 2017",
+            "sequence": 0,
+            "creator": {
+                "email": "gabriel.jo.bengtsson@gmail.com",
+                "displayName": "Gabriel Bengtsson"
+            },
+            "created": "2017-11-08T19:24:19.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=MnUzb2Y0aXBmc2RwbDFoZ2JqcjRmYXFqNTAgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "2u3of4ipfsdpl1hgbjr4faqj50@google.com",
+            "start": {
+                "dateTime": "2017-11-11T19:00:00+01:00"
+            }
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "end": {
+                "dateTime": "2017-11-20T19:23:00+01:00"
+            },
+            "updated": "2017-11-01T13:21:50.418Z",
+            "status": "confirmed",
+            "id": "3533kearlt223ivjg08gjrreb7",
+            "etag": "\"3019085020836000\"",
+            "kind": "calendar#event",
+            "summary": "Utfr\u00e5gning",
+            "sequence": 1,
+            "start": {
+                "dateTime": "2017-11-20T17:23:00+01:00"
+            },
+            "creator": {
+                "email": "gustav.gyback@gmail.com",
+                "displayName": "Gustav Gyback"
+            },
+            "description": "Utfr\u00e5gning av kandidater till Val-SM\nDet kommer finnas mat till de som \u00e4r anm\u00e4lda",
+            "created": "2017-11-01T13:21:37.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=MzUzM2tlYXJsdDIyM2l2amcwOGdqcnJlYjcgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "3533kearlt223ivjg08gjrreb7@google.com",
+            "location": "Konsulatet, Brinellv\u00e4gen 89"
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "sequence": 0,
+            "end": {
+                "date": "2017-11-28"
+            },
+            "updated": "2017-11-01T13:25:35.786Z",
+            "status": "confirmed",
+            "id": "5iblhk0cra43bnvr7v01v0vcjo",
+            "etag": "\"3019085471572000\"",
+            "kind": "calendar#event",
+            "summary": "R\u00f6stning",
+            "transparency": "transparent",
+            "start": {
+                "date": "2017-11-21"
+            },
+            "creator": {
+                "email": "gustav.gyback@gmail.com",
+                "displayName": "Gustav Gyback"
+            },
+            "description": "R\u00f6stningen \u00e4r \u00f6ppen under lunchen och sker i Konsulatet.",
+            "created": "2017-11-01T13:25:35.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=NWlibGhrMGNyYTQzYm52cjd2MDF2MHZjam8gZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "5iblhk0cra43bnvr7v01v0vcjo@google.com",
+            "location": "Konsulatet, Brinellv\u00e4gen 89"
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "end": {
+                "dateTime": "2017-11-28T20:53:00+01:00"
+            },
+            "updated": "2017-11-01T14:50:05.620Z",
+            "status": "confirmed",
+            "id": "040pu0trilovib5vlhh3gue0m5",
+            "etag": "\"3019095611240000\"",
+            "kind": "calendar#event",
+            "summary": "Val-SM",
+            "sequence": 1,
+            "start": {
+                "dateTime": "2017-11-28T17:23:00+01:00"
+            },
+            "creator": {
+                "email": "gustav.gyback@gmail.com",
+                "displayName": "Gustav Gyback"
+            },
+            "description": "Val-SM, H\u00e4r ska vi bland annat r\u00f6sta om godk\u00e4nnandet av valf\u00f6rf\u00f6randet s\u00e5 att vi f\u00e5r f\u00f6rtroendevalda till n\u00e4sta \u00e5r.",
+            "created": "2017-11-01T13:27:54.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=MDQwcHUwdHJpbG92aWI1dmxoaDNndWUwbTUgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "040pu0trilovib5vlhh3gue0m5@google.com",
+            "location": "Konsulatet, Brinellv\u00e4gen 89"
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "end": {
+                "dateTime": "2017-11-29T22:00:00+01:00",
+                "timeZone": "Europe/Stockholm"
+            },
+            "updated": "2017-11-01T14:53:55.163Z",
+            "status": "confirmed",
+            "id": "64r62e32cop3gb9k68p66b9kc9hmcb9pcgr3ib9o75hjgd1o71i36dhj64",
+            "etag": "\"3019096070326000\"",
+            "kind": "calendar#event",
+            "summary": "KF 2",
+            "sequence": 0,
+            "start": {
+                "dateTime": "2017-11-29T18:00:00+01:00",
+                "timeZone": "Europe/Stockholm"
+            },
+            "creator": {
+                "email": "gustav.gyback@gmail.com",
+                "displayName": "Gustav Gyback"
+            },
+            "description": "K\u00e5rfullm\u00e4ktige m\u00f6te 2\nVill man n\u00e4rvara skickas d\u00e5 f\u00f6rfr\u00e5gan till talman@ths.kth.se senast fem dagar innan m\u00f6tet.",
+            "created": "2017-11-01T14:53:55.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=NjRyNjJlMzJjb3AzZ2I5azY4cDY2YjlrYzlobWNiOXBjZ3IzaWI5bzc1aGpnZDFvNzFpMzZkaGo2NCBlMTdycG92aDV2N2o3OWZwcDc0ZDFna2VyOEBn",
+            "iCalUID": "64r62e32cop3gb9k68p66b9kc9hmcb9pcgr3ib9o75hjgd1o71i36dhj64@google.com",
+            "location": "Nymble, Drottning Kristinas v\u00e4g 15, 114 28 Stockholm, Sverige"
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "end": {
+                "dateTime": "2017-12-03T20:00:00+01:00"
+            },
+            "updated": "2017-11-07T10:36:53.677Z",
+            "status": "confirmed",
+            "id": "7osmbrbagmjcqbg7g11ivieflu",
+            "etag": "\"3020102027354000\"",
+            "kind": "calendar#event",
+            "summary": "Adventsmys",
+            "sequence": 0,
+            "creator": {
+                "email": "axel.demborg@gmail.com",
+                "displayName": "Axel Demborg"
+            },
+            "created": "2017-11-07T10:36:53.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=N29zbWJyYmFnbWpjcWJnN2cxMWl2aWVmbHUgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "7osmbrbagmjcqbg7g11ivieflu@google.com",
+            "start": {
+                "dateTime": "2017-12-03T15:00:00+01:00"
+            }
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "end": {
+                "dateTime": "2017-12-10T01:00:00+01:00"
+            },
+            "updated": "2017-11-01T12:30:45.993Z",
+            "status": "confirmed",
+            "id": "193tict3avmtt8783ekhf67do2",
+            "etag": "\"3019078891986000\"",
+            "kind": "calendar#event",
+            "summary": "Mottagningens tackfest",
+            "sequence": 1,
+            "creator": {
+                "email": "ksenia.loskutova@gmail.com",
+                "displayName": "Ksenia Loskutova"
+            },
+            "created": "2017-11-01T12:30:22.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=MTkzdGljdDNhdm10dDg3ODNla2hmNjdkbzIgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "193tict3avmtt8783ekhf67do2@google.com",
+            "start": {
+                "dateTime": "2017-12-09T18:00:00+01:00"
+            }
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "end": {
+                "dateTime": "2017-12-15T23:00:00+01:00"
+            },
+            "updated": "2017-11-11T12:15:21.930Z",
+            "status": "confirmed",
+            "id": "1diror7jg7pajigpcvruocngse",
+            "etag": "\"3020805043860000\"",
+            "kind": "calendar#event",
+            "summary": "Julmiddag",
+            "sequence": 1,
+            "start": {
+                "dateTime": "2017-12-15T17:00:00+01:00"
+            },
+            "creator": {
+                "email": "axel.demborg@gmail.com",
+                "displayName": "Axel Demborg"
+            },
+            "created": "2017-11-07T10:33:10.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=MWRpcm9yN2pnN3BhamlncGN2cnVvY25nc2UgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "1diror7jg7pajigpcvruocngse@google.com",
+            "location": "Konsulatet"
+        },
+        {
+            "organizer": {
+                "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                "displayName": "Fysiksektionen",
+                "self": true
+            },
+            "end": {
+                "dateTime": "2018-09-15T23:00:00+02:00"
+            },
+            "updated": "2017-07-21T16:21:43.574Z",
+            "status": "confirmed",
+            "id": "cbdtgc6qs499gblkas3hmavomo",
+            "etag": "\"3001308207148000\"",
+            "kind": "calendar#event",
+            "summary": "Fysikalen",
+            "sequence": 0,
+            "start": {
+                "dateTime": "2018-09-11T19:00:00+02:00"
+            },
+            "creator": {
+                "email": "rutgeriwf@gmail.com",
+                "displayName": "Rutger Fuglesang"
+            },
+            "description": "Fysikalen!!!",
+            "created": "2017-07-21T16:21:34.000Z",
+            "htmlLink": "https://www.google.com/calendar/event?eid=Y2JkdGdjNnFzNDk5Z2Jsa2FzM2htYXZvbW8gZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+            "iCalUID": "cbdtgc6qs499gblkas3hmavomo@google.com",
+            "location": "Dieselverkstaden"
+        }
+    ],
+    "updated": "2017-11-11T12:15:22.283Z",
+    "defaultReminders": [],
+    "etag": "\"p33sffevenurde0g\"",
+    "kind": "calendar#events",
+    "summary": "Fysiksektionen",
+    "accessRole": "reader",
+    "timeZone": "Europe/Stockholm"
+}
