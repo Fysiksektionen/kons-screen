@@ -15,8 +15,7 @@ def get_access_token(from_facebook=False):
         response = requests.get(access_token_url, params=data)
 
         return response.json()["access_token"]
-    return "{}|{}".format(APP_ID, APP_SECRET) 
-
+    return "{}|{}".format(APP_ID, APP_SECRET)
 
 def get_group(group_id, limit, show_members_posts=True):
     '''
@@ -31,22 +30,23 @@ def get_group(group_id, limit, show_members_posts=True):
     response = requests.get(get_group_url, params=data)
     return response.json()
 
-def get_post(post_id):  # currently not used
-    '''Returns the post provided by the `post_id` in json format.'''
-    get_post_url = BASE_URL + "/v2.11/{}".format(post_id)
-    data={"access_token":get_access_token()}
-
-    response = requests.get(get_post_url, params=data)
-    return response.json()
+def parse(response):
+    '''Reformats the response to be more accessible.'''
+    for post in response["data"]:
+        post["group"], post["id"] = post["id"].split("_")
+    return response["data"]
 
 if __name__ == "__main__":
     # note: page_id's can be used just as group_id (different result though)
     fysiksektionen_page_id = "Fysiksektionen"  
     fysiksektionen_group_id = "1225386484209166"
 
-    fysiksektionen = get_group(fysiksektionen_group_id, 10)
+    fysiksektionen = parse(get_group(fysiksektionen_group_id, 10))
 
     with open("recent_facebook.json", "w") as db:  # dump json to file.
         json.dump(fysiksektionen, db, indent=4, separators=(',', ': '))
+
+
+
 
 
