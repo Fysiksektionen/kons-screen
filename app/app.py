@@ -10,10 +10,6 @@ socketio = SocketIO(app)
 def index():
     return render_template('index.html')  # jinja2 template
 
-@socketio.on('connected')
-def init(message):
-    emit('server response', {"time":time.strftime("%H:%M:%S")})
-
 @socketio.on('update')
 def update_data():
     emit('server response', {'time': time.strftime("%H:%M:%S")})

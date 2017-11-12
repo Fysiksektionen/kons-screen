@@ -15,9 +15,8 @@ p {font-size:30px;text-align: center;}
 <script type="text/javascript" charset="utf-8">
     var socket = io.connect('http://' + document.domain + ':' + location.port);
     socket.on('connect', function() {
-        socket.emit('connected');
-        console.log("Connected.")
         socket.emit("update")
+        console.log("Connected.")
     });
 
     socket.on('server response', function(msg) {
