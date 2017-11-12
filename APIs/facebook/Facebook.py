@@ -1,7 +1,7 @@
 import requests
 import json
 
-from config import APP_ID, APP_SECRET
+from APIs.facebook.config import APP_ID, APP_SECRET
 
 BASE_URL = "https://graph.facebook.com"
 
@@ -17,7 +17,7 @@ def get_access_token(from_facebook=False):
         return response.json()["access_token"]
     return "{}|{}".format(APP_ID, APP_SECRET)
 
-def get_group(group_id, limit, show_members_posts=True):
+def get_group(group_id, limit, show_members_posts=True, parsed=True):
     '''
     Returns the `limit` most recent posts in group or page 
     with id `group_id` in json format.
@@ -27,8 +27,10 @@ def get_group(group_id, limit, show_members_posts=True):
     get_group_url = BASE_URL + "/v2.11/{}/{}".format(group_id, endpoint_to_use)
     data = {"access_token":get_access_token(), "limit":limit if limit <= 100 else 100}
 
-    response = requests.get(get_group_url, params=data)
-    return response.json()
+    response = requests.get(get_group_url, params=data).json()
+    if parsed: 
+        return parse(response)
+    return response
 
 def parse(response):
     '''Reformats the response to be more accessible.'''
