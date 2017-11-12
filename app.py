@@ -1,4 +1,5 @@
 import time
+import json
 
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit
@@ -8,7 +9,9 @@ socketio = SocketIO(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')  # jinja2 template
+    with open("APIs/facebook/recent_facebook.json", "r") as db:
+        fb_posts = json.loads(db.read())
+    return render_template('feed.html', fb_posts=fb_posts)  # jinja2 template
 
 @socketio.on('update')
 def update_data():

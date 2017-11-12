@@ -1,0 +1,6 @@
+{% extends "index.html" %}
+{% block facebook %}
+{% for post in fb_posts %}
+<div class="fb-post" data-href="https://www.facebook.com/{{ post.group }}/posts/{{ post.id }}" data-width="1000" data-show-text="true"><blockquote cite="https://www.facebook.com/groups/Fysiksektionen/permalink/{{ post.id }}/" class="fb-xfbml-parse-ignore"><p>{{ post.message }}</p>Publicerat av <a href="#" role="button">whoever</a>&nbsp;<a href="https://www.facebook.com/groups/Fysiksektionen/permalink/{{ post.id }}/">{{post.updated_time}}</a></blockquote></div>
+{% endfor %}
+{% endblock %}
