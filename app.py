@@ -12,7 +12,6 @@ DB_FILE = "db.json"
 
 @app.route('/')
 def index():
-    # this db needs to be merged into a single one at some point.
     db = DB(DB_FILE, read_only=True)
     return render_template('feed.html', db=db)  # jinja2 template
 
@@ -22,7 +21,6 @@ def update_data():
     db = DB(DB_FILE, read_only=True)
     # sending time to prove dynamic content works.
     emit('server response', {'time': time.strftime("%H:%M:%S"), **db})
-    socketio.sleep(seconds=10)
 
 if __name__ == '__main__':
     socketio.run(app)

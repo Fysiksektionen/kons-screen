@@ -16,6 +16,7 @@ p {font-size:15px;text-align: center;}
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.6/socket.io.min.js"></script>
 <script type="text/javascript" charset="utf-8">
+
 function updateInstagramPosts(instagram){
     // loop over elements with same class and change with jquery.
     $('.instagram-media-rendered').each(function(i, obj) {
@@ -54,8 +55,19 @@ socket.on('server response', function(msg) {
     if (msg.calendar){
         updateCalendarEvents(msg.calendar);
     }
-    socket.emit("update");  // grab another update, server will sleep for 10s.
 });
+
+setInterval(getData, 10000) // fetch new data every 10 seconds.
+
+function getData(){
+    socket.emit("update");  // grab another update from database.
+    
+    /* This could be replaced with a jQuery AJAX call to the main
+       server. It would then call all the update functions with
+       the retrieved JSON data.
+    */
+    
+}
 
 </script>
 
