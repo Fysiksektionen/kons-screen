@@ -13,15 +13,15 @@ Vad vi vill ha på skärmen:
 Vad vi har:
 
 * Busstider
-    *
+    * Hämting av data från SL
 * Prislistor
     *
 * Nyhetsflöde
-    *
+    * Hämting av data från lämplig källa
 * Roliga bilder
     *
 * Sektionskalender
-    *
+    * Hämting av events
 * Meny
     *
 
@@ -29,20 +29,24 @@ Vad vi behöver:
 
 * Testplatform
 * GUI
+    * Vad ska var. Adam
 * Busstidar
-    * Hämting av data från SL. Yashar kollar
+    * Hämting av data från server till Pi. Yashar
+    * Gör snyggt. Seb
 * Prislistor
     * Koppling till iZettle
     * Hämting av prisar till Pi
 * Nyhetsflöde
-    * Hämting av data från lämplig källa
+    * Gör snyggt. Helmer
 * Roliga bilder
     * Hämting av bilder
     * Slideshow-funktionalitet
 * Sektionskalender
-    * Hämting av events
+    * Gör snyggt. Helmer
 * Meny
     * Hämting av menyer
+* Stabilitet. Axel
+
 
 ## Installation
 För att installera alla dependencies så kan du köra kommandot
