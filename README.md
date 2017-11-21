@@ -47,7 +47,6 @@ Vad vi behöver:
     * Hämting av menyer
 * Stabilitet. Axel
 
-
 ## Installation
 För att installera alla dependencies så kan du köra kommandot
 
