@@ -42,7 +42,8 @@ def update_db():
         db["facebook"]  = APIs.Facebook.get_group(fysiksektionen_group_id, limit=10)
         db["instagram"] = APIs.Instagram.get_media_content(instagram_page, limit=10)
         db["calendar"] = APIs.Calendar.list_calendar_events(google_calendar_id, limit=10)
-    
+        db["fnews"] = APIs.FNewsfeed.get_items(limit=5)
+
 if __name__ == "__main__":
     # set cron job to this script.
     update_db()
