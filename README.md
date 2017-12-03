@@ -54,7 +54,7 @@ För att installera alla dependencies så kan du köra kommandot
 
 För att endast köra app.py så räcker det med 
 
-    pip3 install flask flask-socketio
+    pip3 install flask
 
 Om kommandot `pip3` inte känns igen så kör du samma kommando fast med `pip` istället.
 Om detta mot all förmodan inte skulle fungera så måste du först installera pip med 
