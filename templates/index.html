@@ -9,7 +9,7 @@ p {font-size:15px;text-align: center;}
 
 <h1>Socket app</h1>
 <p>Fetches time from server every 10 seconds and embeds some facebook posts.</p>
-<h1 id="time"></h1>
+<h1 id="time">Time: {{ time }}</h1>
 <p id="post-1"></p>
 
 <!-- Socket logic -->
@@ -36,37 +36,28 @@ function updateCalendarEvents(calendar){
     // loop and change with jquery.
 };
 
-var socket = io.connect('http://' + document.domain + ':' + location.port);
-socket.on('connect', function() {
-    socket.emit("update")
-    console.log("Connected.")
-});
+// Call getData every 10 seconds.
+setInterval(getData, 10000) 
 
-socket.on('server response', function(msg) {
-    console.log("Server responded!");
-    console.log("Time is: " + msg.time);
-    $('#time').text("Time: " + msg.time); // modify html document
-    if (msg.instagram){
-        updateInstagramPosts(msg.instagram);
-    }
-    if (msg.facebook){
-        updateFacebookPosts(msg.facebook);
-    }
-    if (msg.calendar){
-        updateCalendarEvents(msg.calendar);
-    }
-});
-
-setInterval(getData, 10000) // fetch new data every 10 seconds.
-
+// Grab another update from database, this url should be replaced with
+// url to the main server once implemented.
 function getData(){
-    socket.emit("update");  // grab another update from database.
-    
-    /* This could be replaced with a jQuery AJAX call to the main
-       server. It would then call all the update functions with
-       the retrieved JSON data.
-    */
-    
+    $.get( "http://127.0.0.1:5000/update", updateDocument, "json");
+}
+
+function updateDocument(data){
+    console.log("Server responded!");
+    console.log("Time is: " + data.time);
+    $('#time').text("Time: " + data.time); // modify html/css document
+    if (data.instagram){
+        updateInstagramPosts(data.instagram);
+    }
+    if (data.facebook){
+        updateFacebookPosts(data.facebook);
+    }
+    if (data.calendar){
+        updateCalendarEvents(data.calendar);
+    }
 }
 
 </script>
