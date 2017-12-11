@@ -1,0 +1,924 @@
+{
+    "instagram": [
+        {
+            "id": "1658310820591785172",
+            "taken_at_timestamp": 1511906076,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/24125363_1733673759985833_5603872495150039040_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/24125363_1733673759985833_5603872495150039040_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/24125363_1733673759985833_5603872495150039040_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/24125363_1733673759985833_5603872495150039040_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/24125363_1733673759985833_5603872495150039040_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/24125363_1733673759985833_5603872495150039040_n.jpg",
+            "caption": "Valet \u00e4r avslutat och detta firades med t\u00e5rta i \u00f6verfl\u00f6d p\u00e5 \u00e5rets sista SM. Stort grattis till alla nya f\u00f6rtroendevalda! \ud83c\udf70\ud83c\udf70\ud83c\udf70",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 1
+            },
+            "code": "BcDgOe8j1TU",
+            "__typename": "GraphSidecar",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/24125363_1733673759985833_5603872495150039040_n.jpg",
+            "edge_media_preview_like": {
+                "count": 38
+            }
+        },
+        {
+            "id": "1653660583541357925",
+            "taken_at_timestamp": 1511351725,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/23735246_1749901671979477_8705868171774525440_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/23735246_1749901671979477_8705868171774525440_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/23735246_1749901671979477_8705868171774525440_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/23735246_1749901671979477_8705868171774525440_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23735246_1749901671979477_8705868171774525440_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/23735246_1749901671979477_8705868171774525440_n.jpg",
+            "caption": "Nu p\u00e5g\u00e5r \ud83d\udc33et i kons! Kom och r\u00f6sta p\u00e5 er favorit! \ud83c\udf1f #Sektionsvalet2017",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 0
+            },
+            "code": "Bby-4oNDD1l",
+            "__typename": "GraphSidecar",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23735246_1749901671979477_8705868171774525440_n.jpg",
+            "edge_media_preview_like": {
+                "count": 31
+            }
+        },
+        {
+            "id": "1642227355785920532",
+            "taken_at_timestamp": 1509988778,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/23347865_2108397219402856_2507928358726139904_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/23347865_2108397219402856_2507928358726139904_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/23347865_2108397219402856_2507928358726139904_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/23347865_2108397219402856_2507928358726139904_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23347865_2108397219402856_2507928358726139904_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/23347865_2108397219402856_2507928358726139904_n.jpg",
+            "caption": "I l\u00f6rdags var det Ettans Fest och f\u00f6r er som inte fick nog av dekoren kan denna nu besk\u00e5das i konsulatet vars bord \u00e4r fyllda av f\u00e4rska snittblommor och v\u00e4ggar upplysta av nya ljusslingor\u2728",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 0
+            },
+            "code": "BbKXRRGDIAU",
+            "__typename": "GraphSidecar",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/23347865_2108397219402856_2507928358726139904_n.jpg",
+            "edge_media_preview_like": {
+                "count": 46
+            }
+        },
+        {
+            "id": "1620284485529365122",
+            "taken_at_timestamp": 1507372984,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/22280816_323963818072669_6435249890162376704_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/22280816_323963818072669_6435249890162376704_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/22280816_323963818072669_6435249890162376704_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/22280816_323963818072669_6435249890162376704_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/22280816_323963818072669_6435249890162376704_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/22280816_323963818072669_6435249890162376704_n.jpg",
+            "caption": "Idag \u00e4r sektionens funktion\u00e4rer p\u00e5 Kakn\u00e4stornet och blir bjudna p\u00e5 brunch med sv\u00e5rslagen utsikt som tack f\u00f6r allt ov\u00e4rderligt jobb de g\u00f6r! \u2764\ufe0f",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 0
+            },
+            "code": "BZ8aCerDeqC",
+            "__typename": "GraphSidecar",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/22280816_323963818072669_6435249890162376704_n.jpg",
+            "edge_media_preview_like": {
+                "count": 57
+            }
+        },
+        {
+            "id": "1619490668324792494",
+            "taken_at_timestamp": 1507278353,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/22280649_299418383872894_2786920762735329280_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/22280649_299418383872894_2786920762735329280_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/22280649_299418383872894_2786920762735329280_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/22280649_299418383872894_2786920762735329280_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/22280649_299418383872894_2786920762735329280_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/22280649_299418383872894_2786920762735329280_n.jpg",
+            "caption": "Ojoj nu \u00e4r GK i full fart att rusta upp Konsulatet ytterligare! Nu ska det minsann bli ordentligt med ljud och ljus p\u00e5 Fysiks fester \ud83c\udf89",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 3
+            },
+            "code": "BZ5li6yjyiu",
+            "__typename": "GraphImage",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/22280649_299418383872894_2786920762735329280_n.jpg",
+            "edge_media_preview_like": {
+                "count": 53
+            }
+        },
+        {
+            "id": "1597274458782926052",
+            "taken_at_timestamp": 1504629975,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/20633860_115552515786598_737219428277551104_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/20633860_115552515786598_737219428277551104_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/20633860_115552515786598_737219428277551104_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/20633860_115552515786598_737219428277551104_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20633860_115552515786598_737219428277551104_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/20633860_115552515786598_737219428277551104_n.jpg",
+            "caption": "Nu har h\u00f6stens tisdagspubar b\u00f6rjat igen! V\u00e4lkomna! \ud83c\udf7b",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 0
+            },
+            "code": "BYqqKhUj4Tk",
+            "__typename": "GraphImage",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20633860_115552515786598_737219428277551104_n.jpg",
+            "edge_media_preview_like": {
+                "count": 57
+            }
+        },
+        {
+            "id": "1589404460542536711",
+            "taken_at_timestamp": 1503691798,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/21041256_215727942292777_6313885723674017792_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/21041256_215727942292777_6313885723674017792_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/21041256_215727942292777_6313885723674017792_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/21041256_215727942292777_6313885723674017792_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21041256_215727942292777_6313885723674017792_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/21041256_215727942292777_6313885723674017792_n.jpg",
+            "caption": "Idag var Styret och handlade till morgondagens stuggasque, och r\u00e5kade k\u00f6pa 120 kg mat till 120 pers. Hoppsan s\u00e4ger vi, och hoppas ni s\u00e4ger mums. \u00af\\_(\u30c4)_/\u00af",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 1
+            },
+            "code": "BYOsu-TDywH",
+            "__typename": "GraphImage",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/21041256_215727942292777_6313885723674017792_n.jpg",
+            "edge_media_preview_like": {
+                "count": 48
+            }
+        },
+        {
+            "id": "1581218991031806109",
+            "taken_at_timestamp": 1502716014,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/c135.0.810.810/20836876_1958671447737174_9080300057680412672_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/c135.0.810.810/20836876_1958671447737174_9080300057680412672_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/c135.0.810.810/20836876_1958671447737174_9080300057680412672_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/c135.0.810.810/20836876_1958671447737174_9080300057680412672_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/20836876_1958671447737174_9080300057680412672_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 810
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/20836876_1958671447737174_9080300057680412672_n.jpg",
+            "caption": "S\u00e5 h\u00e4\u00e4\u00e4\u00e4\u00e4r m\u00e5nga fina faddrar var i morse p\u00e5 plats f\u00f6r att h\u00e4lsa n\u00d8llan v\u00e4lkommen till KTH!",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 3
+            },
+            "code": "BXxnktwjWid",
+            "__typename": "GraphImage",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c135.0.810.810/20836876_1958671447737174_9080300057680412672_n.jpg",
+            "edge_media_preview_like": {
+                "count": 60
+            }
+        },
+        {
+            "id": "1579852433009377164",
+            "taken_at_timestamp": 1502553107,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/20759608_261860987639254_1870218447909027840_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/20759608_261860987639254_1870218447909027840_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/20759608_261860987639254_1870218447909027840_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/20759608_261860987639254_1870218447909027840_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20759608_261860987639254_1870218447909027840_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/20759608_261860987639254_1870218447909027840_n.jpg",
+            "caption": "Nu \u00e4r det kickoff-info f\u00f6r alla faddrar i F2. Vi \u00e4r s\u00e5 taggade inf\u00f6r mottagningsveckorna och att f\u00e5 tr\u00e4ffa n\u00d8llan! \ud83d\ude03",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 0
+            },
+            "code": "BXsw2rbD3-M",
+            "__typename": "GraphImage",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20759608_261860987639254_1870218447909027840_n.jpg",
+            "edge_media_preview_like": {
+                "count": 34
+            }
+        },
+        {
+            "id": "1567402266687654914",
+            "taken_at_timestamp": 1501068932,
+            "comments_disabled": false,
+            "owner": {
+                "id": "2905411461"
+            },
+            "thumbnail_resources": [
+                {
+                    "config_width": 150,
+                    "config_height": 150,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s150x150/e35/20346816_255310714970740_1096031883927486464_n.jpg"
+                },
+                {
+                    "config_width": 240,
+                    "config_height": 240,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s240x240/e35/20346816_255310714970740_1096031883927486464_n.jpg"
+                },
+                {
+                    "config_width": 320,
+                    "config_height": 320,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s320x320/e35/20346816_255310714970740_1096031883927486464_n.jpg"
+                },
+                {
+                    "config_width": 480,
+                    "config_height": 480,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s480x480/e35/20346816_255310714970740_1096031883927486464_n.jpg"
+                },
+                {
+                    "config_width": 640,
+                    "config_height": 640,
+                    "src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20346816_255310714970740_1096031883927486464_n.jpg"
+                }
+            ],
+            "dimensions": {
+                "width": 1080,
+                "height": 1080
+            },
+            "display_url": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/e35/20346816_255310714970740_1096031883927486464_n.jpg",
+            "caption": "S\u00e5 h\u00e4r trevligt var det ig\u00e5r n\u00e4r ftm\ud83c\udf38 h\u00f6ll en middag med egenodlade gr\u00f6nsaker, grillning och invigning av sektionens nybyggda utem\u00f6bler! \u2600\ufe0f @fysikstradgardsmasteri",
+            "is_video": false,
+            "edge_media_to_comment": {
+                "count": 0
+            },
+            "code": "BXAiA6eD0wC",
+            "__typename": "GraphImage",
+            "thumbnail_src": "https://scontent-arn2-1.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/20346816_255310714970740_1096031883927486464_n.jpg",
+            "edge_media_preview_like": {
+                "count": 38
+            }
+        }
+    ],
+    "facebook": [
+        {
+            "id": "1519326151481863",
+            "story": "Filip Af Malmborg shared Fysiks klubbm\u00e4steri's event to the group: Fysiksektionen KTH.",
+            "group": "1225386484209166",
+            "message": "Hej alla! P\u00e5 tisdag anordnar f\u00f6re detta n\u00f8llespexet en pub d\u00e4r vi visar den f\u00e4rdigklippta filmen p\u00e5 spexet! Kom och titta, detta vill ni inte missa!!!\n\nMat och dryck enligt temat kommer sj\u00e4lvklart ocks\u00e5 serveras, och n\u00f8llespexm\u00e4rken kommer finnas att k\u00f6pa f\u00f6r den som vill!\n\n\"One pub to rule them all!\"\n\nSes p\u00e5 tisdag \ud83d\ude18",
+            "updated_time": "2017-12-01T09:23:30+0000"
+        },
+        {
+            "id": "1518424291572049",
+            "story": "Eric Landstr\u00f6m uploaded a file in the group: Fysiksektionen KTH.",
+            "group": "1225386484209166",
+            "message": "SENASTE NYTT:\nKTH har valt att skjuta upp beslutet om studieytorna till i januari f\u00f6r att f\u00e5 mer tid att \u00f6verl\u00e4gga. (tack till Filip Axelsson, Alexander Hesseborn och M\u00e5rten som p\u00e5pekade detta).\n\n------------------------------------------------------------------------------------------------------------\n\nVi fick en f\u00f6rfr\u00e5gan om att sammanfatta det h\u00e4r med st\u00e4ngning av lokaler, s\u00e5 jag t\u00e4nkte g\u00f6ra det:\n\nKTH har beslutat att begr\u00e4nsa \u00f6ppenheten av studieytorna av trygghets- och arbetsmilj\u00f6sk\u00e4l. Beslutet senarelades p.g.a. mer tid f\u00f6r \u00f6verl\u00e4ggning, men i skrivandes stund kommer detta g\u00e4lla:\n\n\u00d6ppet dygnet runt, alla dagar:\nFylke, V, Q, E\n\n\u00d6ppet 07:00-22:00 vardagar (st\u00e4ngda helgdagar):\nM, B, L, AlbaNova, D\n\n\u00d6vriga lokaler \u00e4r \u00f6ppna 07:00-20:00 vardagar och st\u00e4ngda helgdagar. \n\nDet f\u00f6rs redan en diskussion med KTH och THS samt Fysiksektionens \u00e5sikter finns i princip samlade i bifogat \u00e5siktsdokument respektive kommande SM5-protokoll. Om ni har \u00e5sikter b\u00f6r ni kontakta sno@f.kth.se eller pas@f.kth.se.\n\nOBSERVERA ATT SEKTIONSLOKALER EJ BER\u00d6RS.",
+            "updated_time": "2017-11-30T15:23:25+0000"
+        },
+        {
+            "id": "1517646701649808",
+            "story": "Elliot Epstein shared Union Sports Association's event to the group: Fysiksektionen KTH.",
+            "group": "1225386484209166",
+            "message": "Now is the time for the the yearly badminton tournament helt by THS Union Sports Association!",
+            "updated_time": "2017-11-29T18:47:54+0000"
+        },
+        {
+            "id": "1517644371650041",
+            "story": "Axel Demborg created an event for Fysiksektionen KTH.",
+            "group": "1225386484209166",
+            "updated_time": "2017-11-29T18:31:06+0000"
+        },
+        {
+            "id": "1516884191726059",
+            "group": "1225386484209166",
+            "message": "Hej!\n\nUnder Val-SM visades valresultatet p\u00e5 ett annorlunda s\u00e4tt \u00e4n under tidigare \u00e5r, n\u00e4mligen med... \u00c4sch, ni f\u00e5r se f\u00f6r er sj\u00e4lva. Det var jag, Helmer Nyl\u00e9n och Christoffer Ejemyr som skapade det ni kan se nedan. Vi g\u00f6r det g\u00e4rna igen n\u00e4sta \u00e5r men vill f\u00f6rst dela den h\u00e4r s\u00e5 att alla kan se den. \n\nHa det s\u00e5 bra!",
+            "updated_time": "2017-11-29T14:41:22+0000"
+        },
+        {
+            "id": "1517277485020063",
+            "story": "Markus Meder shared Fysiksektionen's event to the group: Fysiksektionen KTH.",
+            "group": "1225386484209166",
+            "message": "Att prata h\u00e4lsa tror jag \u00e4r en j\u00e4ttebra grej. Kom och g\u00f6r det idag! 17:23!",
+            "updated_time": "2017-11-29T11:09:50+0000"
+        },
+        {
+            "id": "1516592925088519",
+            "group": "1225386484209166",
+            "message": "Nu \u00e4r valet klart, och v\u00e5ra f\u00f6rtroendevalda har utsetts. Dessa \u00e4r f\u00f6ljande:\n\nOrdf\u00f6rande: Fred Lindahl\nVice Ordf\u00f6rande: Hanna Linn\nKass\u00f6r: Mikael Lyth\nSekreterare: Ebba Ahlgren\nUtbildningsledamot: Theodor Staffas\nStudiesocial Ledamot: Jonathan Johansen\nN\u00e4ringslivsledamot: Nils W\u00e4gmark\n\nF\u00f6hseriet: Dudu Xuechen Zuo, Oscar Johansson Elling, Eric Landstr\u00f6m\nFadderiet: Leo Frode, Hugo H\u00e4rmark, Christoffer Ejemyr\n\nGeneralkonsul: Hanna Lindahl\n\nGeneralsekreterare: Marcus Wejdelind\nFN Kass\u00f6r: Lara Mohtadi\n\nKlubbm\u00e4stare: Anton Finnson, Aron Nor\u00e9n\n\nRevisor: Johan Engvall, Andreas Lundin\n\nAktivitetsn\u00e4mndens Ordf\u00f6rande: Elliot Epstein\nAktivitetsn\u00e4mndens Kass\u00f6r: Johan Larsson\n\nf.com:s Ordf\u00f6rande: Einar Lennel\u00f6v\nProfilansvarig: Adam Sk\u00e4rbo Jonsson\nWebmaster: Yashar Honarmandi\n\nSNO: Emanuel Ravemyr\nPAS: Filip Axelsson\n\nTotalt r\u00f6stade 107 personer i valet, och vi i Valberedningen 2017 vill tacka f\u00f6r oss!\n\nVi fick \u00e4ven n\u00e5gra fyllnadsvalda under SM, och dessa \u00e4r:\n\nFadderiet: Karl Arthursson\noJ\u00e4mn: Fredrik Sj\u00f6str\u00f6m\nCdA: Gabriel Bengtsson\nKlubbm\u00e4stare: Gustav Gyb\u00e4ck\nRedakt\u00f6r: Svante Rollenhagen",
+            "updated_time": "2017-11-29T05:44:53+0000"
+        },
+        {
+            "id": "1516470541767424",
+            "story": "Linn\u00e9a Andersson shared KTH Master's and International Association - KTH MAIN's event to the group: Fysiksektionen KTH.",
+            "group": "1225386484209166",
+            "message": "Main follows up their pub crawl with a potluck! So bring your A-game and meet students from all over the world!",
+            "updated_time": "2017-11-28T15:03:20+0000"
+        },
+        {
+            "id": "1516277821786696",
+            "story": "Karla Rehn shared Tanja Suhinina's event to the group: Fysiksektionen KTH.",
+            "group": "1225386484209166",
+            "message": "P\u00e5 fredag blir det jazzjazzjazz i kons. Kom och dansa.\n\nhttps://m.facebook.com/events/1944265829229018/",
+            "updated_time": "2017-11-28T10:54:44+0000"
+        },
+        {
+            "id": "1515145795233232",
+            "story": "Hanna Lindahl shared Fysiksektionen's event to the group: Fysiksektionen KTH.",
+            "group": "1225386484209166",
+            "message": "Hej hej, jag vill bara sl\u00e5 ett slag f\u00f6r att g\u00e5 p\u00e5 SM imorgon tisdag. F\u00f6r att \u00f6vertyga lite mer kan jag avsl\u00f6ja att, ut\u00f6ver allt kul som h\u00e4nder p\u00e5 m\u00f6tet i \u00f6vrigt, kommer BAREN VARA \u00d6PPEN OCH DET KOMMER SERVERAS T\u00c5RTA! Det h\u00e4r vill ni inte missa!\n\nSe till att matanm\u00e4la dig s\u00e5 snart som m\u00f6jligt s\u00e5 du f\u00e5r mat och fika p\u00e5 m\u00f6tet, \u00e4r du os\u00e4ker p\u00e5 om du redan anm\u00e4lt dig kan du fr\u00e5ga i kommentarerna s\u00e5 kollar jag :)\n\nMatanm\u00e4lan: bit.ly/matValSM",
+            "updated_time": "2017-11-27T21:21:33+0000"
+        }
+    ],
+    "calendar": {
+        "items": [
+            {
+                "id": "7osmbrbagmjcqbg7g11ivieflu",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=N29zbWJyYmFnbWpjcWJnN2cxMWl2aWVmbHUgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+                "created": "2017-11-07T10:36:53.000Z",
+                "summary": "Adventsmys/st\u00e4ddag",
+                "end": {
+                    "dateTime": "2017-12-03T20:00:00+01:00"
+                },
+                "etag": "\"3021155949538000\"",
+                "updated": "2017-11-13T12:59:34.769Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "axel.demborg@gmail.com",
+                    "displayName": "Axel Demborg"
+                },
+                "sequence": 1,
+                "iCalUID": "7osmbrbagmjcqbg7g11ivieflu@google.com",
+                "start": {
+                    "dateTime": "2017-12-03T13:00:00+01:00"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                }
+            },
+            {
+                "id": "0j60rbpc162j9raf4m3tecfs25",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=MGo2MHJicGMxNjJqOXJhZjRtM3RlY2ZzMjUgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+                "created": "2017-11-27T13:10:05.000Z",
+                "summary": "Tisdagspub",
+                "end": {
+                    "dateTime": "2017-12-05T23:23:00+01:00"
+                },
+                "etag": "\"3023576410678000\"",
+                "location": "Brinellv\u00e4gen 89, 114 28 Stockholm, Sweden",
+                "updated": "2017-11-27T13:10:05.339Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "gabriel.jo.bengtsson@gmail.com",
+                    "displayName": "Gabriel Bengtsson"
+                },
+                "sequence": 0,
+                "iCalUID": "0j60rbpc162j9raf4m3tecfs25@google.com",
+                "start": {
+                    "dateTime": "2017-12-05T17:23:00+01:00"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                },
+                "description": "n\u00d8llespex-pub"
+            },
+            {
+                "id": "193tict3avmtt8783ekhf67do2",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=MTkzdGljdDNhdm10dDg3ODNla2hmNjdkbzIgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+                "created": "2017-11-01T12:30:22.000Z",
+                "summary": "Mottagningens tackfest",
+                "end": {
+                    "dateTime": "2017-12-10T01:00:00+01:00"
+                },
+                "etag": "\"3019078891986000\"",
+                "updated": "2017-11-01T12:30:45.993Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "ksenia.loskutova@gmail.com",
+                    "displayName": "Ksenia Loskutova"
+                },
+                "sequence": 1,
+                "iCalUID": "193tict3avmtt8783ekhf67do2@google.com",
+                "start": {
+                    "dateTime": "2017-12-09T18:00:00+01:00"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                }
+            },
+            {
+                "id": "12gjnja7dr7t0trd1jciohpn4c",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=MTJnam5qYTdkcjd0MHRyZDFqY2lvaHBuNGMgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+                "created": "2017-11-27T13:13:06.000Z",
+                "summary": "Tisdagspub",
+                "end": {
+                    "dateTime": "2017-12-12T23:23:00+01:00"
+                },
+                "etag": "\"3023576773924000\"",
+                "location": "Brinellv\u00e4gen 89, 114 28 Stockholm, Sweden",
+                "updated": "2017-11-27T13:13:06.962Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "gabriel.jo.bengtsson@gmail.com",
+                    "displayName": "Gabriel Bengtsson"
+                },
+                "sequence": 0,
+                "iCalUID": "12gjnja7dr7t0trd1jciohpn4c@google.com",
+                "start": {
+                    "dateTime": "2017-12-12T17:23:00+01:00"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                },
+                "description": "Tema: Svalbar"
+            },
+            {
+                "id": "5jeqivkjphvhh1kmlifcc4oh0f",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=NWplcWl2a2pwaHZoaDFrbWxpZmNjNG9oMGYgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+                "created": "2017-11-21T19:41:27.000Z",
+                "summary": "Internfest fkm*",
+                "end": {
+                    "date": "2017-12-18"
+                },
+                "etag": "\"3022586575024000\"",
+                "transparency": "transparent",
+                "location": "Osqvik, Jerkas v\u00e4g 1, 134 32 Gustavsberg, Sweden",
+                "updated": "2017-11-21T19:41:27.512Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "leo.enge@gmail.com",
+                    "displayName": "Leo Enge"
+                },
+                "sequence": 0,
+                "iCalUID": "5jeqivkjphvhh1kmlifcc4oh0f@google.com",
+                "start": {
+                    "date": "2017-12-15"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                }
+            },
+            {
+                "id": "1diror7jg7pajigpcvruocngse",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=MWRpcm9yN2pnN3BhamlncGN2cnVvY25nc2UgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+                "created": "2017-11-07T10:33:10.000Z",
+                "summary": "Julmiddag",
+                "end": {
+                    "dateTime": "2017-12-15T23:00:00+01:00"
+                },
+                "etag": "\"3020805043860000\"",
+                "location": "Konsulatet",
+                "updated": "2017-11-11T12:15:21.930Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "axel.demborg@gmail.com",
+                    "displayName": "Axel Demborg"
+                },
+                "sequence": 1,
+                "iCalUID": "1diror7jg7pajigpcvruocngse@google.com",
+                "start": {
+                    "dateTime": "2017-12-15T17:00:00+01:00"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                }
+            },
+            {
+                "id": "69u60077dilih8tp8rq6fjee5q",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=Njl1NjAwNzdkaWxpaDh0cDhycTZmamVlNXEgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+                "created": "2017-11-21T19:43:12.000Z",
+                "summary": "Tentagasque 2",
+                "end": {
+                    "dateTime": "2018-01-14T01:00:00+01:00"
+                },
+                "etag": "\"3022586784450000\"",
+                "updated": "2017-11-21T19:43:12.225Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "leo.enge@gmail.com",
+                    "displayName": "Leo Enge"
+                },
+                "sequence": 0,
+                "iCalUID": "69u60077dilih8tp8rq6fjee5q@google.com",
+                "start": {
+                    "dateTime": "2018-01-13T19:00:00+01:00"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                }
+            },
+            {
+                "id": "6i6emlif94bj0hvbs3nvsbrvqd",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=Nmk2ZW1saWY5NGJqMGh2YnMzbnZzYnJ2cWQgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+                "created": "2017-11-21T19:42:04.000Z",
+                "summary": "Nubbedraget 2018",
+                "end": {
+                    "date": "2018-04-15"
+                },
+                "etag": "\"3022586648716000\"",
+                "transparency": "transparent",
+                "updated": "2017-11-21T19:42:04.358Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "leo.enge@gmail.com",
+                    "displayName": "Leo Enge"
+                },
+                "sequence": 0,
+                "iCalUID": "6i6emlif94bj0hvbs3nvsbrvqd@google.com",
+                "start": {
+                    "date": "2018-04-14"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                }
+            },
+            {
+                "id": "5ck79jr1u8i6oaasmha14v9o7t_20180418T110000Z",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=NWNrNzlqcjF1OGk2b2Fhc21oYTE0djlvN3RfMjAxODA0MThUMTEwMDAwWiBlMTdycG92aDV2N2o3OWZwcDc0ZDFna2VyOEBn",
+                "created": "2017-11-14T07:37:01.000Z",
+                "summary": "Fysikalen!!!",
+                "end": {
+                    "dateTime": "2018-04-18T23:00:00+02:00",
+                    "timeZone": "Europe/Stockholm"
+                },
+                "etag": "\"3021290178480000\"",
+                "sequence": 1,
+                "updated": "2017-11-14T07:38:09.240Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "rutgeriwf@gmail.com",
+                    "displayName": "Rutger Fuglesang"
+                },
+                "originalStartTime": {
+                    "dateTime": "2018-04-18T13:00:00+02:00",
+                    "timeZone": "Europe/Stockholm"
+                },
+                "iCalUID": "5ck79jr1u8i6oaasmha14v9o7t@google.com",
+                "recurringEventId": "5ck79jr1u8i6oaasmha14v9o7t",
+                "start": {
+                    "dateTime": "2018-04-18T13:00:00+02:00",
+                    "timeZone": "Europe/Stockholm"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                }
+            },
+            {
+                "id": "5ck79jr1u8i6oaasmha14v9o7t_20180419T110000Z",
+                "status": "confirmed",
+                "htmlLink": "https://www.google.com/calendar/event?eid=NWNrNzlqcjF1OGk2b2Fhc21oYTE0djlvN3RfMjAxODA0MTlUMTEwMDAwWiBlMTdycG92aDV2N2o3OWZwcDc0ZDFna2VyOEBn",
+                "created": "2017-11-14T07:37:01.000Z",
+                "summary": "Fysikalen!!!",
+                "end": {
+                    "dateTime": "2018-04-19T23:00:00+02:00",
+                    "timeZone": "Europe/Stockholm"
+                },
+                "etag": "\"3021290178480000\"",
+                "sequence": 1,
+                "updated": "2017-11-14T07:38:09.240Z",
+                "kind": "calendar#event",
+                "creator": {
+                    "email": "rutgeriwf@gmail.com",
+                    "displayName": "Rutger Fuglesang"
+                },
+                "originalStartTime": {
+                    "dateTime": "2018-04-19T13:00:00+02:00",
+                    "timeZone": "Europe/Stockholm"
+                },
+                "iCalUID": "5ck79jr1u8i6oaasmha14v9o7t@google.com",
+                "recurringEventId": "5ck79jr1u8i6oaasmha14v9o7t",
+                "start": {
+                    "dateTime": "2018-04-19T13:00:00+02:00",
+                    "timeZone": "Europe/Stockholm"
+                },
+                "organizer": {
+                    "self": true,
+                    "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+                    "displayName": "Fysiksektionen"
+                }
+            }
+        ],
+        "updated": "2017-11-28T13:50:52.879Z",
+        "summary": "Fysiksektionen",
+        "timeZone": "Europe/Stockholm",
+        "accessRole": "reader",
+        "etag": "\"p32ca3eflmjgte0g\"",
+        "nextPageToken": "EjYKKzVjazc5anIxdThpNm9hYXNtaGExNHY5bzd0XzIwMTgwNDE5VDExMDAwMFoYgKi5sbLG2gI=",
+        "defaultReminders": [],
+        "kind": "calendar#events"
+    },
+    "fnews": [
+        {
+            "description": "Nu \u00e4r valet klart, och v\u00e5ra f\u00f6rtroendevalda har utsetts. Dessa \u00e4r f\u00f6ljande: Ordf\u00f6rande: Fred Lindahl Vice Ordf\u00f6rande: Hanna Linn Kass\u00f6r: Mikael Lyth Sekreterare: Ebba Ahlgren Cederl\u00f6f Utbildningsledamot: Theodor Staffas Studiesocial Ledamot: Jonathan Johansen N\u00e4ringslivsledamot: Nils W\u00e4gmark F\u00f6hseriet: Dudu Zuo, Oscar Johanson Elling, Eric Landstr\u00f6m Fadderiet: Leo Frode, Hugo H\u00e4rmark, Christoffer Ejemyr Generalkonsul: Hanna Lindahl Generalsekreterare: Marcus Wejdelind FN Kass\u00f6r: Lara [...]",
+            "published": "Tue, 28 Nov 2017 17:18:08 +0000",
+            "content": "<p>Nu \u00e4r valet klart, och v\u00e5ra f\u00f6rtroendevalda har utsetts. Dessa \u00e4r f\u00f6ljande:</p>\n<p>Ordf\u00f6rande: Fred Lindahl<br />\nVice Ordf\u00f6rande: Hanna Linn<br />\nKass\u00f6r: Mikael Lyth<br />\nSekreterare: Ebba Ahlgren Cederl\u00f6f<br />\nUtbildningsledamot: Theodor Staffas<br />\nStudiesocial Ledamot: Jonathan Johansen<br />\nN\u00e4ringslivsledamot: Nils W\u00e4gmark</p>\n<p>F\u00f6hseriet: Dudu Zuo, Oscar Johanson Elling, Eric Landstr\u00f6m<br />\nFadderiet: Leo Frode, Hugo H\u00e4rmark, Christoffer Ejemyr</p>\n<p>Generalkonsul: Hanna Lindahl</p>\n<p>Generalsekreterare: Marcus Wejdelind<br />\nFN Kass\u00f6r: Lara Mohtadi</p>\n<p>Klubbm\u00e4stare: Anton Finnson, Aron Nor\u00e9n</p>\n<p>Revisor: Johan Engvall, Andreas Lundin</p>\n<p>Aktivitetsn\u00e4mndens Ordf\u00f6rande: Elliot Epstein<br />\nAktivitetsn\u00e4mndens Kass\u00f6r: Johan Larsson</p>\n<p>f.com:s Ordf\u00f6rande: Einar Lennel\u00f6v<br />\nProfilansvarig: Adam Sk\u00e4rbo Jonsson<br />\nWebmaster: Yashar Honarmandi</p>\n<p>SNO: Emanuel Ravemyr<br />\nPAS: Filip Axelsson</p>\n<p>Totalt r\u00f6stade 107 personer i valet, och vi i Valberedningen 2017 vill tacka f\u00f6r oss!</p>\n<p>Det fyllnadsvaldes \u00e4ven n\u00e5gra personer under Val-SM, och dessa var:</p>\n<p>Fadderist: Karl Arthursson<br />\noJ\u00e4mn: Fredrik Sj\u00f6str\u00f6m<br />\nCdA (kass\u00f6r FRum): Gabriel Bengtsson<br />\nKlubbm\u00e4stare: Gustav Gyb\u00e4ck<br />\nRedakt\u00f6r: Svante Rollenhagen</p>\n",
+            "title": "Sektionsvalet 2017 klart!",
+            "category": "Styret"
+        },
+        {
+            "description": "Hej sektionen! Det kallas nu till Val-SM, det vill s\u00e4ga \u00e5rets 5:e sektionsm\u00f6te f\u00f6r i \u00e5r. Val-SM \u00e4ger rum i konsulatet tisdagen den 28:e november kl. 17:23. P\u00e5 m\u00f6tet kommer bland annat resultatet fr\u00e5n f\u00f6rtidsvalet presenteras och fyllnadsval till de poster som fortfarande st\u00e5r tomma kommer h\u00e5llas. Vill du motionera om n\u00e5got skickar du din motion till styret@f.kth.se senast tisdag [...]",
+            "published": "Tue, 14 Nov 2017 19:48:00 +0000",
+            "content": "<p>Hej sektionen!</p>\n<p>Det kallas nu till Val-SM, det vill s\u00e4ga \u00e5rets 5:e sektionsm\u00f6te f\u00f6r i \u00e5r.</p>\n<p>Val-SM \u00e4ger rum i konsulatet tisdagen den 28:e november kl. 17:23.</p>\n<p>P\u00e5 m\u00f6tet kommer bland annat resultatet fr\u00e5n f\u00f6rtidsvalet presenteras och fyllnadsval till de poster som fortfarande st\u00e5r tomma kommer h\u00e5llas.</p>\n<p>Vill du motionera om n\u00e5got skickar du din motion till styret@f.kth.se senast tisdag 21:a november.</p>\n<p>Du hittar handlingarna <a href=\"https://drive.google.com/open?id=1X9L1RoZyq3FsyJrGw0RfkeyGfZ5XseEG\">h\u00e4r</a>.</p>\n",
+            "title": "Val-SM \u2013 Sektionsm\u00f6te 5",
+            "category": "Styret"
+        },
+        {
+            "description": "Fr\u00e5n och med den 1 december 2017 kommer KTH begr\u00e4nsa antalet datasalar som \u00e4r \u00f6ppna p\u00e5 natten. De datasalar som som \u00e4r tillg\u00e4ngliga kv\u00e4lls-, nattetid och helger kommer att ha de programvaror som finns inom utbildningsomr\u00e5dena. Bes\u00f6ks- och inloggningsstatistik har analyserats f\u00f6r att s\u00e4kerst\u00e4lla relevant IT-st\u00f6d. De nya reglerna f\u00f6ljer: Datorsalarna med begr\u00e4nsad tillg\u00e4nglighet ska vara tillg\u00e4ngliga f\u00f6r studenter helgfria [...]",
+            "published": "Wed, 01 Nov 2017 10:56:14 +0000",
+            "content": "<p>Fr\u00e5n och med den 1 december 2017 kommer KTH begr\u00e4nsa antalet datasalar som \u00e4r \u00f6ppna p\u00e5 natten.<br />\nDe datasalar som som \u00e4r tillg\u00e4ngliga kv\u00e4lls-, nattetid och helger kommer att ha de programvaror som finns inom utbildningsomr\u00e5dena. Bes\u00f6ks- och inloggningsstatistik har analyserats f\u00f6r att s\u00e4kerst\u00e4lla relevant IT-st\u00f6d.</p>\n<p>De nya reglerna f\u00f6ljer:</p>\n<p><strong>Datorsalarna med begr\u00e4nsad tillg\u00e4nglighet ska vara tillg\u00e4ngliga f\u00f6r studenter helgfria vardagar kl. 07:00 &#8211; 22:00.</strong></p>\n<ul>\n<li>Maskin (Butter, Tr\u00f6tter, Kloker, Toker, Glader, Prosit)</li>\n<li>Q-salar (XQ23, XQ25)</li>\n<li>Bergs (M102, M122)</li>\n<li>Lantm\u00e4teri (Bure, Faggot, MacLean)</li>\n<li>RB33</li>\n<li>E-huset, CSC skolan</li>\n</ul>\n<p><strong>Resterande datorsalar ska vara tillg\u00e4ngliga f\u00f6r studenter dygnet runt/\u00e5ret runt</strong></p>\n<ul>\n<li>Fylke (Merry, Pippin, Frodo, Bilbo, Sam)</li>\n<li>V-salar (Nils, Baltzar, Christopher)</li>\n<li>Q-salar (endast XQ32)</li>\n<li>D-huset (Matsalen, Konsthallen, Musiksalen, Sporthallen, Spelhallen)</li>\n</ul>\n",
+            "title": "\u00c4ndrad tillg\u00e5ng till datasalar nattetid",
+            "category": "Styret"
+        },
+        {
+            "description": "Det kallas nu till \u00e5rets fj\u00e4rde sektionsm\u00f6te. Kallelsen hittar du h\u00e4r. Tid och plats f\u00f6r m\u00f6tet \u00e4r onsdag 1:a november kl. 17:23 i Konsulatet. Handlingarna hittar du h\u00e4r. [...]",
+            "published": "Wed, 18 Oct 2017 11:49:32 +0000",
+            "content": "<p>Det kallas nu till \u00e5rets fj\u00e4rde sektionsm\u00f6te. Kallelsen hittar du <a href=\"https://drive.google.com/open?id=0BxDZAZZcoc3dS2ZtaVcwajAtSzg\" target=\"_blank\" rel=\"noopener\">h\u00e4r</a>.</p>\n<p>Tid och plats f\u00f6r m\u00f6tet \u00e4r onsdag 1:a november kl. 17:23 i Konsulatet.</p>\n<p>Handlingarna hittar du <a href=\"https://drive.google.com/open?id=0BxDZAZZcoc3dUUlMWlNmTkkzRWc\">h\u00e4r</a>.</p>\n",
+            "title": "Sektionsm\u00f6te 4",
+            "category": "Styret"
+        },
+        {
+            "description": "ENGLISH BELOW Valberedningen p\u00e5 THS lyser just nu h\u00f6stens val till k\u00e5rledningen! Posterna \u00e4r arvoderade heltidsarbeten som inneb\u00e4r att man tar en paus fr\u00e5n studierna under ett \u00e5r och arbetar inom k\u00e5ren. Samtliga poster ger stora erfarenheter som kan vara meriterande i framtida arbetss\u00f6kande. Gyllene m\u00f6jligheter, med andra ord! De tillg\u00e4ngliga posterna till k\u00e5rledningen \u00e4r: Mottagningssamordnare Chef f\u00f6r utbildningsinflytande Evenemangschef [...]",
+            "published": "Fri, 15 Sep 2017 09:36:09 +0000",
+            "content": "<p>ENGLISH BELOW</p>\n<p>Valberedningen p\u00e5 THS lyser just nu h\u00f6stens val till k\u00e5rledningen! Posterna \u00e4r arvoderade heltidsarbeten<br />\nsom inneb\u00e4r att man tar en paus fr\u00e5n studierna under ett \u00e5r och arbetar inom k\u00e5ren. Samtliga poster ger<br />\nstora erfarenheter som kan vara meriterande i framtida arbetss\u00f6kande. Gyllene m\u00f6jligheter, med andra ord!</p>\n<p>De tillg\u00e4ngliga posterna till k\u00e5rledningen \u00e4r:</p>\n<ul>\n<li>Mottagningssamordnare</li>\n<li>Chef f\u00f6r utbildningsinflytande</li>\n<li>Evenemangschef</li>\n<li>Projektledare f\u00f6r THS Armada</li>\n<li>Studiesocialt och internationellt ansvarig</li>\n</ul>\n<p>Ut\u00f6ver de fem posterna i k\u00e5rledningen utlyser vi i valberedningen \u00e4ven tv\u00e5 fyllnadsval p\u00e5 THS:</p>\n<ul>\n<li>Tre platser i THS valberedning</li>\n<li>En plats som THS revisor f\u00f6r k\u00e5rfullm\u00e4ktige</li>\n</ul>\n<p>Vi i valberedning vill po\u00e4ngtera att dessa poster inte bara ger goda erfarenheter utan ger \u00e4ven m\u00f6jlighet att<br />\nberika studentlivet och engagera sig i studentk\u00e5ren.</p>\n<p>Om du vill veta mer om posterna bes\u00f6ker du:<br />\n<a href=\"http://ths.kth.se/39224/recruitment-management-team-2018\">http://ths.kth.se/39224/recruitment-management-team-2018</a> (THS K\u00e5rledning)<br />\n<a href=\"https://campuscompetence.se/ths/ths-centralt\">https://campuscompetence.se/ths/ths-centralt</a> (Fyllnadsval till THS valberedning och revisor)<br />\nHar du n\u00e5gra funderingar eller fr\u00e5gor kontakta THS valberedning, vi hj\u00e4lper dig mer \u00e4n g\u00e4rna:<br />\nvalberedning@ths.kth.se</p>\n<p>**** ENGLISH ****</p>\n<p>This autumn it is time to elect the five positions in the management team of THS (the Student Union of<br />\nKTH). These positions are paid full-time jobs which imply that you take a break from studies during a year<br />\nto work at the Student Union. All of these positions generate great experiences that can be of significance<br />\nduring applying for future jobs. Furthermore, these positions give you the opportunity to engage in student<br />\nlife and activities in the Student Union. Great possibilities, in other words!</p>\n<p>Two of these five positions require fluency in the Swedish language.<br />\nThe positions available are:</p>\n<ul>\n<li>Reception Coordinator (Requires fluency in Swedish)</li>\n<li>Head of Educational Affairs (Requires fluency in Swedish)</li>\n<li>Event Manager</li>\n<li>Project Leader for THS Armada</li>\n<li>Head of Social and International Relations</li>\n</ul>\n<p>In addition to the five available positions in the management team of THS there are two more position<br />\navailable in a by-election at THS.</p>\n<ul>\n<li>Three positions in the Nomination Committee</li>\n<li>One position as account at THS Student Council</li>\n</ul>\n<p>If you want more information about the available positions, please visit:<br />\n<a href=\"http://ths.kth.se/39224/recruitment-management-team-2018\">http://ths.kth.se/39224/recruitment-management-team-2018</a> (THS Management Team)<br />\n<a href=\"https://campuscompetence.se/ths/ths-centralt\">https://campuscompetence.se/ths/ths-centralt</a> (By-election for THS Nomination Committee<br />\nand accountant)<br />\nDo you have any thoughts or questions please contact the THS Nomination Committee; we are more than<br />\nhappy to help you:<br />\nvalberedning@ths.kth.se</p>\n<p>&nbsp;</p>\n",
+            "title": "INFORMATION OM H\u00d6STENS VAL P\u00c5 THS/INFORMATION ABOUT ELECTIONS AT THS",
+            "category": "Externt"
+        }
+    ]
+}
