@@ -2,7 +2,7 @@ import requests
 import json
 import datetime
 
-from config import API_KEY
+from APIs.google_calendar.config import API_KEY
 
 BASE_URL = "https://www.googleapis.com/calendar/v3/calendars/"
 
