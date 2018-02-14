@@ -1,4 +1,6 @@
 import requests
+import json
+
 from bs4 import BeautifulSoup as Soup
 
 BASE_URL = "https://f.kth.se/feed"
@@ -38,4 +40,12 @@ def to_json(items):
         jsonitems.append(json)
     return jsonitems
 
+if __name__ == "__main__":
+    from configs import DB_PATH
+
+    items  = get_items(limit=5)
+
+    full_path="{}{}".format(DB_PATH, "fnews.json")
+    with open(full_path, "w") as db:  # dump json to file.
+        json.dump(items, db, indent=4, separators=(',', ': '))
 

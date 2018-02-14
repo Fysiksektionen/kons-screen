@@ -21,8 +21,8 @@ def get_media_content(page_id, limit=10, parsed=True):
 
 def parse(response):
     # edges is list of all post data.
-    edges = response["data"]["user"]["edge_owner_to_timeline_media"]["edges"]
-    nodes = [post["node"] for post in edges]
+    edges = response.get("data", {}).get("user", {}).get("edge_owner_to_timeline_media", {}).get("edges", [])
+    nodes = [post.get("node") for post in edges]
     for node in nodes:
         # Rename keys and reduce some nesting in the data.
         node["code"] = node.pop("shortcode")
@@ -30,9 +30,12 @@ def parse(response):
     return nodes
 
 if __name__ == "__main__":
+    from configs import DB_PATH
+
     instagram_page = "2905411461"
     media_content = get_media_content(instagram_page)
 
-    with open("recent_instagram.json", "w") as db:  # dump json to file.
+    full_path="{}{}".format(DB_PATH, "instagram.json")
+    with open(full_path, "w") as db:  # dump json to file.
         json.dump(media_content, db, indent=4, separators=(',', ': '))
 

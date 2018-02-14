@@ -1,7 +1,7 @@
 import requests
 import json
 
-from APIs.facebook.config import APP_ID, APP_SECRET
+from configs import FACEBOOK_APP_ID, FACEBOOK_APP_SECRET
 
 BASE_URL = "https://graph.facebook.com"
 
@@ -11,11 +11,11 @@ def get_access_token(from_facebook=False):
     if from_facebook:
         access_token_url = BASE_URL + "/oauth/access_token"
 
-        data = {"client_id":APP_ID,"client_secret":APP_SECRET,"grant_type":"client_credentials"}
+        data = {"client_id":APP_ID,"client_secret":FACEBOOK_APP_SECRET,"grant_type":"client_credentials"}
         response = requests.get(access_token_url, params=data)
 
         return response.json()["access_token"]
-    return "{}|{}".format(APP_ID, APP_SECRET)
+    return "{}|{}".format(FACEBOOK_APP_ID, FACEBOOK_APP_SECRET)
 
 def get_group(group_id, limit, show_members_posts=True, parsed=True):
     '''
@@ -34,19 +34,23 @@ def get_group(group_id, limit, show_members_posts=True, parsed=True):
 
 def parse(response):
     '''Reformats the response to be more accessible.'''
-    for post in response["data"]:
+    print(response)
+    for post in response.get("data", []):
         post["group"], post["id"] = post["id"].split("_")
-    return response["data"]
+    return response.get("data")
 
 if __name__ == "__main__":
+    from configs import DB_PATH
+
     # note: page_id's can be used just as group_id (different result though)
-    fysiksektionen_page_id = "Fysiksektionen"  
+    fysiksektionen_page_id = "Fysiksektionen"
     fysiksektionen_group_id = "1225386484209166"
 
-    fysiksektionen = parse(get_group(fysiksektionen_group_id, 10))
+    fysiksektionen = get_group(fysiksektionen_group_id, 10, parsed=True)
 
-    with open("recent_facebook.json", "w") as db:  # dump json to file.
-        json.dump(fysiksektionen, db, indent=4, separators=(',', ': '))
+    full_path = "{}{}".format(DB_PATH, "facebook.json")
+    with open(full_path, "w") as file:  # dump json to file.
+        json.dump(fysiksektionen, file, indent=4, separators=(',', ': '))
 
 
 
