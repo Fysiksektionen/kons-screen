@@ -1,0 +1,314 @@
+[
+    {
+        "created": "2018-01-27T14:43:02.000Z",
+        "sequence": 0,
+        "end": {
+            "dateTime": "2018-02-22T19:00:00+01:00"
+        },
+        "iCalUID": "3pda5r28tcd1n58hh7e1gdulc8@google.com",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "etag": "\"3034128364716000\"",
+        "htmlLink": "https://www.google.com/calendar/event?eid=M3BkYTVyMjh0Y2QxbjU4aGg3ZTFnZHVsYzggZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+        "location": "Konsulatet, Brinellv\u00e4gen 89",
+        "updated": "2018-01-27T14:43:02.358Z",
+        "status": "confirmed",
+        "start": {
+            "dateTime": "2018-02-22T17:23:00+01:00"
+        },
+        "creator": {
+            "displayName": "Fred Lindahl",
+            "email": "lindahl.fred@gmail.com"
+        },
+        "summary": "SM1",
+        "id": "3pda5r28tcd1n58hh7e1gdulc8",
+        "kind": "calendar#event"
+    },
+    {
+        "description": "fkm* arrangerar under ledning av de unga herrarna Demborg & Meder en sp\u00e4nnande \u00f6lprovning i Konsulatets h\u00e4rliga atmosf\u00e4r. Vi vill bjuda in till en uppt\u00e4cktsresa fylld av \u00e4ventyrliga dofter och smaker. Varmt v\u00e4lkomna!\n\nPlatserna \u00e4r begr\u00e4nsade, f\u00f6rst till kvarn g\u00e4ller: \nhttps://goo.gl/forms/B4XJo9nlfh7mdWRF3\n\nPris 100 kr, betalas med kort p\u00e5 plats.  Vegetarisk mat ing\u00e5r, vi b\u00f6rjar servera den fr\u00e5n 17:23 och drar ig\u00e5ng \u00f6lprovningen s\u00e5 fort alla \u00e4r m\u00e4tta och bel\u00e5tna.",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NnNxbTZkajY2aGdtNGI5Zzc0cDMwYjlrNmxoNjZiOW9ja3NqYWI5bWNoaDNjb2hsNmtxajJvaG43NCBlMTdycG92aDV2N2o3OWZwcDc0ZDFna2VyOEBn",
+        "sequence": 0,
+        "end": {
+            "dateTime": "2018-02-23T22:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "iCalUID": "6sqm6dj66hgm4b9g74p30b9k6lh66b9ocksjab9mchh3cohl6kqj2ohn74@google.com",
+        "created": "2018-02-19T22:19:08.000Z",
+        "etag": "\"3038157497384000\"",
+        "location": "Fysiksektionen - Konsulatet, Brinellv\u00e4gen 89, 114 28 Stockholm, Sverige",
+        "updated": "2018-02-19T22:19:08.692Z",
+        "status": "confirmed",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2018-02-23T17:23:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "creator": {
+            "displayName": "Gustav Gyback",
+            "email": "gustav.gyback@gmail.com"
+        },
+        "summary": "\u00d6lprovning",
+        "id": "6sqm6dj66hgm4b9g74p30b9k6lh66b9ocksjab9mchh3cohl6kqj2ohn74",
+        "kind": "calendar#event"
+    },
+    {
+        "created": "2018-02-21T08:43:15.000Z",
+        "sequence": 0,
+        "end": {
+            "dateTime": "2018-02-25T19:00:00+01:00"
+        },
+        "iCalUID": "665F53F8-9AB4-459E-B76D-52307BB0AC6E",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "etag": "\"3038405191794000\"",
+        "htmlLink": "https://www.google.com/calendar/event?eid=XzZvcjNhaGhsNmQzM2diOXA4NTEzOGI5azZrc2thYmEyNnNyNDhiOWw2OHBqMGRxMjg4bzQyZ3BtOGsgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+        "updated": "2018-02-21T08:43:15.897Z",
+        "status": "confirmed",
+        "start": {
+            "dateTime": "2018-02-25T13:00:00+01:00"
+        },
+        "creator": {
+            "displayName": "Hanna Lindahl",
+            "email": "hannalovisalindahl@gmail.com"
+        },
+        "summary": "St\u00e4ddag!",
+        "id": "_6or3ahhl6d33gb9p85138b9k6kskaba26sr48b9l68pj0dq288o42gpm8k",
+        "kind": "calendar#event"
+    },
+    {
+        "description": "Tisdagspub i Konsulatet.",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NmxobThvajRjOHM2MmI5bGM5aWoyYjlrNzRyM2diOW82c28zNmI5ajYxZ21hcGhvYzVqNmNjcHBjY18yMDE4MDIyN1QxNjAwMDBaIGUxN3Jwb3ZoNXY3ajc5ZnBwNzRkMWdrZXI4QGc",
+        "recurringEventId": "6lhm8oj4c8s62b9lc9ij2b9k74r3gb9o6so36b9j61gmaphoc5j6ccppcc",
+        "end": {
+            "dateTime": "2018-03-03T00:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "sequence": 1,
+        "iCalUID": "6lhm8oj4c8s62b9lc9ij2b9k74r3gb9o6so36b9j61gmaphoc5j6ccppcc@google.com",
+        "created": "2018-01-14T02:35:57.000Z",
+        "etag": "\"3033263151700000\"",
+        "location": "Konsulatet, Brinellv\u00e4gen 89",
+        "updated": "2018-01-22T14:32:55.850Z",
+        "status": "confirmed",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2018-03-02T17:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "creator": {
+            "displayName": "Gustav Gyback",
+            "email": "gustav.gyback@gmail.com"
+        },
+        "summary": "Releasepub",
+        "id": "6lhm8oj4c8s62b9lc9ij2b9k74r3gb9o6so36b9j61gmaphoc5j6ccppcc_20180227T160000Z",
+        "originalStartTime": {
+            "dateTime": "2018-02-27T17:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "kind": "calendar#event"
+    },
+    {
+        "created": "2018-02-07T10:05:50.000Z",
+        "sequence": 0,
+        "end": {
+            "dateTime": "2018-03-05T21:00:00+01:00"
+        },
+        "iCalUID": "1r9i877jub18jmgdglinvqkvkt@google.com",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "etag": "\"3035995900248000\"",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MXI5aTg3N2p1YjE4am1nZGdsaW52cWt2a3QgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+        "updated": "2018-02-07T10:05:50.124Z",
+        "status": "confirmed",
+        "start": {
+            "dateTime": "2018-03-05T18:00:00+01:00"
+        },
+        "creator": {
+            "displayName": "Marcus Wejdelind",
+            "email": "marcuswejdelind@gmail.com"
+        },
+        "summary": "F\u00f6retagsbes\u00f6k Sunestone",
+        "id": "1r9i877jub18jmgdglinvqkvkt",
+        "kind": "calendar#event"
+    },
+    {
+        "created": "2018-01-15T16:48:33.000Z",
+        "sequence": 0,
+        "end": {
+            "date": "2018-03-18"
+        },
+        "iCalUID": "0htvkd8169rjphpvsejp7brooi@google.com",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "etag": "\"3032069827364000\"",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MGh0dmtkODE2OXJqcGhwdnNlanA3YnJvb2kgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+        "updated": "2018-01-15T16:48:33.682Z",
+        "status": "confirmed",
+        "transparency": "transparent",
+        "start": {
+            "date": "2018-03-17"
+        },
+        "creator": {
+            "displayName": "Leo Enge",
+            "email": "leo.enge@gmail.com"
+        },
+        "summary": "Tentagasque 3",
+        "id": "0htvkd8169rjphpvsejp7brooi",
+        "kind": "calendar#event"
+    },
+    {
+        "description": "Tisdagspub i Konsulatet.",
+        "htmlLink": "https://www.google.com/calendar/event?eid=NmxobThvajRjOHM2MmI5bGM5aWoyYjlrNzRyM2diOW82c28zNmI5ajYxZ21hcGhvYzVqNmNjcHBjY18yMDE4MDMwNlQxNjAwMDBaIGUxN3Jwb3ZoNXY3ajc5ZnBwNzRkMWdrZXI4QGc",
+        "recurringEventId": "6lhm8oj4c8s62b9lc9ij2b9k74r3gb9o6so36b9j61gmaphoc5j6ccppcc",
+        "end": {
+            "dateTime": "2018-03-21T00:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "sequence": 1,
+        "iCalUID": "6lhm8oj4c8s62b9lc9ij2b9k74r3gb9o6so36b9j61gmaphoc5j6ccppcc@google.com",
+        "created": "2018-01-14T02:35:57.000Z",
+        "etag": "\"3033255480194000\"",
+        "location": "Konsulatet, Brinellv\u00e4gen 89",
+        "updated": "2018-01-22T13:29:00.097Z",
+        "status": "confirmed",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "start": {
+            "dateTime": "2018-03-20T17:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "creator": {
+            "displayName": "Gustav Gyback",
+            "email": "gustav.gyback@gmail.com"
+        },
+        "summary": "Tisdagspub",
+        "id": "6lhm8oj4c8s62b9lc9ij2b9k74r3gb9o6so36b9j61gmaphoc5j6ccppcc_20180306T160000Z",
+        "originalStartTime": {
+            "dateTime": "2018-03-06T17:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "kind": "calendar#event"
+    },
+    {
+        "created": "2018-02-12T20:14:19.000Z",
+        "recurringEventId": "7dc81cg3n0n1u1bee8uk9cbgfh",
+        "end": {
+            "dateTime": "2018-03-21T00:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "sequence": 1,
+        "iCalUID": "7dc81cg3n0n1u1bee8uk9cbgfh@google.com",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "etag": "\"3036933358698000\"",
+        "htmlLink": "https://www.google.com/calendar/event?eid=N2RjODFjZzNuMG4xdTFiZWU4dWs5Y2JnZmhfMjAxODAzMjBUMTcwMDAwWiBlMTdycG92aDV2N2o3OWZwcDc0ZDFna2VyOEBn",
+        "location": "Nymble - Tekniska H\u00f6gskolans K\u00e5rhus, Drottning Kristinas v\u00e4g 15-19, 114 28 Stockholm, Sverige",
+        "updated": "2018-02-12T20:17:59.349Z",
+        "status": "confirmed",
+        "start": {
+            "dateTime": "2018-03-20T18:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "creator": {
+            "displayName": "Gustav Gyback",
+            "email": "gustav.gyback@gmail.com"
+        },
+        "summary": "K\u00e5rfullm\u00e4ktigem\u00f6te 4",
+        "id": "7dc81cg3n0n1u1bee8uk9cbgfh_20180320T170000Z",
+        "originalStartTime": {
+            "dateTime": "2018-03-20T18:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "kind": "calendar#event"
+    },
+    {
+        "created": "2018-02-12T20:14:19.000Z",
+        "recurringEventId": "7dc81cg3n0n1u1bee8uk9cbgfh",
+        "end": {
+            "dateTime": "2018-03-23T00:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "sequence": 1,
+        "iCalUID": "7dc81cg3n0n1u1bee8uk9cbgfh@google.com",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "etag": "\"3036933358698000\"",
+        "htmlLink": "https://www.google.com/calendar/event?eid=N2RjODFjZzNuMG4xdTFiZWU4dWs5Y2JnZmhfMjAxODAzMjJUMTcwMDAwWiBlMTdycG92aDV2N2o3OWZwcDc0ZDFna2VyOEBn",
+        "location": "Nymble - Tekniska H\u00f6gskolans K\u00e5rhus, Drottning Kristinas v\u00e4g 15-19, 114 28 Stockholm, Sverige",
+        "updated": "2018-02-12T20:17:59.349Z",
+        "status": "confirmed",
+        "start": {
+            "dateTime": "2018-03-22T18:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "creator": {
+            "displayName": "Gustav Gyback",
+            "email": "gustav.gyback@gmail.com"
+        },
+        "summary": "K\u00e5rfullm\u00e4ktigem\u00f6te 4",
+        "id": "7dc81cg3n0n1u1bee8uk9cbgfh_20180322T170000Z",
+        "originalStartTime": {
+            "dateTime": "2018-03-22T18:00:00+01:00",
+            "timeZone": "Europe/Stockholm"
+        },
+        "kind": "calendar#event"
+    },
+    {
+        "description": "L\u00e4s mer p\u00e5 bit.ly/thselection2018\nSkicka kandidatur till bit.ly/thsapply2018\nDu \u00e4r varmt v\u00e4lkommen att h\u00f6ra av dig med fr\u00e5gor till THS Valgeneral, maila: valgeneral@ths.kth.se",
+        "created": "2018-02-12T20:27:59.000Z",
+        "sequence": 0,
+        "end": {
+            "date": "2018-03-27"
+        },
+        "iCalUID": "1dh5p51gs5tlsl9asnjec17i34@google.com",
+        "organizer": {
+            "displayName": "Fysiksektionen",
+            "email": "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com",
+            "self": true
+        },
+        "etag": "\"3036944182450000\"",
+        "htmlLink": "https://www.google.com/calendar/event?eid=MWRoNXA1MWdzNXRsc2w5YXNuamVjMTdpMzQgZTE3cnBvdmg1djdqNzlmcHA3NGQxZ2tlcjhAZw",
+        "updated": "2018-02-12T21:48:11.225Z",
+        "status": "confirmed",
+        "transparency": "transparent",
+        "start": {
+            "date": "2018-03-26"
+        },
+        "creator": {
+            "displayName": "Gustav Gyback",
+            "email": "gustav.gyback@gmail.com"
+        },
+        "summary": "Kandidaturstopp till K\u00e5rfullm\u00e4ktige 18/19",
+        "id": "1dh5p51gs5tlsl9asnjec17i34",
+        "kind": "calendar#event"
+    }
+]

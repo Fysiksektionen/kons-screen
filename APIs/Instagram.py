@@ -1,41 +1,73 @@
-import json
 import requests
+import json
+
+from common.guarantee_content import guarantee_content 
+from common.requester import get_request
 
 # from config import APP_ID, APP_SECRET
 # Instagram public API is apparently only for user-interactive apps.
+
+
+#-------- Globals for this API -------- #
 
 BASE_URL = "https://www.instagram.com/graphql/query/"
 
 # Just in case Instagram doesn't like people using their "private" API.
 USER_AGENT = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36"}
 
-def get_media_content(page_id, limit=10, parsed=True):
-    """Returns the `limit` most recent posts from `page_id`"""
+
+#-------- Functionality -------- #
+
+def get_media_content(page_id, limit=10, parser=lambda r: r.json()):
+    """
+    Returns the `limit` most recent posts from `page_id`
+    """
+    
     variables = {"id":page_id, "first":limit}
-    data= {"query_id":17888483320059182, "variables":json.dumps(variables)}
+    data= {"query_id":"17888483320059182", "variables":json.dumps(variables)}
 
-    response = requests.get(BASE_URL, params=data, headers=USER_AGENT)
-    if parsed:
-        return parse(response.json())
-    return response.json()
+    response = get_request(BASE_URL, params=data, headers=USER_AGENT, parser=parser)
+    return response
 
-def parse(response):
-    # edges is list of all post data.
-    edges = response.get("data", {}).get("user", {}).get("edge_owner_to_timeline_media", {}).get("edges", [])
-    nodes = [post.get("node") for post in edges]
-    for node in nodes:
-        # Rename keys and reduce some nesting in the data.
-        node["code"] = node.pop("shortcode")
-        node["caption"] = node.pop("edge_media_to_caption")["edges"][0]["node"]["text"]
-    return nodes
+def validate_and_parse(response):
+    """
+    Validates the response in case the response was a 200 code but not the expected format.
+    
+    Returns: False if not validated, otherwise return the parsed response.
+    """
+    response = response.json()
+    if response.get("status") == "ok":
+        # Traverse down the nested response
+        edges = response.get("data", {}).get("user",{}).get("edge_owner_to_timeline_media",{}).get("edges", [])
+        if edges:
+            nodes = [post.get("node") for post in edges]
+        
+            # Check if all elements in `nodes` contains the following important keys.
+            guaranteed_keys = ("shortcode", "id","display_url","dimensions","edge_media_to_caption")
+        
+            if guarantee_content(nodes, *guaranteed_keys):
+                for node in nodes:
+                    # Rename keys and reduce some nesting in the data.
+                    node["code"] = node.pop("shortcode")
+                    caption_node = node.pop("edge_media_to_caption")
+                    if caption_node.get("edges"):
+                        node["caption"] = caption_node.get("edges")[0].get("node",{}).get("text","")
+                    else:
+                        node["caption"] = ""
+                return nodes
+    # If here, any of the if-statements above failed meaning the validation failed.
+    return False
+
 
 if __name__ == "__main__":
-    from configs import DB_PATH
+    from common.configs import BASE_PATH
+    from common.writer import write_json
 
     instagram_page = "2905411461"
-    media_content = get_media_content(instagram_page)
+    media_content = get_media_content(instagram_page, parser=validate_and_parse)
 
-    full_path="{}{}".format(DB_PATH, "instagram.json")
-    with open(full_path, "w") as db:  # dump json to file.
-        json.dump(media_content, db, indent=4, separators=(',', ': '))
+    # If validate_and_parse did not return False.
+    if media_content:
+        write_json(media_content, BASE_PATH, "db/instagram.json")
+
 

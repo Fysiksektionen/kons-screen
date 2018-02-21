@@ -1,15 +1,23 @@
+# NOTE: If you can find a better way to parse the RSS feed feel free to change this.
+
 import requests
-import json
 
 from bs4 import BeautifulSoup as Soup
 
+from common.requester import get_request
+from common.guarantee_content import guarantee_content
+
+
+#-------- Globals for this API -------- #
+
 BASE_URL = "https://f.kth.se/feed"
 
-"""NOTE: If you can find a better way to parse the RSS feed feel free to change this."""
+
+#-------- Functionality -------- #
 
 def get_items(limit=5):
     '''Get's the first `limit` items in the RSS feed of "https://f.kth.se/feed".'''
-    rss = requests.get(BASE_URL)
+    rss = get_request(BASE_URL)
 
     # replace a poorly formatted tag in order to be parsed properly by Soup.
     rss = rss.text.replace("content:encoded", "content")
@@ -40,12 +48,30 @@ def to_json(items):
         jsonitems.append(json)
     return jsonitems
 
+def validate(items):
+    """
+    Validates the response in case the response was a 200 code but not the expected format.
+    
+    Returns: False if not validated, otherwise return the parsed response.
+    """
+    guaranteed_keys = ("category","published","content","title","description")
+    
+    # Check if all elements in `items` contains the following important keys.
+    valid = False
+    if guarantee_content(items, *guaranteed_keys):
+        valid = True
+        for item in items:
+            # The items should not only exist but not be empty in this case.
+            # If one of these fail, then valid becomes False
+            valid = valid and all([item.get(key) for key in guaranteed_keys])
+    return valid
+
+
 if __name__ == "__main__":
-    from configs import DB_PATH
+    from common.configs import BASE_PATH
+    from common.writer import write_json
 
     items  = get_items(limit=5)
 
-    full_path="{}{}".format(DB_PATH, "fnews.json")
-    with open(full_path, "w") as db:  # dump json to file.
-        json.dump(items, db, indent=4, separators=(',', ': '))
-
+    if validate(items):
+        write_json(items, BASE_PATH, "db/fnews.json")
