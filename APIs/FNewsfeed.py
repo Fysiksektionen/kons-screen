@@ -68,10 +68,10 @@ def validate(items):
 
 
 if __name__ == "__main__":
-    from common.configs import BASE_PATH
+    from common.configs import DB_PATH
     from common.writer import write_json
 
     items  = get_items(limit=5)
 
     if validate(items):
-        write_json(items, BASE_PATH, "db/fnews.json")
+        write_json(items, DB_PATH, "fnews.json")

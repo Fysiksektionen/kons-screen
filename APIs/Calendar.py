@@ -37,7 +37,7 @@ def validate_and_parse(response):
 
 
 if __name__ == "__main__":
-    from common.configs import BASE_PATH
+    from common.configs import DB_PATH
     from common.writer import write_json
 
     calendar_id = "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com"    
@@ -46,4 +46,4 @@ if __name__ == "__main__":
 
     # If validate_and_parse did not return False.
     if events:
-        write_json(events, BASE_PATH, "db/sektionskalendern.json")
+        write_json(events, DB_PATH, "sektionskalendern.json")

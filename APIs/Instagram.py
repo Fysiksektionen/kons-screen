@@ -60,7 +60,7 @@ def validate_and_parse(response):
 
 
 if __name__ == "__main__":
-    from common.configs import BASE_PATH
+    from common.configs import DB_PATH
     from common.writer import write_json
 
     instagram_page = "2905411461"
@@ -68,6 +68,6 @@ if __name__ == "__main__":
 
     # If validate_and_parse did not return False.
     if media_content:
-        write_json(media_content, BASE_PATH, "db/instagram.json")
+        write_json(media_content, DB_PATH, "instagram.json")
 
 

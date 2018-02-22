@@ -55,7 +55,7 @@ def validate_and_parse(response):
 
 
 if __name__ == "__main__":
-    from common.configs import BASE_PATH
+    from common.configs import DB_PATH
     from common.writer import write_json
 
     # note: page_id's can be used just as group_id (different result though)
@@ -66,7 +66,7 @@ if __name__ == "__main__":
 
     # If validate_and_parse did not return False.
     if fysiksektionen:
-        write_json(fysiksektionen, BASE_PATH, "db/facebook.json")
+        write_json(fysiksektionen, DB_PATH, "facebook.json")
 
 
 
