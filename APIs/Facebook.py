@@ -18,7 +18,7 @@ def get_access_token(from_facebook=False):
     if from_facebook:
         access_token_url = BASE_URL + "/oauth/access_token"
 
-        data = {"client_id":APP_ID,"client_secret":FACEBOOK_APP_SECRET,"grant_type":"client_credentials"}
+        data = {"client_id":FACEBOOK_APP_ID,"client_secret":FACEBOOK_APP_SECRET,"grant_type":"client_credentials"}
         response = requests.get(access_token_url, params=data)
 
         return response.json()["access_token"]

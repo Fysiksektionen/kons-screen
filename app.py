@@ -16,7 +16,7 @@ BASE_URL = "https://f.kth.se/"
 
 def data_endpoint(filename, URL=None):
     """
-    Decorator which wraps every database endpoint route.
+    Either returns data from a local database or fetches data from URL
     """
     
     if not REMOTE:  # Load from local db, used in testing.

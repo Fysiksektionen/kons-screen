@@ -8,7 +8,11 @@ from common.configs import BASE_PATH
 class UnexpectedResponseCode(Exception):pass
 
 def get_request(url, params={}, headers={}, parser=lambda x:x):
-
+    """
+    Wraps get requests and retries with exponential backoff if the request failed.
+    Raises error if response code was not 2xx after 6 attempts.
+    Returns the request object if successfull, otherwise return None or raise error.
+    """
     attempts = 0
     while attempts < 7:
         try:
