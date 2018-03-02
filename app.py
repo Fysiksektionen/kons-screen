@@ -8,25 +8,26 @@ from APIs.common.configs import DB_PATH
 
 app = Flask(__name__)
 
-LOCAL = any([arg == "--localdb" for arg in sys.argv])
+# Check if remotedb is passed as an argument.
+REMOTE = any([arg == "--remotedb" for arg in sys.argv])
 
-def data_endpoint(name):
+# Should probably be something like https://f.kth.se/kons/
+BASE_URL = "https://f.kth.se/"
+
+def data_endpoint(filename, URL=None):
     """
     Decorator which wraps every database endpoint route.
     """
-
-    # placeholder url, should probably be something like https://f.kth.se/kons/"
-    BASE_URL = "https://f.kth.se/"
     
-    if LOCAL:
-        with open(DB_PATH + name + ".json", "r") as db:
+    if not REMOTE:  # Load from local db, used in testing.
+        with open(DB_PATH + filename, "r") as db:
             return db.read()
     else:
-        response =  requests.get(BASE_URL + name)
+        response =  requests.get(URL)
 
-        # If status code 200-299 then response.json()
+        # If status code 200-299 then return response.text
         if divmod(response.status_code, 100)[0] == 2:
-            return json.dumps(response.json())
+            return response.text
     
 @app.route('/')
 def index():
@@ -34,23 +35,27 @@ def index():
 
 @app.route('/sl-data')
 def sl_data():
-    return data_endpoint("sl-data")
+    return data_endpoint("sl-data.json", "https://f.kth.se/sl-data")
 
 @app.route('/facebook')
 def facebook():         
-    return data_endpoint("facebook")
+    return data_endpoint("facebook.json", BASE_URL + "facebook")
 
 @app.route('/instagram')
 def instagram():
-    return data_endpoint("instagram")
+    return data_endpoint("instagram.json", BASE_URL + "instagram")
 
 @app.route('/fnews')
 def fnews():
-    return data_endpoint("fnews")
+    return data_endpoint("fnews.rss", "https://f.kth.se/feed")
 
-@app.route('/sektionskalendern')
+@app.route('/sektionskalendern.json')
 def sektionskalendern():
-    return data_endpoint("sektionskalendern")
+    return data_endpoint("sektionskalendern", BASE_URL + "instagram")
+
 
 if __name__ == '__main__':
-    app.run()
+    DEBUG = any([arg == "--debug" for arg in sys.argv])
+    print("Launching with debug={} and REMOTE={}".format(DEBUG, REMOTE))
+    app.run(debug=DEBUG)
+

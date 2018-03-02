@@ -14,6 +14,7 @@ p {font-size:15px;text-align: center;}
 <!-- Media feed -->
 <div id="fbfeed"></div>
 <div id="sldepartures"></div>
+<div id="fnewsfeed"></div>
 
 <!--------- Media feed initialisation --------->
 <!----- Facebook posts ----->
@@ -32,7 +33,6 @@ function initFacebook(){
     }
 }
 
-initFacebook()
 </script>
 
 <!----- SL departures ----->
@@ -63,8 +63,35 @@ function initSL(){
         sldiv.appendChild(station)
     }
 }
+</script>
 
-initSL()
+<!----- FNews articles ----->
+
+<script>
+function initFNews(){
+    // TODO: 5 is hardcoded at the moment, fix this. 
+    // Perhaps call this initialisation function from updateFNews if it is the first
+    // time updateFNews is called, whilst passing the parameter length `fnewsfeed.length`.
+    let feed = document.getElementById("fnewsfeed")
+    for (item=0; item < 10; item++){
+        article = document.createElement("div")
+        article.setAttribute("id", "article" + item)
+
+        let title = document.createElement('h2')
+        title.setAttribute("id", "article" + item + "title")
+        
+        let description = document.createElement('P')
+        description.setAttribute("id", "article" + item + "description");
+
+        let pubdate = document.createElement('P')
+        pubdate.setAttribute("id", "article" + item + "pubdate");
+        
+        article.appendChild(title)
+        article.appendChild(pubdate)
+        article.appendChild(description)
+        feed.appendChild(article)
+    }
+}
 </script>
 
 <!------ Instagram posts ----->
@@ -73,8 +100,18 @@ initSL()
 <!-- Removed instagram embedding initialisation for now -->
 <script async defer src="//platform.instagram.com/en_US/embeds.js"></script>
 
-<!----- FNews articles ----->
 <!----- Calendar events----->
+
+<!-------- Call initialisers -------->
+
+<script>
+$( document ).ready(function () { 
+    initFacebook(); 
+    initSL();
+    initFNews();
+    // etc.
+})
+</script>
 
 <!--------- Dynamic updating of content --------->
 
@@ -100,7 +137,9 @@ function updateFacebookPosts(facebook){
 function updateSLData(stations){
     // loop and change
     for (i=0; i < stations.length; i++){
+        //not used atm
         let station = document.getElementById("station" + i)
+
         let stationdata = stations[i]
         document.getElementById("station" + i + "name").innerText = stationdata.Name
         // only show buses for simplicity at the moment, tired of html
@@ -116,21 +155,30 @@ function updateCalendarEvents(calendar){
 };
 
 // Could we perhaps just use return the RSS feed directly and let the front end parse it instead of parsing it to json first?
-function updateFNews(fnews){
+function updateFNews(fnewsfeed){    
+    $(fnewsfeed).find("item").each(function (i) { // or "item" or whatever suits your feed
+        if (i < 5){  // only first 5 posts shown.
+            item = $(this)
+            // there is also item.find("content:encoded").text() amongst other attr.
+            document.getElementById("article" + i + "title").innerText = item.find("title").text();
+            document.getElementById("article" + i + "description").innerText = item.find("description").text();
+            document.getElementById("article" + i + "pubdate").innerText = item.find("pubDate").text();
+        }
+    });
     // loop and change with jquery.
 };
 
 
-function getData(endpoint, callback){
+function getData(endpoint, callback, datatype="json"){
     // return function which fetches data from `endpoint` and calls `callback` with the response.
-    return () => $.get(endpoint, callback, "json");
+    return () => $.get(endpoint, callback, datatype);
 }
 
 // Set update intervals of endpoints and bind to callback update functions.
-setInterval(getData("http://127.0.0.1:5000/facebook", updateFacebookPosts),             10000) 
+//setInterval(getData("http://127.0.0.1:5000/facebook", updateFacebookPosts),             10000) 
 setInterval(getData("http://127.0.0.1:5000/sl-data", updateSLData),                     10000)
+setInterval(getData("http://127.0.0.1:5000/fnews", updateFNews, "xml"),                 10000)
 //setInterval(getData("/instagram", updateInstagramPosts),                                10000) 
-//setInterval(getData("http://127.0.0.1:5000/fnews", updateFNews),                        10000)
 //setInterval(getData("http://127.0.0.1:5000/sektionskalendern", updateCalendarEvents),   10000) 
 
 </script>
