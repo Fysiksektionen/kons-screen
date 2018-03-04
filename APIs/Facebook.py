@@ -56,7 +56,7 @@ def validate_and_parse(response):
         if guarantee_content(data, "id", "from", "created_time"):
             for post in data:
                 post["group"], post["id"] = post["id"].split("_")
-        return data
+            return data
     return False
 
 
