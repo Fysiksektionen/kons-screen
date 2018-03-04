@@ -31,8 +31,14 @@ def get_group(group_id, limit, show_members_posts=True, parser=lambda r: r.json(
     '''
     endpoint_to_use = "feed" if show_members_posts else "posts"
 
+    fields = ["caption", "message", "from", "story", "object_id", "picture",
+               "full_picture", "link", "name", "created_time", "description"]
+    fields = ",".join(fields)
+
     get_group_url = BASE_URL + "/v2.11/{}/{}".format(group_id, endpoint_to_use)
-    data = {"access_token":get_access_token(), "limit":limit if limit <= 100 else 100}
+    data = {"access_token":get_access_token(),
+             "fields": fields, 
+             "limit":limit if limit <= 100 else 100}
 
     response = get_request(get_group_url, params=data, parser=parser)
     return response
@@ -47,7 +53,7 @@ def validate_and_parse(response):
     data = response.get("data")
     if data:
         # Check if all elements in `data` contains the following important keys.
-        if guarantee_content(data, "updated_time","id"):
+        if guarantee_content(data, "id", "from", "created_time"):
             for post in data:
                 post["group"], post["id"] = post["id"].split("_")
         return data

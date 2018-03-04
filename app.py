@@ -14,7 +14,7 @@ REMOTE = any([arg == "--remotedb" for arg in sys.argv])
 # Should probably be something like https://f.kth.se/kons/
 BASE_URL = "https://f.kth.se/"
 
-def data_endpoint(filename, URL=None):
+def data_endpoint(filename, URL):
     """
     Either returns data from a local database or fetches data from URL
     """
@@ -51,7 +51,7 @@ def fnews():
 
 @app.route('/sektionskalendern.json')
 def sektionskalendern():
-    return data_endpoint("sektionskalendern", BASE_URL + "instagram")
+    return data_endpoint("sektionskalendern.json", BASE_URL + "sektionskalendern")
 
 
 if __name__ == '__main__':
