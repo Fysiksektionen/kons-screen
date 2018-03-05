@@ -1,0 +1,60 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    background: yellow;
+    padding: 0;
+    margin: 0;
+}
+
+#wrapper {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #ff0000;
+    position: absolute;
+}
+
+#left, #right {
+    height: 100vh;
+    width: 50vw;
+    position: absolute;
+}
+
+#left {
+    background: blue;
+    left:0;
+
+    text-align: center;
+    overflow: hidden;
+}
+
+#right {
+    background: green;
+    right: 0;
+}
+
+#top, #bottom {
+    height: 50vh;
+    width: 50vw;
+    position: absolute;
+    right: 0;
+}
+
+#top {
+    top: 0;
+    background: orange;
+}
+
+#bottom {
+    bottom: 0;
+    background: brown;
+}
+
+.image-left {
+    height: 100vh;
+    min-width: 50vw;
+}
