@@ -29,6 +29,7 @@ html, body {
     left:0;
     text-align: center;
     overflow: hidden;
+    background: transparent;
 }
 
 #right {
@@ -51,6 +52,17 @@ html, body {
     bottom: 0;
 }
 
+.left-shadow {
+    box-shadow: inset -10px 0px 15px -2px #000000;
+    height: 100vh;
+    width: 50vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: transparent;
+    z-index: 100px;
+}
+
 .img-left {
     position: absolute;
     top: 50%;
@@ -58,4 +70,5 @@ html, body {
     transform: translateX(-50%) translateY(-50%);
     min-width: 100%;
     height: 100%;
+    z-index: 0;
 }
