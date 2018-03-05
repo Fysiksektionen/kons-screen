@@ -2,10 +2,11 @@
     background: white;
     margin: 0;
     padding: 0;
-
     font-family: 'Open Sans', sans-serif;
-
     height: 100%;
+
+    box-shadow: inset 0 -10px 10px -10px #000000;
+    overflow: hidden;
 }
 
 .sl .sl-header {
