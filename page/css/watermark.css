@@ -1,8 +1,11 @@
 #watermark {
     font-family: 'Open Sans', sans-serif;
     position: absolute;
-    bottom: 80px;
-    left: 80px;
+    bottom: 120px;
+    left: 0;
+    width: 50vw;
+    background: #000000a0;
+    padding: 40px;
     text-align: center;
     z-index: 1;
     color: white;
@@ -13,14 +16,14 @@
 }
 
 .wm-title {
-    font-size: 30pt;
+    font-size: 20pt;
     font-weight: 300;
 }
 .wm-clock {
-    font-size: 110pt;
-    margin: -25px 0;
+    font-size: 80pt;
+    margin: -10px 0 -5px 0;
 }
 .wm-date {
-    font-size: 30pt;
+    font-size: 20pt;
     font-weight: 300;
 }
