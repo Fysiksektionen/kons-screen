@@ -31,7 +31,7 @@ def data_endpoint(filename, URL):
     
 @app.route('/')
 def index():
-    return render_template('index.html')  # jinja2 template
+    return render_template('screen.html')  # jinja2 template
 
 @app.route('/sl-data')
 def sl_data():
