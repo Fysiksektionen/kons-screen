@@ -15,6 +15,12 @@ function updateSLData(stations){
             $(obj).find("span.sl-line-name").text(destination)
             $(obj).find("span.sl-time").text(displaytime)
         }
+        else {
+            // Remove the old residual data.
+            $(obj).find("span.sl-line-number").text("")
+            $(obj).find("span.sl-line-name").text("")
+            $(obj).find("span.sl-time").text("")
+        }
     });
 };
 
