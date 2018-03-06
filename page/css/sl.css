@@ -16,7 +16,8 @@
 }
 
 .sl .sl-header .sl-icon {
-    margin-right: 15px;
+    height: 50px;
+    margin: -20px 12px -10px 0; 
 }
 
 .sl .sl-header .sl-clock {
@@ -38,7 +39,8 @@
 }
 
 .sl .sl-item .sl-icon {
-    margin: 0 20px 0 20px;
+    margin: -5px 20px -15px 20px;
+    height: 48px;
 }
 
 .sl .sl-item .sl-line-number {
@@ -51,3 +53,9 @@
     padding-right: 20px;
     font-weight: 700;
 }
+
+@keyframes slide {
+    100% { 
+      transform: translateY(-66.6666%);  
+    }
+  }

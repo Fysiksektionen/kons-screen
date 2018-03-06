@@ -8,61 +8,59 @@
         <link rel="stylesheet" href="css/sl.css">
         <link rel="stylesheet" href="css/calendar.css">
         <link rel="stylesheet" href="css/watermark.css">
-        <link rel="stylesheet" href="css/fontawesome-all.min.css">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <script src="js/handlebars-v4.0.11.js"></script>
+        <script src="js/moment.min.js"></script>
+        <script src="js/main.js"></script>
+
     </head>
     <body>
-        <div id="wrapper">
-            <div id="left">>
-                <img src="img/img1.jpg" alt="Hoppsan, något gick fel. Maila något argt till yasharh@kth.se" class="img-left">
-                <div class="left-shadow"></div>
-            </div>
-            <div id="right">
-                <div id="top">
-                    <div class="sl">
-                        <div class="sl-header"><i class="far fa-hourglass sl-icon"></i> Tidtabell <div class="sl-clock">13:37</div></div>
-                        <div class="sl-items">
-                            <div class="sl-item"><i class="sl-icon fas fa-train"></i> <span class="sl-line-number">14</span> <span class="sl-line-name">Mörby centrum</span> <span class="sl-time">10:53</span></div>
-                            <div class="sl-item"><i class="sl-icon fas fa-train"></i> <span class="sl-line-number">14</span> <span class="sl-line-name">Mörby centrum</span> <span class="sl-time">10:53</span></div>
-                            <div class="sl-item"><i class="sl-icon fas fa-train"></i> <span class="sl-line-number">14</span> <span class="sl-line-name">Mörby centrum</span> <span class="sl-time">10:53</span></div>
-                            <div class="sl-item"><i class="sl-icon fas fa-train"></i> <span class="sl-line-number">14</span> <span class="sl-line-name">Mörby centrum</span> <span class="sl-time">10:53</span></div>
-                            <div class="sl-item"><i class="sl-icon fas fa-train"></i> <span class="sl-line-number">14</span> <span class="sl-line-name">Mörby centrum</span> <span class="sl-time">10:53</span></div>
-                            <div class="sl-item"><i class="sl-icon fas fa-train"></i> <span class="sl-line-number">14</span> <span class="sl-line-name">Mörby centrum</span> <span class="sl-time">10:53</span></div>
-                            <div class="sl-item"><i class="sl-icon fas fa-train"></i> <span class="sl-line-number">14</span> <span class="sl-line-name">Mörby centrum</span> <span class="sl-time">10:53</span></div>
-                            <div class="sl-item"><i class="sl-icon fas fa-train"></i> <span class="sl-line-number">14</span> <span class="sl-line-name">Mörby centrum</span> <span class="sl-time">10:53</span></div>
+
+        <div id="app"></div>
+
+        <script id="app-template" type="text/x-handlebars-template">
+            <div id="wrapper">
+                <div id="left">
+                    <img src="{{image.url}}" alt="Hoppsan, något gick fel. Maila något argt till yasharh@kth.se" class="img-left">
+                    <div class="left-shadow"></div>
+                </div>
+                <div id="right">
+                    <div id="top">
+                        <div class="sl">
+                            <div class="sl-header"><img src="img/icons/sl_icon.svg" class="sl-icon"></img> Tidtabell <div class="sl-clock">{{time}}</div></div>
+                            <div class="sl-items">
+                                {{#each sl.rides}}
+                                    <div class="sl-item"><img src="img/icons/sl_{{this.type}}.svg" class="sl-icon"></img> <span class="sl-line-number">{{this.number}}</span> <span class="sl-line-name">{{this.name}}</span> <span class="sl-time">{{this.time}}</span></div>
+                                {{else}}
+                                    <p class="error-no-info">Ingen information tillgänglig</p>
+                                {{/each}}
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="bottom">
-                    <div class="cal">
-                        <div class="cal-header"><i class="far fa-calendar cal-icon"></i> Kalender</div>
-
-                        <div class="cal-items">
-                            <div class="cal-item"><div class="cal-date">Tisdag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Torsdagspubb</div></div>
-                            <div class="cal-item"><div class="cal-date">Onsdag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Fysikalen</div></div>
-                            <div class="cal-item"><div class="cal-date">Torsdag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Ett väldigt långt namn på event</div></div>
-                            <div class="cal-item"><div class="cal-date">Freadg 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Torsdagspubb</div></div>
-                            <div class="cal-item"><div class="cal-date">Lördag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Fysikalen</div></div>
-                            <div class="cal-item"><div class="cal-date">Söndag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Ett väldigt långt namn på event</div></div>
-                            <div class="cal-item"><div class="cal-date">Måndag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Torsdagspubb</div></div>
-                            <div class="cal-item"><div class="cal-date">Tisdag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Torsdagspubb</div></div>
-                            <div class="cal-item"><div class="cal-date">Onsdag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Fysikalen</div></div>
-                            <div class="cal-item"><div class="cal-date">Torsdag 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Ett väldigt långt namn på event</div></div>
-                            <div class="cal-item"><div class="cal-date">Freadg 30 feb <span class="cal-time">13:37</span></div><div class="cal-name">Torsdagspubb</div></div>
+                    <div id="bottom">
+                        <div class="cal">
+                            <div class="cal-header"><img src="img/icons/calendar.svg" class="cal-icon"></img> Kalender</div>
+    
+                            <div class="cal-items">
+                                {{#each calendar.events}}
+                                <div class="cal-item"><div class="cal-date">{{this.date}} <span class="cal-time">{{this.time}}</span></div><div class="cal-name">{{this.name}}</div></div>
+                                {{else}}
+                                    <p class="error-no-info">Ingen information tillgängling</p>
+                                {{/each}}
+                            </div>
                         </div>
+    
                     </div>
-
                 </div>
+    
+                <div id="watermark">
+                    <div class="wm-clock">{{time}}</div>
+                    <div class="wm-date">{{date}}</div>
+                </div>        
             </div>
+        </script>
 
-            <div id="watermark">
-                <div class="wm-title">Fysiksektionen</div>
-                <div class="wm-clock">13:37</div>
-                <div class="wm-date">30 februari 2018</div>
-            </div>
-
-        </div>
     </body>
 </html>
