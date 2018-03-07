@@ -81,15 +81,14 @@ moment.locale('se', {
     relativeTime : {
         future : 'om %s',
         past : 'för %s sedan',
-        s : 'en sekund',
-        ss : 'sekunder',
+        s : 'sekunder',
         m : 'en minut',
         mm : '%d minuter',
         h : 'en timme',
         hh : '%d timmar',
         d : 'en dag',
         dd : '%d dagar',
-        M : 'un månad',
+        M : 'en månad',
         MM : '%d månader',
         y : 'ett år',
         yy : '%d år'
