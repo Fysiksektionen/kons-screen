@@ -43,7 +43,7 @@ function compareDepartures(a, b){
 }
 
 function getDisplayTimeText(ride){
-    if (ride.ExpectedDateTime){
+    if (ride.ExpectedDateTime && ride.minutes_left >= 20){
         // return time in HH:MM format
         return new Date(ride.ExpectedDateTime).toLocaleTimeString().substr(0,5)
     }
@@ -73,16 +73,19 @@ function compileRides(stations){
                 station.Departures[type].forEach(ride => {
                     ride.minutes_left = realMinutesLeft(ride.DisplayTime, station.Departures.LatestUpdate)
                     ride.DisplayTime = getDisplayTimeText(ride)
-                    ride.type = type
+                    ride.TransportMode = ride.TransportMode.toLowerCase()
                     rides.push(ride)
                 })
             }
         })
     })
     
+    // Keys are StopAreaNumbers (identifiers for stations), values are minutes_left required to be shown on screen.
+    thresholds = {10194:5, 60080:5, 6601:5, 0:5, 10036:2}
+
     // Sort and remove the ones that already departed or are <= 1 min away.
-    rides = rides.sort(compareDepartures).
-        filter(ride => ride.minutes_left > 1 || ride.DisplayTime == "Okänt")
+    rides = rides.filter(ride => ride.minutes_left >= thresholds[ride.StopAreaNumber] || ride.DisplayTime == "Okänt")
+        .sort(compareDepartures)
     return rides
 };
 
@@ -142,7 +145,6 @@ function getState(){
             }
         }
         responses.forEach(response => $.extend(state, response))
-        console.log("state:",state)
         return state
     })
 }

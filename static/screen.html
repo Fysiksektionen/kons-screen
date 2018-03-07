@@ -34,7 +34,7 @@
                             <div class="sl-header"><img src="static/img/icons/sl_icon.svg" class="sl-icon"></img> Tidtabell <div class="sl-clock">{{time}}</div></div>
                             <div class="sl-items">
                                 {{#each sl.rides}}
-                                    <div class="sl-item"><img src="static/img/icons/sl_{{this.type}}.svg" class="sl-icon"></img> <span class="sl-line-number">{{this.LineNumber}}</span> <span class="sl-line-name">{{this.Destination}}</span> <span class="sl-right"><span class="sl-stop">{{this.StopAreaName}}</span><span class="sl-time">{{this.DisplayTime}}</span></span></div>
+                                    <div class="sl-item"><img src="static/img/icons/sl_{{this.TransportMode}}.svg" class="sl-icon"></img> <span class="sl-line-number">{{this.LineNumber}}</span> <span class="sl-line-name">{{this.Destination}}</span> <span class="sl-right"><span class="sl-stop">{{this.StopAreaName}}</span><span class="sl-time">{{this.DisplayTime}}</span></span></div>
                                 {{else}}
                                     <p class="error-no-info">Ingen information tillgänglig</p>
                                 {{/each}}
