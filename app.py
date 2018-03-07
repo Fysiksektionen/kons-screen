@@ -19,16 +19,16 @@ def data_endpoint(filename, URL):
     Either returns data from a local database or fetches data from URL
     """
     
-    if not REMOTE:  # Load from local db, used in testing.
-        with open(DB_PATH + filename, "r") as db:
-            return db.read()
-    else:
+    if REMOTE:  
         response =  requests.get(URL)
 
         # If status code 200-299 then return response.text
         if divmod(response.status_code, 100)[0] == 2:
             return response.text
-    
+    # Load from local db, used in testing.
+    with open(DB_PATH + filename, "r") as db:
+        return db.read()
+            
 @app.route('/')
 def index():
     return send_from_directory('static', 'screen.html')
@@ -49,7 +49,7 @@ def instagram():
 def fnews():
     return data_endpoint("fnews.rss", "https://f.kth.se/feed")
 
-@app.route('/sektionskalendern.json')
+@app.route('/sektionskalendern')
 def sektionskalendern():
     return data_endpoint("sektionskalendern.json", BASE_URL + "sektionskalendern")
 

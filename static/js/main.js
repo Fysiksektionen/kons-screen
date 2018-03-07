@@ -1,44 +1,9 @@
 "use strict"
 var testDate = new Date()
+
 function init() {
-
-    
-
-    var state = {
-        event: false,
-        time: moment().format("HH:mm"),
-        date: moment().format("dddd D MMMM YYYY"),
-        image: {
-            url: "https://source.unsplash.com/random",
-            text: ""
-        },
-        sl: {
-            rides: [
-                { type: "metro", number: 4, name: "Mörby Centrum", stop: "Station X", time: "12:34" },
-                { type: "train", number: "666x", name: "Näsby park", stop: "Station Y", time: "13:30" },
-                { type: "bus", number: 61, name: "Hornsborg?", stop: "Station X", time: "19:29" },
-                { type: "metro", number: 14, name: "Mörby Centrum", stop: "Station X", time: "12:34" },
-                { type: "train", number: 29, name: "Näsby park", stop: "Station X", time: "13:30" },
-                { type: "bus", number: 61, name: "Hornsborg?", stop: "Station X", time: "19:29" },
-                { type: "metro", number: 14, name: "Mörby Centrum", stop: "Station X", time: "12:34" },
-                { type: "train", number: 29, name: "Näsby park", stop: "Station X", time: "13:30" },
-                { type: "bus", number: 61, name: "Hornsborg?", stop: "Station X", time: "19:29" }
-            ]
-        },
-        calendar: {
-            events: [
-                {date: moment(testDate.getTime()).calendar(), name: "Torsdagspub"},
-                {date: moment(testDate.getTime() + 84000000 * 1).calendar(), name: "Fysikalen"},
-                {date: moment(testDate.getTime() + 84000000 * 2).calendar(), name: "Torsdagspub"},
-                {date: moment(testDate.getTime() + 84000000 * 4).calendar(), name: "Fysikalen"},
-                {date: moment(testDate.getTime() + 84000000 * 6).calendar(), name: "Ett väldigt långt namn på event"},
-                {date: moment(testDate.getTime() + 84000000 * 8).calendar(), name: "Torsdagspub"},
-                {date: moment(testDate.getTime() + 84000000 * 10).calendar(), name: "Fysikalen"},
-                {date: moment(testDate.getTime() + 84000000 * 12).calendar(), name: "Torsdagspub"}
-            ]
-        }
-    }
-    renderState(state)
+    // from data_compilers.js
+    getState().then(state => renderState(state))
 }
 
 function renderState(state) {

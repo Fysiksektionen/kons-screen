@@ -4,16 +4,19 @@
     <head>
         <meta charset="utf-8">
         <title></title>
-        <link rel="stylesheet" href="css/screen.css">
-        <link rel="stylesheet" href="css/sl.css">
-        <link rel="stylesheet" href="css/calendar.css">
-        <link rel="stylesheet" href="css/watermark.css">
+        <link rel="stylesheet" href="static/css/screen.css">
+        <link rel="stylesheet" href="static/css/sl.css">
+        <link rel="stylesheet" href="static/css/calendar.css">
+        <link rel="stylesheet" href="static/css/watermark.css">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <script src="js/handlebars-v4.0.11.js"></script>
-        <script src="js/moment.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="static/js/handlebars-v4.0.11.js"></script>
+        <script src="static/js/moment.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="static/js/data_compilers.js"></script>
+        <script src="static/js/main.js"></script>
+
 
     </head>
     <body>
@@ -28,10 +31,10 @@
                 <div id="right">
                     <div id="top">
                         <div class="sl">
-                            <div class="sl-header"><img src="img/icons/sl_icon.svg" class="sl-icon"></img> Tidtabell <div class="sl-clock">{{time}}</div></div>
+                            <div class="sl-header"><img src="static/img/icons/sl_icon.svg" class="sl-icon"></img> Tidtabell <div class="sl-clock">{{time}}</div></div>
                             <div class="sl-items">
                                 {{#each sl.rides}}
-                                    <div class="sl-item"><img src="img/icons/sl_{{this.type}}.svg" class="sl-icon"></img> <span class="sl-line-number">{{this.number}}</span> <span class="sl-line-name">{{this.name}}</span> <span class="sl-right"><span class="sl-stop">{{this.stop}}</span><span class="sl-time">{{this.time}}</span></span></div>
+                                    <div class="sl-item"><img src="static/img/icons/sl_{{this.type}}.svg" class="sl-icon"></img> <span class="sl-line-number">{{this.LineNumber}}</span> <span class="sl-line-name">{{this.Name}}</span> <span class="sl-right"><span class="sl-stop">{{this.StopAreaName}}</span><span class="sl-time">{{this.DisplayTime}}</span></span></div>
                                 {{else}}
                                     <p class="error-no-info">Ingen information tillgänglig</p>
                                 {{/each}}
@@ -40,7 +43,7 @@
                     </div>
                     <div id="bottom">
                         <div class="cal">
-                            <div class="cal-header"><img src="img/icons/calendar.svg" class="cal-icon"></img> Kalender</div>
+                            <div class="cal-header"><img src="static/img/icons/calendar.svg" class="cal-icon"></img> Kalender</div>
     
                             <div class="cal-items">
                                 {{#each calendar.events}}
