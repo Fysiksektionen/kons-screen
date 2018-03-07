@@ -15,7 +15,8 @@
 }
 
 .cal-icon {
-    margin-right: 12px;
+    height: 50px;
+    margin: -20px 12px -10px 0; 
 }
 
 .cal-item {

@@ -2,11 +2,11 @@ import sys
 import json
 import requests
 
-from flask import Flask, render_template
+from flask import Flask, send_from_directory
 
 from APIs.common.configs import DB_PATH
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 # Check if remotedb is passed as an argument.
 REMOTE = any([arg == "--remotedb" for arg in sys.argv])
@@ -31,7 +31,7 @@ def data_endpoint(filename, URL):
     
 @app.route('/')
 def index():
-    return render_template('screen.html')  # jinja2 template
+    return send_from_directory('static', 'screen.html')
 
 @app.route('/sl-data')
 def sl_data():
