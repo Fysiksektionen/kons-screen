@@ -1,6 +1,8 @@
 "use strict"
-
+var testDate = new Date()
 function init() {
+
+    
 
     var state = {
         event: false,
@@ -12,27 +14,27 @@ function init() {
         },
         sl: {
             rides: [
-                { type: "metro", number: 14, name: "Mörby Centrum", time: "12:34" },
-                { type: "train", number: 29, name: "Näsby park", time: "13:30" },
-                { type: "bus", number: 61, name: "Hornsborg?", time: "19:29" },
-                { type: "metro", number: 14, name: "Mörby Centrum", time: "12:34" },
-                { type: "train", number: 29, name: "Näsby park", time: "13:30" },
-                { type: "bus", number: 61, name: "Hornsborg?", time: "19:29" },
-                { type: "metro", number: 14, name: "Mörby Centrum", time: "12:34" },
-                { type: "train", number: 29, name: "Näsby park", time: "13:30" },
-                { type: "bus", number: 61, name: "Hornsborg?", time: "19:29" }
+                { type: "metro", number: 4, name: "Mörby Centrum", stop: "Station X", time: "12:34" },
+                { type: "train", number: "666x", name: "Näsby park", stop: "Station Y", time: "13:30" },
+                { type: "bus", number: 61, name: "Hornsborg?", stop: "Station X", time: "19:29" },
+                { type: "metro", number: 14, name: "Mörby Centrum", stop: "Station X", time: "12:34" },
+                { type: "train", number: 29, name: "Näsby park", stop: "Station X", time: "13:30" },
+                { type: "bus", number: 61, name: "Hornsborg?", stop: "Station X", time: "19:29" },
+                { type: "metro", number: 14, name: "Mörby Centrum", stop: "Station X", time: "12:34" },
+                { type: "train", number: 29, name: "Näsby park", stop: "Station X", time: "13:30" },
+                { type: "bus", number: 61, name: "Hornsborg?", stop: "Station X", time: "19:29" }
             ]
         },
         calendar: {
             events: [
-                {date: "Tisdag 30 feb", time: "13:37", name: "Torsdagspub"},
-                {date: "Måndag 30 feb", time: "13:37", name: "Fysikalen"},
-                {date: "Onsdag 30 feb", time: "13:37", name: "Torsdagspub"},
-                {date: "Lördag 30 feb", time: "13:37", name: "Fysikalen"},
-                {date: "Fredag 30 feb", time: "13:37", name: "Ett väldigt långt namn på event"},
-                {date: "Torsdag 30 feb", time: "13:37", name: "Torsdagspub"},
-                {date: "Söndag 30 feb", time: "13:37", name: "Fysikalen"},
-                {date: "Tisdag 30 feb", time: "13:37", name: "Torsdagspub"}
+                {date: moment(testDate.getTime()).calendar(), name: "Torsdagspub"},
+                {date: moment(testDate.getTime() + 84000000 * 1).calendar(), name: "Fysikalen"},
+                {date: moment(testDate.getTime() + 84000000 * 2).calendar(), name: "Torsdagspub"},
+                {date: moment(testDate.getTime() + 84000000 * 4).calendar(), name: "Fysikalen"},
+                {date: moment(testDate.getTime() + 84000000 * 6).calendar(), name: "Ett väldigt långt namn på event"},
+                {date: moment(testDate.getTime() + 84000000 * 8).calendar(), name: "Torsdagspub"},
+                {date: moment(testDate.getTime() + 84000000 * 10).calendar(), name: "Fysikalen"},
+                {date: moment(testDate.getTime() + 84000000 * 12).calendar(), name: "Torsdagspub"}
             ]
         }
     }
@@ -63,7 +65,7 @@ moment.locale('se', {
     weekdaysMin : 'må_ti_on_to_fr_lö_sö'.split('_'),
     weekdaysParseExact : true,
     longDateFormat : {
-        LT : 'HH:mm',
+        LT : '[<span class="cal-time">]HH:mm[</span>]',
         LTS : 'HH:mm:ss',
         L : 'YYYY-MM-DD',
         LL : 'D MMMM YYYY',
@@ -73,10 +75,10 @@ moment.locale('se', {
     calendar : {
         sameDay : '[Idag] LT',
         nextDay : '[Imorgon] LT',
-        nextWeek : 'På dddd [klockan] LT',
+        nextWeek : 'dddd LT',
         lastDay : '[Igår] LT',
-        lastWeek : '[Förra veckan] dddd [klockan] LT',
-        sameElse : 'L'
+        lastWeek : '[Förra] dddd LT',
+        sameElse : 'dddd DD MMM LT'
     },
     relativeTime : {
         future : 'om %s',

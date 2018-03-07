@@ -32,7 +32,7 @@
                             <div class="sl-header"><img src="img/icons/sl_icon.svg" class="sl-icon"></img> Tidtabell <div class="sl-clock">{{time}}</div></div>
                             <div class="sl-items">
                                 {{#each sl.rides}}
-                                    <div class="sl-item"><img src="img/icons/sl_{{this.type}}.svg" class="sl-icon"></img> <span class="sl-line-number">{{this.number}}</span> <span class="sl-line-name">{{this.name}}</span> <span class="sl-time">{{this.time}}</span></div>
+                                    <div class="sl-item"><img src="img/icons/sl_{{this.type}}.svg" class="sl-icon"></img> <span class="sl-line-number">{{this.number}}</span> <span class="sl-line-name">{{this.name}}</span> <span class="sl-right"><span class="sl-stop">{{this.stop}}</span><span class="sl-time">{{this.time}}</span></span></div>
                                 {{else}}
                                     <p class="error-no-info">Ingen information tillgänglig</p>
                                 {{/each}}
@@ -45,7 +45,8 @@
     
                             <div class="cal-items">
                                 {{#each calendar.events}}
-                                <div class="cal-item"><div class="cal-date">{{this.date}} <span class="cal-time">{{this.time}}</span></div><div class="cal-name">{{this.name}}</div></div>
+                                    <div class="cal-item"><div class="cal-date">{{{this.date}}}</div><div class="cal-name">{{this.name}}</div></div>
+                                    <!-- <span class="cal-time">{{this.time}}</span> -->
                                 {{else}}
                                     <p class="error-no-info">Ingen information tillgängling</p>
                                 {{/each}}

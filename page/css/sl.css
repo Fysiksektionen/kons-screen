@@ -46,12 +46,25 @@
 .sl .sl-item .sl-line-number {
     margin: 0 20px 0 0;
     font-weight: 600;
+    display: inline-block;
+    text-align: right;
+    width: 50px;
+}
+
+.sl .sl-item .sl-right {
+    float: right;
+    padding-right: 20px;
 }
 
 .sl .sl-item .sl-time {
-    float: right;
-    padding-right: 20px;
+
     font-weight: 700;
+}
+
+.sl .sl-item .sl-stop {
+    padding-right: 20px;
+    font-weight: 300;
+    font-style: italic;
 }
 
 @keyframes slide {
