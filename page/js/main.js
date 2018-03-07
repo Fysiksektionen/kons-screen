@@ -58,7 +58,7 @@ moment.locale('se', {
     months : 'januari_februari_mars_april_maj_juni_juli_augusti_september_oktober_november_december'.split('_'),
     monthsShort : 'jan_feb_mar_apr_maj_jun_jul_aug_sep_okt_nov_dec'.split('_'),
     monthsParseExact : true,
-    weekdays : 'måndag_tisdag_onsdag_torsdag_fredag_lördag_söndag'.split('_'),
+    weekdays : 'Måndag_Tisdag_Onsdag_Torsdag_Fredag_Lördag_Söndag'.split('_'),
     weekdaysShort : 'mån_tis_ons_tor_fre_lör_sön'.split('_'),
     weekdaysMin : 'må_ti_on_to_fr_lö_sö'.split('_'),
     weekdaysParseExact : true,
