@@ -122,9 +122,7 @@ function compileFacebookPosts(facebook){
 
 function getData(endpoint, datatype="json"){
     // return promise which resolves to response data from `endpoint`.
-    return new Promise((resolve, reject) => {
-        $.get(endpoint, null, null, datatype).done(response => resolve(response))
-    })
+    return $.get(endpoint, null, null, datatype)
 }
 
 function getState(){
