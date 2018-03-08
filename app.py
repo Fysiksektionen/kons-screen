@@ -53,6 +53,18 @@ def fnews():
 def sektionskalendern():
     return data_endpoint("sektionskalendern.json", BASE_URL + "sektionskalendern")
 
+@app.route('/metadata')
+def metadata():
+    filename = "metadata.json"
+    with open(DB_PATH + filename, "r+") as db:
+        metadata = json.load(db)
+
+        if  metadata.get("sl_carousel") in [0,1,2]:
+            metadata["sl_carousel"] = (metadata["sl_carousel"] + 1) % 3  # 3 is for the length of ["buses", "metro", "tram"]
+
+        db.seek(0)
+        json.dump(metadata, db, indent=4, separators=(',', ': '))
+        return json.dumps(metadata)
 
 if __name__ == '__main__':
     DEBUG = any([arg == "--debug" for arg in sys.argv])

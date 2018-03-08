@@ -131,10 +131,11 @@ function getState(){
         getData("http://127.0.0.1:5000/sl-data").then(function(resp){
             return {sl:{rides: compileRides(resp)}}}),
         getData("http://127.0.0.1:5000/sektionskalendern").then(function(resp){
-            return {calendar: compileCalendar(resp)}})
+            return {calendar: compileCalendar(resp)}}),
+        getData("http://127.0.0.1:5000/metadata").then(function(resp){
+            return {metadata: resp}})
     ]).then(responses => {
         let state = {
-            event: false,
             time: moment().format("HH:mm"),
             date: moment().format("dddd D MMMM YYYY"),
             image: {
@@ -143,6 +144,11 @@ function getState(){
             }
         }
         responses.forEach(response => $.extend(state, response))
+
+        // only show rides of type specified by state.metadata.sl_carousel
+        types = ["bus", "metro", "tram"]
+        state.sl.rides = state.sl.rides.filter(ride => ride.TransportMode == types[state.metadata.sl_carousel])
+        console.log(state)
         return state
     })
 }
