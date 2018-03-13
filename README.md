@@ -48,40 +48,50 @@ Vad vi behöver:
 * Stabilitet. Axel
 
 ## Installation
-För att installera alla dependencies så kan du köra kommandot
+Följande instruktioner förutsätter att `python` är av version python3.5+.
+Kolla din python-version med `python --version`. I vissa fall finner du python3 genom `python3`.
+### Frontend
+Om du inte redan har `nodejs` eller `npm` så kör du
+
+    sudo apt-get install nodejs
+
+och därefter
+
+    sudo apt-get install npm
+
+För att sedan installera appen så går du in i `frontend/` och kör
+
+    npm install
+
+### Backend
+För att installera alla dependencies till `app.py` så kan du köra kommandot
 
     pip3 install -r requirements.txt
 
-För att endast köra app.py så räcker det med 
-
-    pip3 install flask
-
 Om kommandot `pip3` inte känns igen så kör du samma kommando fast med `pip` istället.
-Om detta mot all förmodan inte skulle fungera så måste du först installera pip med 
+Om detta mot all förmodan inte skulle fungera så måste du först installera pip med
 
     sudo apt-get install python-pip
 
-eller 
+eller
 
     sudo apt-get install python3-pip
 
 ## Användning
-Följande instruktioner förutsätter att `python` är av version python3.5+. 
-Kolla din python-version med `python --version`. I vissa fall finner du python3 genom `python3`.
 
-För att förhandsgranska `index.html` så måste du först köra `app.py` som sedan levererar
-`index.html` på http://127.0.0.1:5000. Det finns flera sätt att köra `app.py` på; du kan
-välja mellan att använda en lokal databas, eller att koppla upp dig mot https://f.kth.se
-och använda data som uppdateras regelbundet. För att använda en lokal databas så kör du
-kommandot `python app.py` och för att använda data från https://f.kth.se så körs istället
-`python app.py --remotedb`. Det rekommenderas att använda en lokal databas när man utvecklar 
-för front-end eftersom det underlättar att fixera så många parametrar som möjligt när man 
-vill debugga. 
+### Frontend
+För att förhandsgranska `index.html` så måste du först köra `npm start` när du är i `frontend/`.
+Efter detta så serveras appen på `localhost:3000`. För att data ska fyllas i så måste `app.py` köras,
+se instruktioner nedan.
 
-Ytterligare startalternativ är `--debug` som tillåter dig att spara ändringar och se dessa
+### Backend
+Det finns flera sätt att köra `app.py` på; du kan välja mellan att använda en lokal databas,
+eller att koppla upp dig mot https://f.kth.se och använda data som uppdateras regelbundet.
+För att använda en lokal databas så kör du kommandot `python app.py` och för att använda data
+från https://f.kth.se så körs istället `python app.py --remotedb`. Datan i `APIs/db/` är gammal
+så i vissa fall måste datan uppdateras manuellt för att den ska visas på frontend.
+
+Ytterligare startalternativ till `app.py` är `--debug` som tillåter dig att spara ändringar och se dessa
 genom att bara uppdatera sidan istället för att behöva starta om `app.py`.
 
-Exempelanvändning: `python app.py --debug --remotedb`
-
-Efter att ha startat `app.py` så är det som sagt bara att besöka http://127.0.0.1:5000.
-
+Exempelanvändning: `python app.py --debug --remotedb`.
