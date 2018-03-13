@@ -2,7 +2,7 @@ import sys
 import json
 import requests
 
-from flask import Flask, send_from_directory
+from flask import Flask, Response, send_from_directory
 
 from APIs.common.configs import DB_PATH
 
@@ -18,16 +18,24 @@ def data_endpoint(filename, URL):
     """
     Either returns data from a local database or fetches data from URL
     """
-    
+    response_text = ""
     if REMOTE:  
         response =  requests.get(URL)
 
         # If status code 200-299 then return response.text
         if divmod(response.status_code, 100)[0] == 2:
-            return response.text
+            response_text = response.text
+    
     # Load from local db, used in testing.
-    with open(DB_PATH + filename, "r") as db:
-        return db.read()
+    # If the request above wasn't successful or if REMOTE==False this will run.
+    if response_text == "":
+        with open(DB_PATH + filename, "r") as db:
+            response_text = db.read()
+    
+    response = Response(response_text)
+    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+    return response
+
             
 @app.route('/')
 def index():
