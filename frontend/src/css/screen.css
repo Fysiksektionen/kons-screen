@@ -81,7 +81,7 @@ html, body {
     height: 6vh;
     position: absolute;
     border-bottom: 0.1 solid #000;
-    z-index: 99999;
+    z-index: 1;
 }
 
 .right-header-icon {

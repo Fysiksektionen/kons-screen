@@ -88,7 +88,9 @@ se instruktioner nedan.
 Det finns flera sätt att köra `app.py` på; du kan välja mellan att använda en lokal databas,
 eller att koppla upp dig mot https://f.kth.se och använda data som uppdateras regelbundet.
 För att använda en lokal databas så kör du kommandot `python app.py` och för att använda data
-från https://f.kth.se så körs istället `python app.py --remotedb`. Datan i `APIs/db/` är gammal
+från https://f.kth.se så körs istället `python app.py --remotedb`.
+
+Datan i `APIs/db/` är gammal
 så i vissa fall måste datan uppdateras manuellt för att den ska visas på frontend.
 
 Ytterligare startalternativ till `app.py` är `--debug` som tillåter dig att spara ändringar och se dessa
