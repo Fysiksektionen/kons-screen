@@ -3,7 +3,7 @@ const fetch = require('node-fetch')
 
 // ######   HELPER FUNCTIONS   ######
 
-var realMinutesLeft = function (displaytime, latest_updated){
+var realMinutesLeft = function (displaytime, latest_updated, now){
     /*
      Converts `displaytime` to the amount of minutes left based on current time instead of `latest_updated`.
      This value is used when comparing two departures in `compareDepartures`.
@@ -37,8 +37,7 @@ var realMinutesLeft = function (displaytime, latest_updated){
         minutes_left = parseInt(displaytime.split(" ")[0], 10)
     }
     let real_departure = minutes_left*60 + upd/1000 //unix seconds
-
-    let real_minutes_left = (real_departure - Date.now()/1000)/60
+    let real_minutes_left = (real_departure - now/1000)/60
     return real_minutes_left // float
 };
 
@@ -72,11 +71,12 @@ var compileRides = function (stations){
     let rides = []
     let types = ["Metros", "Trams", "Buses"]
 
+    let now = new Date()
     stations.forEach(station =>{
         types.forEach(type => {
             if (station.Departures[type]){
                 station.Departures[type].forEach(ride => {
-                    ride.minutes_left = realMinutesLeft(ride.DisplayTime, station.Departures.LatestUpdate)
+                    ride.minutes_left = realMinutesLeft(ride.DisplayTime, station.Departures.LatestUpdate, now)
                     ride.DisplayTime = getDisplayTimeText(ride)
                     ride.TransportMode = ride.TransportMode.toLowerCase()
                     rides.push(ride)
