@@ -72,16 +72,6 @@ html, body {
     object-position: center;
 }
 
-.sl .sl-header .sl-icon {
-    height: 4.2vh;
-    margin: -3vh 0.6vh -1vh 0;
-}
-
-.sl .sl-header .sl-clock {
-    float: right;
-    margin-right: 2vh;
-}
-
 .right-header {
     font-size: 3.2vh;
     padding-left: 1vh;
