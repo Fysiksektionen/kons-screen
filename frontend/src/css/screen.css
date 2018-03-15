@@ -90,7 +90,7 @@ html, body {
     width: 50vw;
     height: 6vh;
     position: absolute;
-    border-bottom: 1px solid black;
+    border-bottom: 0.1 solid #000;
     z-index: 99999;
 }
 

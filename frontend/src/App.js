@@ -77,9 +77,10 @@ class App extends Component {
                 text: ""
             },
             sl: {
-                rides: {metros:[],
-                buses:[],
-                trams:[]}
+                rides: {
+                    metros:[],
+                    buses:[],
+                    trams:[] }
             },
             calendar: {
                 events: []
