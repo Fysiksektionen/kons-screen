@@ -75,7 +75,6 @@ class CalendarHeader extends Component {
     }
 }
 
-
 class App extends Component {
     constructor (){
         super()
@@ -88,9 +87,10 @@ class App extends Component {
                 text: ""
             },
             sl: {
-                rides: {metros:[],
-                buses:[],
-                trams:[]}
+                rides: {
+                    metros:[],
+                    buses:[],
+                    trams:[] }
             },
             calendar: {
                 events: []
@@ -131,8 +131,7 @@ class App extends Component {
                             <div className="cal">
                                 <CalendarHeader/>
                                 <div className="cal-items">
-                                    {this.state.calendar.events.map(item => <CalendarItem item={item}/>)
-                                        || <p className="error-no-info">Ingen information tillgängling</p>}
+                                    { (this.state.calendar.events.length != 0) ? this.state.calendar.events.map(item => <CalendarItem item={item}/>) : <p className="error-no-info">Ingen information tillgängling</p>}
                                 </div>
                             </div>
                         </div>
