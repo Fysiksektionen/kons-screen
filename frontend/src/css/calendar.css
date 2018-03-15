@@ -8,15 +8,8 @@
     overflow: hidden;
 }
 
-.cal-header {
-    font-size: 3.2vh;
-    padding-left: 1vh;
-    padding-top: 1.2vh;
-}
-
-.cal-icon {
-    height: 4.2vh;
-    margin: -3vh 0.6vh -1vh 0; 
+.cal-items {
+    margin-top: 6vh;
 }
 
 .cal-item {
@@ -26,7 +19,6 @@
 .cal-item:nth-child(even) {
     background: rgba(255, 100, 43, 0.6);
 }
-
 
 .cal-date, .cal-name {
     display: inline-block;

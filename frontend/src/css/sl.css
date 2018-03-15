@@ -9,28 +9,6 @@
     overflow: hidden;
 }
 
-.sl .sl-header {
-    font-size: 3.2vh;
-    padding-left: 1vh;
-    padding-top: 1.2vh;
-    background-color: white;
-    width: 50vw;
-    height: 6vh;
-    position: absolute;
-    border-bottom: 1px solid black;
-    z-index: 99999;
-}
-
-.sl .sl-header .sl-icon {
-    height: 4.2vh;
-    margin: -3vh 0.6vh -1vh 0;
-}
-
-.sl .sl-header .sl-clock {
-    float: right;
-    margin-right: 2vh;
-}
-
 .sl .sl-items {
     margin-top: 6vh;
     animation: slide 33s ease-in-out infinite;

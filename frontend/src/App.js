@@ -41,16 +41,6 @@ class SLDepartureSlide extends Component {
     }
 }
 
-class SLHeader extends Component {
-    render() {
-        return (
-            <div className="sl-header">
-                <img src={require("./img/icons/sl_icon.svg")} className="sl-icon"></img>
-                Tidtabell
-                <div className="sl-clock">{this.props.time}</div></div>
-        )
-    }
-}
 
 class CalendarItem extends Component {
     render() {
@@ -59,31 +49,30 @@ class CalendarItem extends Component {
                 <div className="cal-date">{this.props.item.date}</div>
                 <div className="cal-name">{this.props.item.name}</div>
             </div>
-            //<span class="cal-time">{this.props.item.time}</span>
-
         )
     }
 }
-class CalendarHeader extends Component {
+
+class RightHeader extends Component {
     render() {
         return (
-            <div className="cal-header">
-                <img src={require("./img/icons/calendar.svg")} className="cal-icon"></img>
-                Kalender
+            <div className="right-header">
+            <img src={require(this.props.icon)} className="right-header-icon"></img>
+            {this.props.title}
+            <span className="right-header-current">{this.props.current}</span>
             </div>
         )
     }
 }
-
 
 class App extends Component {
     constructor (){
         super()
         this.state = {
             event: false,
+            time: new Date().toLocaleTimeString().substr(0,8),
+            date: new Date().toDateString(),
             image: {
-                time: new Date().toLocaleTimeString().substr(0,8),
-                date: new Date().toDateString(),
                 url: "https://source.unsplash.com/random",
                 text: ""
             },
@@ -108,7 +97,7 @@ class App extends Component {
       setInterval(() =>
         this.setState({
             time: new Date().toLocaleTimeString().substr(0,8),
-            date: Date()
+            date: new Date().toDateString()
         }), 500);
     }
 
@@ -118,7 +107,7 @@ class App extends Component {
                     <div id="right">
                         <div id="top">
                             <div className="sl">
-                                <SLHeader time={this.state.time}/>
+                                <RightHeader title="Tidtabell" icon="./img/icons/sl_icon.svg" current={this.state.time}/>
                                 <div className="sl-items">
                                     <SLDepartureSlide rides={this.state.sl.rides.metros} TransportMode="metro"/>
                                     <SLDepartureSlide rides={this.state.sl.rides.trams} TransportMode="tram"/>
@@ -129,10 +118,11 @@ class App extends Component {
                         </div>
                         <div id="bottom">
                             <div className="cal">
-                                <CalendarHeader/>
+                                <RightHeader title="Kalender" icon="./img/icons/calendar.svg" current={this.state.date}/>
                                 <div className="cal-items">
-                                    {this.state.calendar.events.map(item => <CalendarItem item={item}/>)
-                                        || <p className="error-no-info">Ingen information tillgängling</p>}
+                                    {this.state.calendar.events.length
+                                        ? this.state.calendar.events.map(item => <CalendarItem item={item}/>)
+                                        : <p className="error-no-info">Ingen information tillgängling</p>}
                                 </div>
                             </div>
                         </div>
