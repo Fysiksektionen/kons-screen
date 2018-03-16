@@ -2,11 +2,11 @@ import sys
 import json
 import requests
 
-from flask import Flask, Response, send_from_directory
+from flask import Flask, Response
 
 from APIs.common.configs import DB_PATH
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
 
 # Check if remotedb is passed as an argument.
 REMOTE = any([arg == "--remotedb" for arg in sys.argv])
@@ -36,43 +36,27 @@ def data_endpoint(filename, URL):
     response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
     return response
 
-            
-@app.route('/')
-def index():
-    return send_from_directory('static', 'screen.html')
 
 @app.route('/sl-data')
 def sl_data():
-    return data_endpoint("sl-data.json", "https://f.kth.se/sl-data")
+    return data_endpoint("sl-data.json", BASE_URL + "sl-data")
 
 @app.route('/facebook')
 def facebook():         
-    return data_endpoint("facebook.json", BASE_URL + "facebook")
+    return data_endpoint("facebook.json", BASE_URL + "facebook-data")
 
 @app.route('/instagram')
 def instagram():
-    return data_endpoint("instagram.json", BASE_URL + "instagram")
+    return data_endpoint("instagram.json", BASE_URL + "instagram-data")
+
+@app.route('/sektionskalendern')
+def sektionskalendern():
+    return data_endpoint("sektionskalendern.json", BASE_URL + "calendar-data")
 
 @app.route('/fnews')
 def fnews():
     return data_endpoint("fnews.rss", "https://f.kth.se/feed")
 
-@app.route('/sektionskalendern')
-def sektionskalendern():
-    return data_endpoint("sektionskalendern.json", BASE_URL + "sektionskalendern")
-
-@app.route('/metadata')
-def metadata():
-    filename = "metadata.json"
-    with open(DB_PATH + filename, "r+") as db:
-        metadata = json.load(db)
-
-        if  metadata.get("sl_carousel") in [0,1,2]:
-            metadata["sl_carousel"] = (metadata["sl_carousel"] + 1) % 3  # 3 is for the length of ["buses", "metro", "tram"]
-
-        db.seek(0)
-        json.dump(metadata, db, indent=4, separators=(',', ': '))
-        return json.dumps(metadata)
 
 if __name__ == '__main__':
     DEBUG = any([arg == "--debug" for arg in sys.argv])
