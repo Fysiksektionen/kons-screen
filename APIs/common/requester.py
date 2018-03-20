@@ -2,7 +2,8 @@ import requests
 import time
 from urllib.parse import urlencode
 
-from common.configs import BASE_PATH
+# currently not implemented
+from common.paths import LOGGING_PATH
 
 # Custom exception
 class UnexpectedResponseCode(Exception):pass

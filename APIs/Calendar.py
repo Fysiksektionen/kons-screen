@@ -37,7 +37,7 @@ def validate_and_parse(response):
 
 
 if __name__ == "__main__":
-    from common.configs import DB_PATH
+    from common.paths import DB_PATH
     from common.writer import write_json
 
     calendar_id = "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com"    
