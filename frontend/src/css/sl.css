@@ -1,0 +1,60 @@
+.sl {
+    background: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    height: 100%;
+    overflow: hidden;
+    border-bottom: 0.1vh solid #000;
+}
+
+.sl .sl-items {
+    margin-top: 6vh;
+    animation: slide 33s ease-in-out infinite;
+}
+
+.sl .sl-item {
+    font-size: 2.6vh;
+    padding: 0.69vh 0;
+    clear: both;
+}
+
+.sl .sl-item:nth-child(even) {
+    background: rgba(255, 100, 43, 0.6);
+}
+
+.sl .sl-item .sl-icon {
+    margin: -0.4vh 0.4vh -1vh 1.5vh;
+    height: 4vh;
+}
+
+.sl .sl-item .sl-line-number {
+    margin: 0 2vh 0 0;
+    font-weight: 600;
+    display: inline-block;
+    text-align: right;
+    width: 5.5vh;
+}
+
+.sl .sl-item .sl-right {
+    float: right;
+    padding-right: 2vh;
+}
+
+.sl .sl-item .sl-time {
+
+    font-weight: 700;
+}
+
+.sl .sl-item .sl-stop {
+    padding-right: 2vh;
+    font-weight: 300;
+    font-style: italic;
+}
+
+@keyframes slide {
+   0%, 30% {transform: translateY(0%);}
+   33.33%, 63.33% {transform: translateY(-25%);}
+   66.66%, 96.66%{transform: translateY(-50%);}
+   100% {transform: translateY(-75%);}
+}

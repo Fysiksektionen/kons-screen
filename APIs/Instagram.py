@@ -60,7 +60,7 @@ def validate_and_parse(response):
 
 
 if __name__ == "__main__":
-    from common.configs import DB_PATH
+    from common.paths import DB_PATH
     from common.writer import write_json
 
     instagram_page = "2905411461"

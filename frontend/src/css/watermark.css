@@ -1,0 +1,25 @@
+#watermark {
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50vw;
+    background: #000000a0;
+    padding: 4vh;
+    text-align: center;
+    z-index: 1;
+    color: white;
+    text-shadow:    0.1vh 0 1vh #000000,
+                    -0.1vh 0 1vh #000000,
+                    0 0.1vh 1vh #000000,
+                    0 -0.1vh 1vh #000000;
+}
+
+.wm-clock {
+    font-size: 14vh;
+    margin: -2vh 0 -2vh 0;
+}
+.wm-date {
+    font-size: 3vh;
+    font-weight: 300;
+}
