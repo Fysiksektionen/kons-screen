@@ -6,9 +6,15 @@ var realMinutesLeft = function (displaytime, latest_updated, now){
     /*
      Converts `displaytime` to the amount of minutes left based on current time instead of `latest_updated`.
      This value is used when comparing two departures in `compareDepartures`.
-     Returns: float: Amount of minutes left until departure according to current time.
+     Params:
+        displaytime: String representing the display time,
+                     formats are 'HH:MM', 'x min' and just '-'
+        latest_updated: Datetime string representing the latest time the data was updated.
+                        format : "YYYY-MM-DDThh:mm:ss"
+        now: Date object representing the current datetime.
+     Returns (float): Amount of minutes left until departure according to current time.
     */
-    var upd = new Date(latest_updated)
+    const upd = new Date(latest_updated)
     let minutes_left
     if (displaytime == "Nu"){
         minutes_left = 0
@@ -18,9 +24,9 @@ var realMinutesLeft = function (displaytime, latest_updated, now){
         return 0 // real_minutes_left
     }
     else if (displaytime.includes(":")){
-        let time = displaytime.split(":")
-        let hours = time[0]
-        let mins = time[1]
+        const time = displaytime.split(":")
+        const hours = time[0]
+        const mins = time[1]
         let depart = new Date(latest_updated)
         depart.setHours(hours)
         depart.setMinutes(mins)
@@ -35,19 +41,28 @@ var realMinutesLeft = function (displaytime, latest_updated, now){
     else {
         minutes_left = parseInt(displaytime.split(" ")[0], 10)
     }
-    let real_departure = minutes_left*60 + upd/1000 //unix seconds
-    let real_minutes_left = (real_departure - now/1000)/60
+    const real_departure = minutes_left*60 + upd/1000 //unix seconds
+    const real_minutes_left = (real_departure - now/1000)/60
     return real_minutes_left // float
 };
 
 var compareDepartures = function (a, b){
-    //Compares two departures, used for calling sort()
+    /*Compares two departures, used for calling sort()
+      Params `a` and `b`: An object representing a ride.
+      Returns: The difference in the amount of minutes left.
+               Negative if b departs later than a.
+    */
     return a.minutes_left - b.minutes_left
 };
 
 var getDisplayTimeText = function (ride){
-    if (ride.ExpectedDateTime && ride.minutes_left > 25){
-        // return time in HH:MM format
+    /*Returns the departure time string which is to be displayed on screen for a ride.
+
+      Param ride: An object representing a `ride`.
+      Returns: A string representing the departure time of the given `ride`
+    */
+   if (ride.ExpectedDateTime && ride.minutes_left > 25){
+       // return time in HH:MM format
         return new Date(ride.ExpectedDateTime).toLocaleTimeString().substr(0,5)
     }
     else if (ride.DisplayTime == "-"){
@@ -59,50 +74,152 @@ var getDisplayTimeText = function (ride){
     }
 };
 
-// ######   Functions that compile the SL data   ######
+// ######   Functions that compile the rides   ######
 
-var compileRides = function (stations){
-    /*
-     Returns all rides in stations as a single list of objects with some modified attributes
-     such as `minutes_left`, `type` and a proper `DisplayTime`.
+var compileRidesFactory = function(deps) {
+    /*A function which generates a compileRide function given its dependencies.
+
+      This exists in order to test compileRides but without its real dependencies.
+      When testing you pass mock ("fake") functions that you can control in order
+      to inspect how they were handled and behaved in retrospect.
+      
+      Param deps: An object containing the dependencies of the function.
+        {
+            extractor,
+            remapper,
+            filterer,
+            sorter,
+            separator
+        }
+      Returns: A function which takes an array `stations` and returns an array of
+               all filtered and sorted rides in all `stations`.
     */
+    return stations => {
+        // First extract the rides from all stations and modify the ride objects
+        // to have certain desired properties.
+        let rides = deps.extractor(stations, deps.remapper)
+        // Then filter the rides removing any rides that shouldn't be shown
+        // then sort the rides by minutes left in ascending order.
+        rides = rides.filter(deps.filterer).sort(deps.sorter)
+        // Then separate the rides into their respective transport mode.
+        // `rides` is now an object with the transport modes as keys.
+        rides = deps.separator(rides)
+        // return an object {sl:{metros:[MetrosArray],buses:[BusesArray],trams:[TramsArray]}}
+        return {sl:{rides}}
+    }
+}
 
-    let rides = []
-    let types = ["Metros", "Trams", "Buses"]
-
-    let now = new Date()
-    stations.forEach(station =>{
-        types.forEach(type => {
-            if (station.Departures[type]){
-                station.Departures[type].forEach(ride => {
-                    ride.minutes_left = realMinutesLeft(ride.DisplayTime, station.Departures.LatestUpdate, now)
-                    ride.DisplayTime = getDisplayTimeText(ride)
-                    ride.TransportMode = ride.TransportMode.toLowerCase()
-                    rides.push(ride)
+var extractRides = function(stations, remapper) {
+    /* This function is the first one called in compileRides in order
+       to extract all of the rides from all stations into a single array.
+    Params:
+        stations: Array of objects representing a station.
+        remapper: Function which is called on each ride in a station,
+                  it should return a modified ride.
+    Returns: A single array of all combined rides in stations.
+    */
+   let rides = []
+   const types = ["Metros", "Trams", "Buses"]
+   
+   const now = new Date()
+   stations.forEach(station => {
+       types.forEach(type => {
+           if (station.Departures[type]){
+               station.Departures[type].forEach(ride => {
+                   const newride = remapper(ride, station, now)
+                   rides.push(newride)
                 })
             }
         })
     })
+    return rides
+}
 
-    // Keys are StopAreaNumbers (identifiers for stations), values are minutes_left required to be shown on screen.
-    let thresholds = {10194:5, 60080:5, 6601:5, 0:5, 10036:2}
+var remapRideFactory = deps => function (ride, station, now){
+    /* 
+    This exists in order to test remapRide but without its real dependencies.
+    When testing you pass mock ("fake") functions that you can control in order
+    to inspect how they were handled and behaved in retrospect.
+    
+    Param: An object containing the dependencies of the function.
+    {
+        realMinutesLeftGetter,
+        displayTimeTextGetter
+    }
+    Returns: A function which takes param `ride`, an object representing a ride,
+             and returns a ride with updated properties.
+    */
+   let newride = Object.assign({}, ride) // don't modify ride, instead return new ride.
+   newride.minutes_left = deps.realMinutesLeftGetter(
+       newride.DisplayTime, station.Departures.LatestUpdate, now
+    )
+    newride.DisplayTime = deps.displayTimeTextGetter(newride)
+    newride.TransportMode = newride.TransportMode.toLowerCase()
+    newride.SiteId = station.SiteId
+    return newride
+}
 
-    // Sort and remove the ones that already departed or are <= 1 min away.
-    rides = rides.filter(ride => ride.minutes_left >= thresholds[ride.StopAreaNumber] || ride.DisplayTime == "Okänt")
-        .sort(compareDepartures)
+var remapRide = remapRideFactory({
+    /*Function that returns a modified ride object
+      Params:
+        ride: An object representing a ride.
+        station: An object representing a station.
+        now: Date object representing the current datetime.
+      Returns: A modified copy of parameter `ride`.
+    */
+    realMinutesLeftGetter: realMinutesLeft,
+    displayTimeTextGetter: getDisplayTimeText
+})
 
-    // separate by transport type and slice to first 9 rides
-    let metros = rides.filter(ride => ride.TransportMode == "metro").slice(0,9)
-    let buses = rides.filter(ride => ride.TransportMode == "bus").slice(0,9)
-    let trams = rides.filter(ride => ride.TransportMode == "tram").slice(0,9)
+var rideFilterer = function(thresholds){
+    /*A function which returns a filter function to be used in Array.filter
 
-    return {metros, buses, trams}
-};
+    Param: 
+         thresholds:  An object with keys `SiteId` (identifiers for stations),
+                      values are `minutes_left` required to be shown on screen.
+         Example: SiteId 1337 for Tekniska högskolan and 6 min left required
+                  for a ride to be shown on screen:
+                        thresholds = {1337:6}
+    Returns: A function which returns false if ride should be filtered.
+    */
+   
+   // Sort and remove the ones that are above the specified thresholds.
+   return ride => ride.minutes_left >= thresholds[ride.SiteId] || ride.DisplayTime == "Okänt"
+}
+
+var separateByType = function(rides){
+    /*Separates by transport type and slices to first 9 rides.
+      Param `rides`: Array of objects representing a ride.
+      Returns: Object containing keys metros, buses and trams each containing
+               an array of rides of the corresponding transport mode.
+    */
+   const metros = rides.filter(ride => ride.TransportMode == "metro").slice(0,9)
+   const buses = rides.filter(ride => ride.TransportMode == "bus").slice(0,9)
+   const trams = rides.filter(ride => ride.TransportMode == "tram").slice(0,9)
+   return {metros, buses, trams}
+}
+
+var compileRides = compileRidesFactory({
+    extractor: extractRides,
+    // 1118 is Ruddammsparken and 9204 is Tekniska Högskolan
+    // Noted by yashar: Should we separate this param to a configuration file of some sort?
+    filterer: rideFilterer({1118:2, 9204:5}), 
+    separator: separateByType,
+    sorter: compareDepartures,
+    remapper: remapRide
+});
 
 module.exports = {
     compileRides,
+    compileRidesFactory,
 
     realMinutesLeft,
     getDisplayTimeText,
-    compareDepartures
+    compareDepartures,
+
+    extractRides,
+    remapRideFactory,
+    remapRide,
+    rideFilterer,
+    separateByType
 }

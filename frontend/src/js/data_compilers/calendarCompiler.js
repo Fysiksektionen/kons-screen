@@ -3,6 +3,7 @@
 var compileCalendar = function (calendar){
     //Not implemented yet.
     return  {
+        calendar:{
             events: [
                 {date: "Torsdag den 15 mars", name: "Torsdagspub"},
                 {date: "Torsdag den 15 mars", name: "Fysikalen"},
@@ -14,6 +15,7 @@ var compileCalendar = function (calendar){
                 {date: "Torsdag den 15 mars", name: "Torsdagspub"}
             ]
         }
+    }
 };
 
 module.exports = {
