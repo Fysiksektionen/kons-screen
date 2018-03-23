@@ -1,5 +1,4 @@
-const fetch = require('node-fetch')
-
+// Module containing functions which compile the SL data fetched.
 
 // ######   HELPER FUNCTIONS   ######
 
@@ -60,7 +59,7 @@ var getDisplayTimeText = function (ride){
     }
 };
 
-// ######   Functions that compile the data   ######
+// ######   Functions that compile the SL data   ######
 
 var compileRides = function (stations){
     /*
@@ -100,70 +99,10 @@ var compileRides = function (stations){
     return {metros, buses, trams}
 };
 
-var compileCalendar = function (calendar){
-    //Not implemented yet.
-    return  {
-            events: [
-                {date: "Torsdag den 15 mars", name: "Torsdagspub"},
-                {date: "Torsdag den 15 mars", name: "Fysikalen"},
-                {date: "Torsdag den 15 mars", name: "Torsdagspub"},
-                {date: "Torsdag den 15 mars", name: "Fysikalen"},
-                {date: "Torsdag den 15 mars", name: "Ett väldigt långt namn på event"},
-                {date: "Torsdag den 15 mars", name: "Torsdagspub"},
-                {date: "Torsdag den 15 mars", name: "Fysikalen"},
-                {date: "Torsdag den 15 mars", name: "Torsdagspub"}
-            ]
-        }
-};
-
-var compileInstagramPosts = function (instagram){
-    //Not implemented yet.
-    return null
-};
-
-var compileFNews = function (fnewsfeed){
-    //Not implemented yet.
-    return null
-};
-
-var compileFacebookPosts = function (facebook){
-    //Not implemented yet.
-    return null
-};
-
-var getData = function(endpoint) {return fetch(endpoint).then(response => response.json())};
-
-var getState = function (){
-    // Returns promise of state.
-    return Promise.all([
-        getData("http://127.0.0.1:5000/sl-data").then(function(resp){
-            return {sl:{rides: compileRides(resp)}}}),
-        getData("http://127.0.0.1:5000/sektionskalendern").then(function(resp){
-            return {calendar: compileCalendar(resp)}})
-    ]).then(responses => {
-        let state = {
-            image: {
-                url: "https://source.unsplash.com/random",
-                text: ""
-            }
-        }
-        responses.forEach(response => Object.assign(state, response))
-
-        // only show rides of type specified by state.metadata.sl_carousel
-        console.log(state)
-        return state
-    })
-}
-
 module.exports = {
-    getState,
-    getData,
-    compileFacebookPosts,
-    compileFNews,
-    compileInstagramPosts,
-    compileCalendar,
     compileRides,
-    compareDepartures,
+
+    realMinutesLeft,
     getDisplayTimeText,
-    realMinutesLeft
+    compareDepartures
 }

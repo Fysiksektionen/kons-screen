@@ -9,7 +9,7 @@ const SLBusIcon = require('./img/icons/sl_bus.svg')
 const SLTramIcon = require('./img/icons/sl_tram.svg')
 const CalendarIcon = require('./img/icons/calendar.svg')
 
-const getState = require('./js/data_compilers').getState
+const getState = require('./js/data_compilers/getState').getState
 
 
 class SLItem extends Component {
@@ -98,9 +98,7 @@ class App extends Component {
         getState().then(state => this.setState(state))
 
         setInterval(() => {
-          getState().then(state => {
-            console.log(state);
-            this.setState(state)})
+          getState().then(state => this.setState(state))
       }, 10000);
 
       setInterval(() =>
