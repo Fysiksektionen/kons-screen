@@ -48,9 +48,16 @@ Vad vi behöver:
 * Stabilitet. Axel
 
 ## Installation
-Följande instruktioner förutsätter att `python` är av version python3.5+.
+Det borde i de flesta fall räcka med att köra
+
+    ./setup.sh
+    
+i rot-directoryn (dvs `kons-screen/`).
+
+### Manuell installation
+Följande instruktioner förutsätter att `python` är av version python3.4+.
 Kolla din python-version med `python --version`. I vissa fall finner du python3 genom `python3`.
-### Frontend
+#### Frontend
 Om du inte redan har `nodejs` eller `npm` så kör du
 
     sudo apt-get install nodejs
@@ -63,7 +70,7 @@ För att sedan installera appen så går du in i `frontend/` och kör
 
     npm install
 
-### Backend
+#### Backend
 För att installera alla dependencies till `app.py` så kan du köra kommandot
 
     pip3 install -r requirements.txt

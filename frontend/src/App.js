@@ -137,7 +137,7 @@ class App extends Component {
                         </div>
                     </div>
                     <div id="left">
-                        <img src={this.state.image.url} alt="Hoppsan, något gick fel. Maila något argt till yasharh@kth.se" className="img-left"/>
+                        <img src={this.state.image.url} alt="Hoppsan, något gick fel. Maila något argt till webmaster@f.kth.se" className="img-left"/>
                         <div className="left-shadow"></div>
                     </div>
                 </div>

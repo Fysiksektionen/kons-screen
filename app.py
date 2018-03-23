@@ -4,7 +4,7 @@ import requests
 
 from flask import Flask, Response
 
-from APIs.common.configs import DB_PATH
+from APIs.common.paths import DB_PATH
 
 app = Flask(__name__)
 

@@ -100,3 +100,10 @@ html, body {
     font-size: 3vh;
     color: #888;
 }
+
+.img-left {
+    font-size: 3vh;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #888;
+}

@@ -61,7 +61,7 @@ def validate_and_parse(response):
 
 
 if __name__ == "__main__":
-    from common.configs import DB_PATH
+    from common.paths import DB_PATH
     from common.writer import write_json
 
     # note: page_id's can be used just as group_id (different result though)
