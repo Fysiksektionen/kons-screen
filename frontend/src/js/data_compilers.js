@@ -1,5 +1,7 @@
 const fetch = require('node-fetch')
 
+const GOOGLE_KEY = ""
+
 
 // ######   HELPER FUNCTIONS   ######
 
@@ -141,7 +143,8 @@ var compileFacebookPosts = function (facebook){
 var getData = function(endpoint) { return fetch(endpoint).then(response => response.json())};
 
 var getState = function (){
-    var calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com/events?key=AIzaSyBBIcs5aVpvJgClscekIe_cZmlaWoNVKxc&singleEvents=true&orderBy=startTime&timeMin=${(new Date()).toISOString()}&maxResults=9`
+
+    var calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com/events?key=${GOOGLE_KEY}&singleEvents=true&orderBy=startTime&timeMin=${(new Date()).toISOString()}&maxResults=9`
     
     // Returns promise of state.
     return Promise.all([
