@@ -101,18 +101,25 @@ var compileRides = function (stations){
 };
 
 var compileCalendar = function (calendar){
-    //Not implemented yet.
-    return  {
-            events: [
-                {date: "Torsdag den 15 mars", name: "Torsdagspub"},
-                {date: "Torsdag den 15 mars", name: "Fysikalen"},
-                {date: "Torsdag den 15 mars", name: "Torsdagspub"},
-                {date: "Torsdag den 15 mars", name: "Fysikalen"},
-                {date: "Torsdag den 15 mars", name: "Ett väldigt långt namn på event"},
-                {date: "Torsdag den 15 mars", name: "Torsdagspub"},
-                {date: "Torsdag den 15 mars", name: "Fysikalen"},
-                {date: "Torsdag den 15 mars", name: "Torsdagspub"}
-            ]
+
+    var getDate = (e) => {
+        if (e.start.dateTime)
+            return e.start.dateTime
+        else if (e.start.date)
+            return e.start.date
+        else 
+            return 0
+    }
+
+    var events = calendar.items
+        .map( (e) => {
+            return {
+                date: (new Date(getDate(e))).toLocaleString(),
+                location: e.location,
+                name: e.summary }
+            })
+    return {
+            events: events
         }
 };
 
@@ -131,14 +138,16 @@ var compileFacebookPosts = function (facebook){
     return null
 };
 
-var getData = function(endpoint) {return fetch(endpoint).then(response => response.json())};
+var getData = function(endpoint) { return fetch(endpoint).then(response => response.json())};
 
 var getState = function (){
+    var calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com/events?key=AIzaSyBBIcs5aVpvJgClscekIe_cZmlaWoNVKxc&singleEvents=true&orderBy=startTime&timeMin=${(new Date()).toISOString()}&maxResults=9`
+    
     // Returns promise of state.
     return Promise.all([
         getData("http://127.0.0.1:5000/sl-data").then(function(resp){
             return {sl:{rides: compileRides(resp)}}}),
-        getData("http://127.0.0.1:5000/sektionskalendern").then(function(resp){
+        getData(calendarUrl).then(function(resp){
             return {calendar: compileCalendar(resp)}})
     ]).then(responses => {
         let state = {
