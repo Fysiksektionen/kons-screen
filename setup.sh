@@ -14,6 +14,21 @@ else
 fi
 
 # PYTHON SETUP
+
+# If no python installation was found, prompt for installation of python3.
+if !([ $(command -v python) ] || [ $(command -v python3) ]); then
+    echo "Error: Couldn't find a python installation (inspected python and python3)."
+    echo 'Do you want to install the missing program python3?'
+    select yn in "Yes" "No";
+    do
+        case $yn in
+            Yes ) echo '* kons-screen: Installing python3...'; sudo apt-get install python3 ; break;;
+            No ) echo 'Setup was unsuccessful'; exit;;
+        esac
+    done
+fi
+
+#Installation of backend/requirements.txt
 pyver="$(python -V 2>&1)"
 if [[ $pyver == "Python 3."* ]]; then 
     echo '* kons-screen: Installing requirements.txt...'
@@ -28,7 +43,7 @@ else
             echo "Couldn't find python's official package manager pip3, do you want to install it? (1/2)"
             select yn in "Yes" "No"; do
                 case $yn in
-                    Yes ) echo "* kons-screen: Installing python3-pip..."; apt-get install python3-pip;break;;
+                    Yes ) echo "* kons-screen: Installing python3-pip..."; sudo apt-get install python3-pip;break;;
                     No ) echo "Setup was unsuccessful"; exit;;
                 esac
             done
@@ -51,11 +66,19 @@ else
         node_ver=$(nodejs -v)
     else
         echo "Error: Could not find any installation of node/nodejs"
-        echo "Setup was unsuccessful"
-        exit
+        echo "Do you want to install the missing program nodejs?"
+        select yn in "Yes" "No";
+        do
+            case $yn in
+                Yes ) echo "* kons-screen: Installing nodejs..."; curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash - ; sudo apt-get install -y nodejs; break;;
+                No ) echo "Setup of frontend/ was unsuccessful"; exit;;
+            esac
+        done
+        node_ver=$(nodejs -v)
     fi
 fi
 
+# NPM
 if [ $node_ver ]; then
     # Regex means Node v4.0.0 or higher (v10.* should also match)
     if [[ $(echo $node_ver | grep -E "^v[4-9]\.|^v[0-9][0-9]\.") ]]; then
