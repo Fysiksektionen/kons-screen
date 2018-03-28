@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # SAVE THE CORRECT PATHS TO FILE UPON INITIAL SETUP
-file_to_write="$PWD/APIs/common/paths.py"
+file_to_write="$PWD/backend/APIs/common/paths.py"
 
 if [ -f "$file_to_write" ]; then
-    echo "LOGGING_PATH = '$PWD/APIs/'" > "$file_to_write"
-    echo "DB_PATH = '$PWD/APIs/db/'" >> "$file_to_write"
+    echo "LOGGING_PATH = '$PWD/backend/APIs/'" > "$file_to_write"
+    echo "DB_PATH = '$PWD/backend/APIs/db/'" >> "$file_to_write"
     echo "* kons-screen: Exported DB paths"
 else
     echo "Error: '$file_to_write' is not a file"
@@ -17,13 +17,13 @@ fi
 pyver="$(python -V 2>&1)"
 if [[ $pyver == "Python 3."* ]]; then 
     echo '* kons-screen: Installing requirements.txt...'
-    pip install -r requirements.txt
+    pip install -r backend/requirements.txt
 else
     if [ $(command -v python3) ]; then
         # Checks if pip3 is a command, if not then install it pip3
         if [ $(command -v pip3) ]; then
             echo '* kons-screen: Installing requirements.txt...'
-            pip3 install -r requirements.txt
+            pip3 install -r backend/requirements.txt
         else
             echo "Couldn't find python's official package manager pip3, do you want to install it? (1/2)"
             select yn in "Yes" "No"; do
@@ -33,7 +33,7 @@ else
                 esac
             done
             echo '* kons-screen: Installing requirements.txt...'
-            pip3 install -r requirements.txt
+            pip3 install -r backend/requirements.txt
         fi
     else
         echo "Error: Couldn't find a python installation of version 3+ (inspected python and python3)."
