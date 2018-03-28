@@ -51,7 +51,7 @@ Vad vi behöver:
 Det borde i de flesta fall räcka med att köra
 
     ./setup.sh
-    
+
 i rot-directoryn (dvs `kons-screen/`).
 
 ### Manuell installation
@@ -85,13 +85,31 @@ eller
     sudo apt-get install python3-pip
 
 ## Användning
+Om du vill köra hela appen samtidigt så räcker det med att köra
 
-### Frontend
+    ./run.sh
+
+i rot-directoryn (dvs `kons-screen/`).
+
+Argument till `run.sh` (flera argument separeras med mellanslag):
+
+    ./run.sh --remotedb
+    ./run.sh --debug
+`--remotedb` gör så att appen använder data från f.kth.se istället för lokal data.
+Den lokala datan är gammal så i vissa fall måste datan uppdateras manuellt för att den
+ska visas på frontend.
+
+`--debug` är endast relevant om du redigerar saker på backend och inte vill starta om hela
+ skriptet för att servern ska uppdateras. Du behöver då endast uppdatera sidan för att ändringarna
+ ska få effekt.
+ 
+### Separat användning
+#### Frontend
 För att förhandsgranska `index.html` så måste du först köra `npm start` när du är i `frontend/`.
 Efter detta så serveras appen på `localhost:3000`. För att data ska fyllas i så måste `app.py` köras,
 se instruktioner nedan.
 
-### Backend
+#### Backend
 Det finns flera sätt att köra `app.py` på; du kan välja mellan att använda en lokal databas,
 eller att koppla upp dig mot https://f.kth.se och använda data som uppdateras regelbundet.
 För att använda en lokal databas så kör du kommandot `python app.py` och för att använda data
