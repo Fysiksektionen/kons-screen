@@ -91,11 +91,11 @@ class App extends Component {
     componentDidMount () {
         compilers.getState().then(state => {this.setState(state)})
 
-        setInterval(() => {
-            var oldState = this.state
-            oldState.time = new Date().toLocaleTimeString().substr(0,8)
-            oldState.date = new Date().toDateString()
-            this.setState(oldState) }, 500);
+        setInterval(() =>
+        this.setState({
+            time: new Date().toLocaleTimeString().substr(0,8),
+            date: new Date().toDateString()
+        }), 500);
 
         // Updatera allt state var 10 min för att hålla kalendern updaterad
         setInterval(() => compilers.getState().then(state => {this.setState(state)}), 1000*60*10);

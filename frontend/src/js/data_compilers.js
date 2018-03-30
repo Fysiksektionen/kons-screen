@@ -142,15 +142,12 @@ var compileFacebookPosts = function (facebook){
 
 var getData = function(endpoint) { return fetch(endpoint).then(response => response.json())};
 
-var getState = function (){
-
-    var calendarUrl = `https://www.googleapis.com/calendar/v3/calendars/e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com/events?key=${GOOGLE_KEY}&singleEvents=true&orderBy=startTime&timeMin=${(new Date()).toISOString()}&maxResults=9`
-    
+var getState = function (){    
     // Returns promise of state.
     return Promise.all([
         getData("http://127.0.0.1:5000/sl-data").then(function(resp){
             return {sl:{rides: compileRides(resp)}}}),
-        getData(calendarUrl).then(function(resp){
+        getData("http://127.0.0.1:5000/sektionskalendern").then(function(resp){
             return {calendar: compileCalendar(resp)}})
     ]).then(responses => {
         let state = {
