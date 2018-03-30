@@ -25,9 +25,14 @@
 
 .cal-date {
     width: 28vh;
-    text-align: right;
+    text-align: left;
+    margin-left: 2vh;
     height: 100%;
     font-weight: 300;
+}
+
+.cal-date:first-letter {    
+    text-transform:capitalize;
 }
 
 .cal-name {
