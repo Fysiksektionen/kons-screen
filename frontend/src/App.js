@@ -3,13 +3,19 @@ import './css/screen.css';
 import './css/calendar.css';
 import './css/sl.css';
 import './css/watermark.css';
-const compilers = require('./js/data_compilers.js')
+const SLIcon = require('./img/icons/sl_icon.svg')
+const SLMetroIcon = require('./img/icons/sl_metro.svg')
+const SLBusIcon = require('./img/icons/sl_bus.svg')
+const SLTramIcon = require('./img/icons/sl_tram.svg')
+const CalendarIcon = require('./img/icons/calendar.svg')
+
+const getState = require('./js/data_compilers/getState').getState
 
 
 class SLItem extends Component {
     render() {return (
         <div className="sl-item">
-            <img src={require("./img/icons/sl_" + this.props.TransportMode + ".svg")} className="sl-icon"></img>
+            <img src={this.props.icon} className="sl-icon"></img>
             <span className="sl-line-number">{this.props.ride.LineNumber}</span>
             <span className="sl-line-name">{this.props.ride.Destination}</span>
             <span className="sl-right">
@@ -26,13 +32,13 @@ class SLDepartureSlide extends Component {
             <div className="sl-departure-type">
                 {this.props.rides.map((ride, i) =>
                     <SLItem ride={ride}
-                            TransportMode={this.props.TransportMode}/>
+                            icon={this.props.icon}/>
                 )}
                 {this.props.rides.length < 9
                     ? Array(9 - this.props.rides.length).fill().map((ride, i) =>
                         i == 0
-                            ? <SLItem ride={{Destination:"Inga fler avångar tillgängliga"}} TransportMode={this.props.TransportMode}/>
-                            : <SLItem ride={{}} TransportMode={this.props.TransportMode}/>
+                            ? <SLItem ride={{Destination:"Inga fler avångar tillgängliga"}} icon={this.props.icon}/>
+                            : <SLItem ride={{}} icon={this.props.icon}/>
                     )
                     :null
                 }
@@ -57,7 +63,7 @@ class RightHeader extends Component {
     render() {
         return (
             <div className="right-header">
-            <img src={require(this.props.icon)} className="right-header-icon"></img>
+            <img src={this.props.icon} className="right-header-icon"></img>
             {this.props.title}
             <span className="right-header-current">{this.props.current}</span>
             </div>
@@ -89,16 +95,16 @@ class App extends Component {
     }
 
     componentDidMount () {
-        compilers.getState().then(state => {this.setState(state)})
+        getState().then(state => {this.setState(state)})
 
         setInterval(() =>
-        this.setState({
-            time: new Date().toLocaleTimeString().substr(0,8),
-            date: new Date().toDateString()
-        }), 500);
+            this.setState({
+                time: new Date().toLocaleTimeString().substr(0,8),
+                date: new Date().toDateString()
+            }), 500);
 
         // Updatera allt state var 10 min för att hålla kalendern updaterad
-        setInterval(() => compilers.getState().then(state => {this.setState(state)}), 1000*60*10);
+        setInterval(() => getState().then(state => {this.setState(state)}), 1000*60*10);
     }
 
 
@@ -108,18 +114,18 @@ class App extends Component {
                     <div id="right">
                         <div id="top">
                             <div className="sl">
-                                <RightHeader title="Tidtabell" icon="./img/icons/sl_icon.svg" current={this.state.time}/>
+                                <RightHeader title="Tidtabell" icon={SLIcon} current={this.state.time}/>
                                 <div className="sl-items">
-                                    <SLDepartureSlide rides={this.state.sl.rides.metros} TransportMode="metro"/>
-                                    <SLDepartureSlide rides={this.state.sl.rides.trams} TransportMode="tram"/>
-                                    <SLDepartureSlide rides={this.state.sl.rides.buses} TransportMode="bus"/>
-                                    <SLDepartureSlide rides={this.state.sl.rides.metros} TransportMode="metro"/>
+                                    <SLDepartureSlide rides={this.state.sl.rides.metros} icon={SLMetroIcon}/>
+                                    <SLDepartureSlide rides={this.state.sl.rides.trams} icon={SLTramIcon}/>
+                                    <SLDepartureSlide rides={this.state.sl.rides.buses} icon={SLBusIcon}/>
+                                    <SLDepartureSlide rides={this.state.sl.rides.metros} icon={SLMetroIcon}/>
                                 </div>
                             </div>
                         </div>
                         <div id="bottom">
                             <div className="cal">
-                                <RightHeader title="Kalender" icon="./img/icons/calendar.svg" current={this.state.date}/>
+                                <RightHeader title="Kalender" icon={CalendarIcon} current={this.state.date}/>
                                 <div className="cal-items">
                                     {this.state.calendar.events.length
                                         ? this.state.calendar.events.map(item => <CalendarItem item={item}/>)
