@@ -4,28 +4,28 @@ const cal_compiler = require('./calendarCompiler')
 
 describe('getDate', () => {
     it('returns expected if event.start.dateTime exists', () => {
-        event = {start:{dateTime:"2018-04-03T17:00:00+02:00"}}
+        const event = {start:{dateTime:"2018-04-03T17:00:00+02:00"}}
         const expected = "tisdag 3 april 17:00"
         const result = cal_compiler.getDate(event)
         expect(result).toBe(expected)
     })  
     
     it("returns expected if event.start.date exists and not event.start.dateTime.",() => {
-        event = {start:{date:"2018-04-09"}}
+        const event = {start:{date:"2018-04-09"}}
         const expected = "måndag 9 april"
         const result = cal_compiler.getDate(event)
         expect(result).toBe(expected)
     })
 
     it('returns expected if no start date was found.', () => {
-        event = {start:{}}
+        const event = {start:{}}
         const expected = 0
         const result = cal_compiler.getDate(event)
         expect(result).toBe(expected)
     })
 
     it('handles case where event.start was undefined', () => {
-        event = {}
+        const event = {}
         const expected = 0
         const result = cal_compiler.getDate(event)
         expect(result).toBe(expected)

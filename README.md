@@ -56,7 +56,19 @@ ska visas på frontend.
 `--debug` är endast relevant om du redigerar saker på backend och inte vill starta om hela
  skriptet för att servern ska uppdateras. Du behöver då endast uppdatera sidan för att ändringarna
  ska få effekt.
- 
+ ### Testning
+För att starta testköraren för hela applikationen så körs kommandot
+
+    npm test
+
+ i `kons-screen/frontend`. App.test.js renderar dock hela applikationen varje gång du sparar och söker dessutom efter alla tester som ska köras, så om du
+ önskar att få snabbare respons på testerna med nackdelen att App.js inte testas
+ så kan du köra
+
+    npm run watch
+
+ i `kons-screen/frontend`. För tillfället körs då alla tester i `kons-screen/frontend/src/js/data_compilers/`, vilket råkar vara där just alla övriga tester som inte är `App.js.test` ligger. Om fler tester tillkommer så borde regexen för `watch` under `scripts` i `package.json` ändras.
+
 ### Separat användning
 #### Frontend
 För att förhandsgranska `index.html` så måste du först köra `npm start` när du är i `frontend/`.
