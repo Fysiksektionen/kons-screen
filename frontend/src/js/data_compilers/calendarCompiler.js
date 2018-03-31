@@ -1,21 +1,22 @@
 const moment = require('moment')
-const locale = require('moment/locale/sv')
+require('moment/locale/sv')
 moment.locale('sv')
 
 // Module containing functions which compile the calendar data fetched.
 
 var getDate = (event) => {
     let date
-    if (event.start.dateTime){
-        date = event.start.dateTime
-        return moment(date).format('dddd D MMMM HH:mm')
-    }
-    else if (event.start.date){
-        date =  event.start.date
-        return moment(date).format('dddd D MMMM')
-    }
-    else 
-        return 0
+    if (event.start) {
+        if (event.start.dateTime){
+            date = event.start.dateTime
+            return moment(date).format('dddd D MMMM HH:mm')
+        }
+        else if (event.start.date){
+            date =  event.start.date
+            return moment(date).format('dddd D MMMM')
+        }
+    }    
+    return 0
 }
 
 var remapperFactory = function (dateGetter){
