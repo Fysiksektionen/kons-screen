@@ -1,5 +1,9 @@
 // Module containing functions which compile the SL data fetched.
 
+const moment = require('moment')
+require('moment/locale/sv')
+moment.locale('sv')
+
 // ######   HELPER FUNCTIONS   ######
 
 var realMinutesLeft = function (displaytime, latest_updated, now){
@@ -14,7 +18,7 @@ var realMinutesLeft = function (displaytime, latest_updated, now){
         now: Date object representing the current datetime.
      Returns (float): Amount of minutes left until departure according to current time.
     */
-    const upd = new Date(latest_updated)
+    const upd = moment(latest_updated)
     let minutes_left
     if (displaytime == "Nu"){
         minutes_left = 0
@@ -27,14 +31,14 @@ var realMinutesLeft = function (displaytime, latest_updated, now){
         const time = displaytime.split(":")
         const hours = time[0]
         const mins = time[1]
-        let depart = new Date(latest_updated)
-        depart.setHours(hours)
-        depart.setMinutes(mins)
+        let depart = moment(latest_updated)
+        depart.hour(hours)
+        depart.minute(mins)
 
         // departure can't be before latest_updated, this handles edge cases at midnight.
         if ((depart - upd) <= 0){
             // increment day by 1
-            depart.setDate(depart.getDate() + 1)
+            depart.add(1, 'days')
         }
         minutes_left = (depart - upd)/1000/60
     }
@@ -63,7 +67,7 @@ var getDisplayTimeText = function (ride){
     */
    if (ride.ExpectedDateTime && ride.minutes_left > 25){
        // return time in HH:MM format
-        return new Date(ride.ExpectedDateTime).toLocaleTimeString().substr(0,5)
+        return moment(ride.ExpectedDateTime).format('HH:mm')
     }
     else if (ride.DisplayTime == "-"){
         return "Okänt"
@@ -121,7 +125,7 @@ var extractRides = function(stations, remapper) {
    let rides = []
    const types = ["Metros", "Trams", "Buses"]
    
-   const now = new Date()
+   const now = moment()
    stations.forEach(station => {
        types.forEach(type => {
            if (station.Departures[type]){
