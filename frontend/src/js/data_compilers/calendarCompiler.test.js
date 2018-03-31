@@ -3,18 +3,39 @@
 const cal_compiler = require('./calendarCompiler')
 
 describe('getDate', () => {
+    let fakeMoment
+    let momentObject
+    let deps
+    let getDate
+    
+    beforeEach(() => {
+        momentObject = {format: jest.fn()}
+        // once called, return an object with method format.
+        fakeMoment = jest.fn().mockReturnValue(momentObject)
+        deps = {moment: fakeMoment}
+        getDate = cal_compiler.getDateFactory(deps)
+    })
+
     it('returns expected if event.start.dateTime exists', () => {
         const event = {start:{dateTime:"2018-04-03T17:00:00+02:00"}}
+        momentObject.format.mockReturnValue("tisdag 3 april 17:00")
+
         const expected = "tisdag 3 april 17:00"
-        const result = cal_compiler.getDate(event)
+        const result = getDate(event)
         expect(result).toBe(expected)
-    })  
+        expect(fakeMoment).toBeCalledWith("2018-04-03T17:00:00+02:00")
+        expect(momentObject.format).toBeCalledWith('dddd D MMMM HH:mm')
+    })
     
     it("returns expected if event.start.date exists and not event.start.dateTime.",() => {
         const event = {start:{date:"2018-04-09"}}
+        momentObject.format.mockReturnValue("måndag 9 april")
+        
         const expected = "måndag 9 april"
-        const result = cal_compiler.getDate(event)
+        const result = getDate(event)
         expect(result).toBe(expected)
+        expect(fakeMoment).toBeCalledWith("2018-04-09")
+        expect(momentObject.format).toBeCalledWith('dddd D MMMM')
     })
 
     it('returns expected if no start date was found.', () => {
@@ -22,6 +43,8 @@ describe('getDate', () => {
         const expected = 0
         const result = cal_compiler.getDate(event)
         expect(result).toBe(expected)
+        expect(fakeMoment).toHaveBeenCalledTimes(0)
+        expect(momentObject.format).toHaveBeenCalledTimes(0)
     })
 
     it('handles case where event.start was undefined', () => {
@@ -29,6 +52,8 @@ describe('getDate', () => {
         const expected = 0
         const result = cal_compiler.getDate(event)
         expect(result).toBe(expected)
+        expect(fakeMoment).toHaveBeenCalledTimes(0)
+        expect(momentObject.format).toHaveBeenCalledTimes(0)
     })
 })
 

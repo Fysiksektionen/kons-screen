@@ -1,23 +1,27 @@
+// Module containing functions which compile the calendar data fetched.
+
 const moment = require('moment')
 require('moment/locale/sv')
 moment.locale('sv')
 
-// Module containing functions which compile the calendar data fetched.
-
-var getDate = (event) => {
-    let date
-    if (event.start) {
-        if (event.start.dateTime){
-            date = event.start.dateTime
-            return moment(date).format('dddd D MMMM HH:mm')
-        }
-        else if (event.start.date){
-            date =  event.start.date
-            return moment(date).format('dddd D MMMM')
-        }
-    }    
-    return 0
+var getDateFactory = function(deps){
+    return event => {
+        let date
+        if (event.start) {
+            if (event.start.dateTime){
+                date = event.start.dateTime
+                return deps.moment(date).format('dddd D MMMM HH:mm')
+            }
+            else if (event.start.date){
+                date =  event.start.date
+                return deps.moment(date).format('dddd D MMMM')
+            }
+        }    
+        return 0
+    }
 }
+
+var getDate = getDateFactory({moment})
 
 var remapperFactory = function (dateGetter){
     return event => {
@@ -45,6 +49,8 @@ module.exports = {
     compileCalendarFactory,
 
     getDate,
+    getDateFactory,
+    
     remapEvent,
     remapperFactory
 }
