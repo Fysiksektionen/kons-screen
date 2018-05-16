@@ -79,7 +79,7 @@ class App extends Component {
             time: new Date().toLocaleTimeString().substr(0,8),
             date: new Date().toDateString(),
             image: {
-                url: "https://source.unsplash.com/random",
+                src: "",
                 text: ""
             },
             sl: {
@@ -95,16 +95,30 @@ class App extends Component {
     }
 
     componentDidMount () {
+        this.setState({carousel_index:0})
         getState().then(state => {this.setState(state)})
+            .then(() => this.setState({
+                image: this.state.instagram[this.state.carousel_index]
+            }))
+            
 
-        setInterval(() =>
+
+        setInterval(() => {
             this.setState({
                 time: new Date().toLocaleTimeString().substr(0,8),
                 date: new Date().toDateString()
-            }), 500);
-
+            })
+        }, 500);
+        
         // Updatera allt state var 10 min för att hålla kalendern updaterad
         setInterval(() => getState().then(state => {this.setState(state)}), 1000*60*10);
+    
+        // Rotate the image every 30 seconds
+        setInterval(() => {
+            // should probably be an iterator instead.
+            this.setState({ carousel_index: (this.state.carousel_index + 1 ) % this.state.instagram.length })
+            this.setState({ image: this.state.instagram[this.state.carousel_index] })
+        }, 30*1000)
     }
 
 
@@ -135,8 +149,15 @@ class App extends Component {
                         </div>
                     </div>
                     <div id="left">
-                        <img src={this.state.image.url} alt="Hoppsan, något gick fel. Maila något argt till webmaster@f.kth.se" className="img-left"/>
+                        <img src={this.state.image.src} alt="Hoppsan, något gick fel. Maila något argt till webmaster@f.kth.se" className="img-left"/>
                         <div className="left-shadow"></div>
+                        {this.state.image.src 
+                            ?   <div id="watermark">
+                                    {/* <div class="wm-clock">{this.state.time}</div> */}
+                                    <div class="wm-text">{this.state.image.text}</div>
+                                </div>
+                            :   null
+                        }
                     </div>
                 </div>
             );

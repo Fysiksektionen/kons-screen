@@ -2,7 +2,7 @@ const fetch = require('node-fetch')
 
 const compileRides = require('./slCompiler').compileRides
 const compileCalendar = require('./calendarCompiler').compileCalendar
-const compileInstagram = () => null
+const compileInstagram = require('./instagramCompiler').compileInstagram
 const compileFacebook = () => null
 const compileFNews = () => null
 
@@ -23,9 +23,9 @@ var getStateFactory = function (deps){
       When testing you pass mock ("fake") functions that you can control in order
       to inspect how they were handled and behaved in retrospect.
 
-    // Returns: A getState function based on dependencies specified by `deps`.
-    //          the returned function returns a promise which resolves to the 
-                state used in the react application.
+      Returns: A getState function based on dependencies specified by `deps`.
+               the returned function returns a promise which resolves to the 
+               state used in the react application.
     */
     return () => {
         return Promise.all([
@@ -34,7 +34,9 @@ var getStateFactory = function (deps){
             deps.sl.fetcher("http://127.0.0.1:5000/sl-data").then(
                 deps.sl.compiler),
             deps.cal.fetcher("http://127.0.0.1:5000/sektionskalendern").then(
-                deps.cal.compiler)
+                deps.cal.compiler),
+            deps.ig.fetcher( "http://127.0.0.1:5000/instagram").then(
+                deps.ig.compiler)
         ]).then(responses => {
             let state = {}
             // Append each result to the state.
