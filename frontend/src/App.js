@@ -53,7 +53,7 @@ class CalendarItem extends Component {
         return (
             <div className="cal-item">
                 <div className="cal-date">{this.props.item.date}</div>
-                <div className="cal-name">{this.props.item.name}</div>
+                <div className="cal-name">{this.props.item.name.substr(0,39) + (this.props.item.name.length > 39 ? "[...]" : "")}</div>
             </div>
         )
     }
@@ -111,8 +111,8 @@ class App extends Component {
                 : null
             })
             
-        // Updatera allt state var 10 min för att hålla kalendern updaterad
-        setInterval(() => getState().then(state => {this.setState(state)}), 1000*60*10);
+        // Hämta nytt state var 30s.
+        setInterval(() => getState().then(state => {this.setState(state)}), 1000*30);
     
         // Rotate the image every 30 seconds
         setInterval(() => {
