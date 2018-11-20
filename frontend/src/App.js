@@ -61,7 +61,7 @@ class CalendarItem extends Component {
             <div className="cal-item">
                 <div className="cal-item-inner">
                     <div className="cal-date">{this.props.item.date}</div>
-                    <div className="cal-name">{this.props.item.name}</div>
+                    <div className="cal-name">{this.props.item.name.substr(0,39) + (this.props.item.name.length > 39 ? "[...]" : "")}</div>
                 </div>
             </div>
         )
@@ -108,7 +108,7 @@ class App extends Component {
 
     componentDidMount () {
         getState().then(state=>{this.setState(state)})
-        // Updatera allt state var 10 min för att hålla kalendern updaterad
+        // Updatera allt state varje min för att hålla kalendern updaterad
         setInterval(() => getState().then(state => {this.setState(state)}), 1000*60);
     }
 
