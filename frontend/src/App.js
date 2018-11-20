@@ -53,7 +53,7 @@ class CalendarItem extends Component {
         return (
             <div className="cal-item">
                 <div className="cal-date">{this.props.item.date}</div>
-                <div className="cal-name">{this.props.item.name.substr(0,39) + (this.props.item.name.length > 39 ? "[...]" : "")}</div>
+                <div className="cal-name">{this.props.item.name.substr(0,35) + (this.props.item.name.length > 35 ? "[...]" : "")}</div>
             </div>
         )
     }
