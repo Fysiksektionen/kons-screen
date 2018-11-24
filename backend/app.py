@@ -14,18 +14,17 @@ REMOTE = any([arg == "--remotedb" for arg in sys.argv])
 # Should probably be something like https://f.kth.se/kons/
 BASE_URL = "https://f.kth.se/"
 
-def data_endpoint(filename, URL):
+def data_endpoint(filename, URL, remote=REMOTE):
     """
     Either returns data from a local database or fetches data from URL
     """
     response_text = ""
-    if REMOTE:  
+    if remote:
         response =  requests.get(URL)
 
         # If status code 200-299 then return response.text
         if divmod(response.status_code, 100)[0] == 2:
             response_text = response.text
-    
     # Load from local db, used in testing.
     # If the request above wasn't successful or if REMOTE==False this will run.
     if response_text == "":
@@ -33,7 +32,9 @@ def data_endpoint(filename, URL):
             response_text = db.read()
     
     response = Response(response_text)
-    response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+    response.headers['Content-Type'] = 'application/json'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    print("returning response from:", URL if remote else filename)
     return response
 
 
@@ -47,7 +48,7 @@ def facebook():
 
 @app.route('/instagram')
 def instagram():
-    return data_endpoint("instagram.json", BASE_URL + "instagram-data")
+    return data_endpoint("slides.json", BASE_URL + "konsol/api/screen/slides", remote=False)
 
 @app.route('/sektionskalendern')
 def sektionskalendern():
