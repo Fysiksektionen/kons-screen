@@ -31,11 +31,11 @@ var getStateFactory = function (deps){
         return Promise.all([
             // Fetch data from localhost which in turn calls f.kth.se
             // and then call the relevant compiler with the data returned.
-            deps.sl.fetcher("http://127.0.0.1:5000/sl-data").then(
+            deps.sl.fetcher("http://dataproxy:5000/sl-data").then(
                 deps.sl.compiler),
-            deps.cal.fetcher("http://127.0.0.1:5000/sektionskalendern").then(
+            deps.cal.fetcher("http://dataproxy:5000/sektionskalendern").then(
                 deps.cal.compiler),
-            deps.ig.fetcher( "http://127.0.0.1:5000/instagram").then(
+            deps.ig.fetcher( "http://dataproxy:5000/instagram").then(
                 deps.ig.compiler)
         ]).then(responses => {
             let state = {}

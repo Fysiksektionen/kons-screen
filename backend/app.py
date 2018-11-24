@@ -1,4 +1,5 @@
 import sys
+import os
 import json
 import requests
 
@@ -12,7 +13,7 @@ app = Flask(__name__)
 REMOTE = any([arg == "--remotedb" for arg in sys.argv])
 
 # Should probably be something like https://f.kth.se/kons/
-BASE_URL = "https://f.kth.se/"
+BASE_URL = os.environ.get('KONS_SCREEN_PROXY_URL', "https://f.kth.se/")
 
 def data_endpoint(filename, URL, remote=REMOTE):
     """
@@ -62,5 +63,5 @@ def fnews():
 if __name__ == '__main__':
     DEBUG = any([arg == "--debug" for arg in sys.argv])
     print("Launching with debug={} and REMOTE={}".format(DEBUG, REMOTE))
-    app.run(debug=DEBUG)
+    app.run(host="0.0.0.0",debug=DEBUG)
 

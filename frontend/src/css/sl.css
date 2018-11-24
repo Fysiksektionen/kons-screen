@@ -14,9 +14,14 @@
 }
 
 .sl .sl-item {
-    font-size: 2.6vh;
-    padding: 0.69vh 0;
+    font-size: 2.59vh;
+    height: 4.897vh;
     clear: both;
+}
+.sl .sl-item .sl-item-inner {
+    height:100%;
+    width:100%;
+    padding: 0.69vh 0
 }
 
 .sl .sl-item:nth-child(even) {

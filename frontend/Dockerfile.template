@@ -1,0 +1,14 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-node:8-slim
+
+WORKDIR /usr/src/app/frontend
+
+COPY package.json package.json
+
+RUN JOBS=MAX npm install --production
+
+COPY . ./
+
+RUN npm run-script build
+RUN npm install -g serve
+ENV INITSYSTEM on
+CMD ["serve", "--single", "build", "-p", "3000"]

@@ -15,13 +15,15 @@ const getState = require('./js/data_compilers/getState').getState
 class SLItem extends Component {
     render() {return (
         <div className="sl-item">
-            <img src={this.props.icon} className="sl-icon"></img>
-            <span className="sl-line-number">{this.props.ride.LineNumber}</span>
-            <span className="sl-line-name">{this.props.ride.Destination}</span>
-            <span className="sl-right">
-                <span className="sl-stop">{this.props.ride.StopAreaName}</span>
-                <span className="sl-time">{this.props.ride.DisplayTime}</span>
-            </span>
+            <div className="sl-item-inner">
+                <img src={this.props.icon} className="sl-icon"></img>
+                <span className="sl-line-number">{this.props.ride.LineNumber}</span>
+                <span className="sl-line-name">{this.props.ride.Destination}</span>
+                <span className="sl-right">
+                    <span className="sl-stop">{this.props.ride.StopAreaName}</span>
+                    <span className="sl-time">{this.props.ride.DisplayTime}</span>
+                </span>
+            </div>
         </div>
     )}
 }
@@ -52,8 +54,10 @@ class CalendarItem extends Component {
     render() {
         return (
             <div className="cal-item">
-                <div className="cal-date">{this.props.item.date}</div>
-                <div className="cal-name">{this.props.item.name}</div>
+                <div className="cal-item-inner">
+                    <div className="cal-date">{this.props.item.date}</div>
+                    <div className="cal-name">{this.props.item.name}</div>
+                </div>
             </div>
         )
     }
