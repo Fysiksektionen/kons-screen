@@ -4,9 +4,11 @@ Kod till Raspberry Pi-en som driver skärmen i Konsulatet
 ## Installation
 Det borde i de flesta fall räcka med att köra
 
-    ./setup.sh
+    ./setup_local.sh
 
-i rot-directoryn (dvs `kons-screen/`).
+i rot-directoryn (dvs `kons-screen/`). 
+* NOTE: Den kommer att ändra filen `backend/APIs/common/paths.py` 
+men du borde inte committa dessa ändringar eftersom de pekar på dina lokala paths.
 
 ### Manuell installation
 Följande instruktioner förutsätter att `python` är av version python3.4+.
