@@ -1,2 +1,2 @@
-requests
-flask
+requests==2.18.3
+flask==0.12.2
