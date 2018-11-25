@@ -7,8 +7,6 @@ services:
       - dataproxy
     expose:
       - "3000"
-    ports:
-      - "3000:3000"
     links: 
       - dataproxy
     restart: always
