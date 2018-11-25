@@ -1,5 +1,18 @@
 # kons-screen
 Kod till Raspberry Pi-en som driver skärmen i Konsulatet
+## Innehållsförteckning
+
+* [Innehållsförteckning](#innehållsförteckning)
+* [Installation](#installation)
+    * [Balena setup](#balena-setup)
+    * [Manuell installation](#manuell-installation)
+        * [Frontend](#frontend)
+        * [Backend](#backend)
+* [Användning](#användning)
+	* [Testning](#testning)
+	* [Separat körning](#separat-körning)
+	    * [Frontend](#separat-körning)
+	    * [Backend](#separate-running)
 
 ## Installation
 Det borde i de flesta fall räcka med att köra
@@ -9,6 +22,9 @@ Det borde i de flesta fall räcka med att köra
 i rot-directoryn (dvs `kons-screen/`). 
 * NOTE: Den kommer att ändra filen `backend/APIs/common/paths.py` 
 men du borde inte committa dessa ändringar eftersom de pekar på dina lokala paths.
+
+### Balena setup
+Börja med att logga in med github på [balena.io](https://www.balena.io/).
 
 ### Manuell installation
 Följande instruktioner förutsätter att `python` är av version python3.4+.
@@ -71,7 +87,8 @@ För att starta testköraren för hela applikationen så körs kommandot
 
  i `kons-screen/frontend`. För tillfället körs då alla tester i `kons-screen/frontend/src/js/data_compilers/`, vilket råkar vara där just alla övriga tester som inte är `App.js.test` ligger. Om fler tester tillkommer så borde regexen för `watch` under `scripts` i `package.json` ändras.
 
-### Separat användning
+### Separat körning
+
 #### Frontend
 För att förhandsgranska `index.html` så måste du först köra `npm start` när du är i `frontend/`.
 Efter detta så serveras appen på `localhost:3000`. För att data ska fyllas i så måste `app.py` köras,
