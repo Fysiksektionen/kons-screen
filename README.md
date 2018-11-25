@@ -1,7 +1,35 @@
 # kons-screen
 Kod till Raspberry Pi-en som driver skärmen i Konsulatet
+## Innehållsförteckning
 
-## Installation
+* [Innehållsförteckning](#innehållsförteckning)
+* [Balena setup](#balena-setup)
+* [Lokal setup](#lokal-setup)
+    * [Manuell setup](#manuell-setup)
+        * [Frontend](#frontend)
+        * [Backend](#backend)
+* [Användning](#användning)
+	* [Testning](#testning)
+	* [Separat körning](#separat-körning)
+	    * [Frontend](#separat-körning)
+	    * [Backend](#separat-körning)
+
+## Balena setup
+Börja med att logga in med github (rekommenderat) på [balena.io](https://www.balena.io/). Därefter skapar du en ny Raspberry Pi applikation och klickar sedan på **+Add device**. Följ instruktionerna och välj inställningar som passar behovet. [Här finns en mer detaljerad guide](https://www.balena.io/docs/learn/getting-started/raspberrypi3/nodejs/#adding-your-first-device) som går igenom varje steg, koden som du pushar kan du ersätta med denna repository. Ibland appliceras inte förändringar på pi:en direkt efter en push och då räcker det med en enkel restart genom balenas device-dashboard.
+
+<span style="color:orange">**VIKTIGT**</span>: För att skärmen överhuvudtaget ska visa någonting så måste du även lägga till en custom-config-variabel till din device. Detta görs genom tabben "Device configuration". Scrolla ner längst ner och klicka på **+Add custom variable** och ange någon av följande variabelvärden:
+
+| Key                                 | Value
+|-------------------------------------|----------
+|**`RESIN_HOST_CONFIG_gpu_mem_256`**  | **`128`**
+|**`RESIN_HOST_CONFIG_gpu_mem_512`**  | **`196`**
+|**`RESIN_HOST_CONFIG_gpu_mem_1024`** | **`396`**
+
+Det borde räcka med `RESIN_HOST_CONFIG_gpu_mem_256` och `128`. Mer detaljerad information om detta finns i `kons-screen/wpe/README.md` eller på [balena-wpe](https://github.com/balena-io-projects/balena-wpe/blob/master/README.md) repon.
+
+Om allt gått bra och ingenting spökar så borde det nu gå att pusha till och styra hallonpajen över internet!
+
+## Lokal setup
 Det borde i de flesta fall räcka med att köra
 
     ./setup_local.sh
@@ -71,7 +99,8 @@ För att starta testköraren för hela applikationen så körs kommandot
 
  i `kons-screen/frontend`. För tillfället körs då alla tester i `kons-screen/frontend/src/js/data_compilers/`, vilket råkar vara där just alla övriga tester som inte är `App.js.test` ligger. Om fler tester tillkommer så borde regexen för `watch` under `scripts` i `package.json` ändras.
 
-### Separat användning
+### Separat körning
+
 #### Frontend
 För att förhandsgranska `index.html` så måste du först köra `npm start` när du är i `frontend/`.
 Efter detta så serveras appen på `localhost:3000`. För att data ska fyllas i så måste `app.py` köras,
