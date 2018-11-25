@@ -92,6 +92,11 @@ html, body {
 .right-header-current {
     float: right;
     margin-right: 2vh;
+
+}
+
+.right-header-current:first-letter {    
+    text-transform:capitalize;
 }
 
 .error-no-info {

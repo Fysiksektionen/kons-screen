@@ -1,6 +1,6 @@
 // Module containing functions which compile the calendar data fetched.
 
-const moment = require('moment')
+const moment = require('moment-timezone')
 require('moment/locale/sv')
 moment.locale('sv')
 
@@ -10,11 +10,11 @@ var getDateFactory = function(deps){
         if (event.start) {
             if (event.start.dateTime){
                 date = event.start.dateTime
-                return deps.moment(date).format('dddd D MMMM HH:mm')
+                return deps.moment(date).tz('Europe/Stockholm').format('dddd D MMMM HH:mm')
             }
             else if (event.start.date){
                 date =  event.start.date
-                return deps.moment(date).format('dddd D MMMM')
+                return deps.moment(date).tz('Europe/Stockholm').format('dddd D MMMM')
             }
         }    
         return 0
