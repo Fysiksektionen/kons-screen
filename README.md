@@ -39,10 +39,7 @@ i rot-directoryn (dvs `kons-screen/`).
 * NOTE: Den kommer att ändra filen `backend/APIs/common/paths.py` 
 men du borde inte committa dessa ändringar eftersom de pekar på dina lokala paths.
 
-### Balena setup
-Börja med att logga in med github på [balena.io](https://www.balena.io/).
-
-### Manuell installation
+### Manuell setup
 Följande instruktioner förutsätter att `python` är av version python3.4+.
 Kolla din python-version med `python --version`. I vissa fall finner du python3 genom `python3`.
 #### Frontend
