@@ -9,7 +9,7 @@ describe('getDate', () => {
     let getDate
     
     beforeEach(() => {
-        momentObject = {format: jest.fn()}
+        momentObject = {format: jest.fn(), tz: jest.fn()}
         // once called, return an object with method format.
         fakeMoment = jest.fn().mockReturnValue(momentObject)
         deps = {moment: fakeMoment}
@@ -19,22 +19,26 @@ describe('getDate', () => {
     it('returns expected if event.start.dateTime exists', () => {
         const event = {start:{dateTime:"2018-04-03T17:00:00+02:00"}}
         momentObject.format.mockReturnValue("tisdag 3 april 17:00")
+        momentObject.tz.mockReturnValue(momentObject)
 
         const expected = "tisdag 3 april 17:00"
         const result = getDate(event)
         expect(result).toBe(expected)
         expect(fakeMoment).toBeCalledWith("2018-04-03T17:00:00+02:00")
+        expect(momentObject.tz).toBeCalledWith('Europe/Stockholm')
         expect(momentObject.format).toBeCalledWith('dddd D MMMM HH:mm')
     })
     
     it("returns expected if event.start.date exists and not event.start.dateTime.",() => {
         const event = {start:{date:"2018-04-09"}}
         momentObject.format.mockReturnValue("måndag 9 april")
-        
+        momentObject.tz.mockReturnValue(momentObject)
+
         const expected = "måndag 9 april"
         const result = getDate(event)
         expect(result).toBe(expected)
         expect(fakeMoment).toBeCalledWith("2018-04-09")
+        expect(momentObject.tz).toBeCalledWith('Europe/Stockholm')
         expect(momentObject.format).toBeCalledWith('dddd D MMMM')
     })
 

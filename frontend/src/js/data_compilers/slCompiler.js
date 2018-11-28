@@ -1,6 +1,6 @@
 // Module containing functions which compile the SL data fetched.
 
-const moment = require('moment')
+const moment = require('moment-timezone')
 require('moment/locale/sv')
 moment.locale('sv')
 
@@ -18,7 +18,7 @@ var realMinutesLeft = function (displaytime, latest_updated, now){
         now: Date object representing the current datetime.
      Returns (float): Amount of minutes left until departure according to current time.
     */
-    const upd = moment(latest_updated)
+    const upd = moment.tz(latest_updated, 'Europe/Stockholm')
     let minutes_left
     if (displaytime == "Nu"){
         minutes_left = 0
@@ -31,7 +31,7 @@ var realMinutesLeft = function (displaytime, latest_updated, now){
         const time = displaytime.split(":")
         const hours = time[0]
         const mins = time[1]
-        let depart = moment(latest_updated)
+        let depart = moment.tz(latest_updated,'Europe/Stockholm')
         depart.hour(hours)
         depart.minute(mins)
 
@@ -67,7 +67,7 @@ var getDisplayTimeText = function (ride){
     */
    if (ride.ExpectedDateTime && ride.minutes_left > 25){
        // return time in HH:MM format
-        return moment(ride.ExpectedDateTime).format('HH:mm')
+        return moment.tz(ride.ExpectedDateTime,'Europe/Stockholm').format('HH:mm')
     }
     else if (ride.DisplayTime == "-"){
         return "Okänt"
@@ -125,7 +125,7 @@ var extractRides = function(stations, remapper) {
    let rides = []
    const types = ["Metros", "Trams", "Buses"]
    
-   const now = moment()
+   const now = moment().tz('Europe/Stockholm')
    stations.forEach(station => {
        types.forEach(type => {
            if (station.Departures[type]){

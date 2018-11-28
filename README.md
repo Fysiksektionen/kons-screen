@@ -1,5 +1,6 @@
 # kons-screen
-Kod till Raspberry Pi-en som driver skärmen i Konsulatet
+Kod till Raspberry Pi:en som driver skärmen i Konsulatet
+
 ## Innehållsförteckning
 
 * [Innehållsförteckning](#innehållsförteckning)
@@ -37,6 +38,9 @@ Det borde i de flesta fall räcka med att köra
 i rot-directoryn (dvs `kons-screen/`). 
 * NOTE: Den kommer att ändra filen `backend/APIs/common/paths.py` 
 men du borde inte committa dessa ändringar eftersom de pekar på dina lokala paths.
+
+### Balena setup
+Börja med att logga in med github på [balena.io](https://www.balena.io/).
 
 ### Manuell installation
 Följande instruktioner förutsätter att `python` är av version python3.4+.

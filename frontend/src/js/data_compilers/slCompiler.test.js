@@ -1,13 +1,13 @@
 // Test suite for the compilation of the SL data fetched.
 
 const sl_compiler = require('./slCompiler')
-const moment = require('moment')
+const moment = require('moment-timezone')
 
 describe('realMinutesLeft',() => {
     const latest_upd = "2018-03-15T19:42:00"
     let time
     beforeEach(() => {
-        time = moment(latest_upd)
+        time = moment.tz(latest_upd,'Europe/Stockholm')
     });
 
     it('handles format `x min`', () => {
@@ -19,7 +19,7 @@ describe('realMinutesLeft',() => {
     it('handles format `hh:mm`', () => {
         const curr_minutes = time.minute()
         time.add(3, 'minutes')
-        let depart = moment(latest_upd)
+        let depart = moment.tz(latest_upd,'Europe/Stockholm')
         depart.add(43, 'minutes')
         const result = sl_compiler.realMinutesLeft(depart.format('HH:mm'), latest_upd, time)
         expect(result).toBe(40)
@@ -39,7 +39,7 @@ describe('realMinutesLeft',() => {
             configured correctly. It was not a daylight savings issue seeing as it hasn't
             started yet here in Europe and had already started in America.
         */
-        const time = moment("2018-03-15T22:52:00")
+        const time = moment.tz("2018-03-15T22:52:00", 'Europe/Stockholm')
         const result = sl_compiler.realMinutesLeft("00:50", latest_upd, time)
         expect(result).toBe(118)
     });

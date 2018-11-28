@@ -3,6 +3,10 @@ import './css/screen.css';
 import './css/calendar.css';
 import './css/sl.css';
 import './css/watermark.css';
+const moment = require('moment-timezone')
+require('moment/locale/sv')
+moment.locale('sv')
+
 const SLIcon = require('./img/icons/sl_icon.svg')
 const SLMetroIcon = require('./img/icons/sl_metro.svg')
 const SLBusIcon = require('./img/icons/sl_bus.svg')
@@ -116,7 +120,7 @@ class App extends Component {
             })
             
         // Updatera allt state var 10 min för att hålla kalendern updaterad
-        setInterval(() => getState().then(state => {this.setState(state)}), 1000*60*10);
+        setInterval(() => getState().then(state => {this.setState(state)}), 1000*60);
     
         // Rotate the image every 30 seconds
         setInterval(() => {
@@ -124,7 +128,7 @@ class App extends Component {
                 this.setState({ carousel_index: (this.state.carousel_index + 1 ) % this.state.instagram.length })
                 this.setState({ image: this.state.instagram[this.state.carousel_index] })
             }
-        }, 10*1000)    
+        }, 10*1000)
     }
 
     render() {
@@ -134,7 +138,7 @@ class App extends Component {
                         <div id="top">
                             <div className="sl">
                                 <RightHeader title="Tidtabell" icon={SLIcon} current={{
-                                    value:() => new Date().toLocaleTimeString().substr(0,8),
+                                    value:() => moment().tz('Europe/Stockholm').format('HH:mm:ss'),
                                     interval:500}}
                                 />
                                 <div className="sl-items">
@@ -148,7 +152,7 @@ class App extends Component {
                         <div id="bottom">
                             <div className="cal">
                                 <RightHeader title="Kalender" icon={CalendarIcon} current={{
-                                    value:() => new Date().toDateString(),
+                                    value:() => moment().tz('Europe/Stockholm').format('dddd D MMMM YYYY'),
                                     interval:60*1000}}
                                 />
                                 <div className="cal-items">
