@@ -26,15 +26,18 @@ it('correctly calls dependencies and appended results to state', () => {
         // return {`caller`:"modified"} with `caller` replaced with the string.
         return parsed
     }
-    const base = "http://127.0.0.1:5000/"
-    deps.sl.fetcher = fakeFetchFactory(base + "sl-data")
-    deps.cal.fetcher = fakeFetchFactory(base + "sektionskalendern")
+    deps.sl.fetcher = fakeFetchFactory("/sl-data")
+    deps.cal.fetcher = fakeFetchFactory("/sektionskalendern")
+    deps.ig.fetcher = fakeFetchFactory("/instagram")
     deps.sl.compiler = fakeCompiler("sl")
     deps.cal.compiler = fakeCompiler("cal")
+    deps.ig.compiler = fakeCompiler("ig")
+
     // verify that each compiler was called (and result added to state)
     return getState().then(state => expect(state).toEqual({
             sl:"modified",
-            cal:"modified"
+            cal:"modified",
+            ig:"modified"
         })
     )
 });
