@@ -70,44 +70,14 @@ describe('getDisplayTimeText', () => {
     });
 })
 
-describe('compileRides', () => {
-    let deps
-    let compileRides
-    beforeEach(() => {
-        deps = {extractor:null, filterer:null, separator:null, sorter:null,remapper:null}
-        // Generate a compileRides function with the specified dependencies.
-        compileRides = sl_compiler.compileRidesFactory(deps)
-    });
-
-    it('Arguments passed correctly, deps were called correctly, returns correct format', () => {
-        deps.extractor = jest.fn().mockReturnValue(["ride1", "ride2", "ride3"])
-        deps.remapper = jest.fn()
-        deps.filterer = jest.fn()
-        // return true for first two rides and false for last. true means keep the ride.
-        deps.filterer.mockReturnValueOnce(true).mockReturnValueOnce(true).mockReturnValueOnce(false)
-        // 1 means any comparison should swap
-        deps.sorter = jest.fn().mockReturnValue(1) 
-        deps.separator = jest.fn().mockReturnValue({
-            metros:["testride1","testride2"], buses:[], trams:["testride3"]
-        })
-
-        const stations = {test_prop:42}
-        const result = compileRides(stations)
-        expect(deps.extractor).toBeCalledWith(stations, deps.remapper)
-        expect(deps.sorter).toBeCalledWith("ride1","ride2")
-        expect(deps.separator).toBeCalledWith(["ride2","ride1"])
-        
-        // wraps result in {sl: {result}}
-        expect(result).toEqual(
-            {sl:{rides:{metros:["testride1","testride2"], buses:[], trams:["testride3"]}}}
-        )
-    });
-});
-
-describe('compileRides dependencies', () => {
+describe('sl_compiler steps', () => {
     describe('extractRides', () => {
         let stations
+        let extractRides
+        let remapper
         beforeEach(() => {
+            remapper = jest.fn().mockImplementation((ride, station, now) => ride)
+            extractRides = sl_compiler.extractRidesFactory(remapper)
             stations = [
                 {Departures:{Metros:[], Buses:[], Trams:[]}},
                 {Departures:{Metros:[], Buses:[], Trams:[]}}
@@ -119,11 +89,10 @@ describe('compileRides dependencies', () => {
             stations[0].Departures.Trams = ["tram1","tram2","tram3"]
             stations[1].Departures.Buses = ["bus42", "bus1337"]
 
-            const remapper = jest.fn().mockImplementation((ride, station, now) => ride)
-
             const expected = ["metro1", "metro2", "tram1", "tram2", "tram3", "bus1",
                                 "bus2", "bus3", "bus4", "bus42", "bus1337"]
-            const result = sl_compiler.extractRides(stations, remapper)
+            const result = extractRides(stations)
+            
             expect(result).toMatchObject(expected)
 
             expect(remapper).toBeCalledWith(
@@ -141,7 +110,7 @@ describe('compileRides dependencies', () => {
             )
         });
         it('handles stations with no rides', () => {
-            const result = sl_compiler.extractRides(stations, ride => ride)
+            const result = extractRides(stations)
             expect(result).toEqual([])
 
         });
@@ -238,10 +207,10 @@ describe('compileRides dependencies', () => {
                 {TransportMode:"metro"}, {TransportMode:"bus"}, {TransportMode:"tram"}
             ]
             // rides contains 1 ship, this should not be included
-            expect(sl_compiler.separateByType(rides)).toEqual({
+            expect(sl_compiler.separateByType(rides)).toEqual({sl:{rides:{
                 metros: [{TransportMode:"metro"},{TransportMode:"metro"}],
                 buses: [{TransportMode:"bus"},{TransportMode:"bus"}],
-                trams: [{TransportMode:"tram"}]
+                trams: [{TransportMode:"tram"}]}}
             })
         });
 
@@ -254,12 +223,12 @@ describe('compileRides dependencies', () => {
                 {TransportMode:"bus"},{TransportMode:"bus"},{TransportMode:"bus"},
                 {TransportMode:"tram"},
             ]
-            expect(sl_compiler.separateByType(rides)).toEqual({
+            expect(sl_compiler.separateByType(rides)).toEqual({sl:{rides:{
                 metros: [{TransportMode:"metro"},{TransportMode:"metro"}],
                 buses: [{TransportMode:"bus"},{TransportMode:"bus"},{TransportMode:"bus"},
                         {TransportMode:"bus"},{TransportMode:"bus"},{TransportMode:"bus"},
                         {TransportMode:"bus"},{TransportMode:"bus"},{TransportMode:"bus"}],
-                trams: [{TransportMode:"tram"}]
+                trams: [{TransportMode:"tram"}]}}
             })
         });
     });
