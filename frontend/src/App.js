@@ -87,6 +87,15 @@ class RightHeader extends Component {
     }
 }
 
+// class Slide extends Component {
+
+//     render() {
+//         return (
+
+//         )
+//     }
+// }
+
 class App extends Component {
     constructor (){
         super()
@@ -164,15 +173,22 @@ class App extends Component {
                         </div>
                     </div>
                     <div id="left">
-                        <img src={this.state.image.src} alt={"Hoppsan, något gick fel. Maila något argt till webmaster@f.kth.se"} className="img-left"/>
-                        <div className="left-shadow"></div>
-                        {this.state.image.src && this.state.image.text
-                            ?   <div id="watermark">
-                                    {/* <div class="wm-clock">{this.state.time}</div> */}
-                                    <div className="wm-text">{this.state.image.text}</div>
-                                </div>
-                            :   null
-                        }
+                        {this.state.instagram.map((image,i) => 
+                            // <Slide props={...image} key={image._id}/>
+                            <div className="image" key={image._id} style={{"display":this.state.carousel_index===i ? "inline" : "none"}}>
+                                <img src={this.state.image.src} key={image._id} style={{"display":this.state.carousel_index===i ? "inline" : "none"}}  
+                                    alt={"Hoppsan, något gick fel. Maila något argt till webmaster@f.kth.se"} className="img-left"
+                                />
+                                <div className="left-shadow" key={image._id}  style={{"display":this.state.carousel_index===i ? "inline" : "none"}}></div>
+                                {image.src && image.text && this.state.carousel_index===i
+                                    ?   <div id="watermark" key={image._id}>
+                                            {/* <div class="wm-clock">{this.state.time}</div> */}
+                                            <div className="wm-text" key={image._id}>{image.text}</div>
+                                        </div>
+                                    : null
+                                }
+                            </div>
+                        )}
                     </div>
                 </div>
             );
