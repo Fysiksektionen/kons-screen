@@ -43,7 +43,7 @@
 
 .sl .sl-item .sl-right {
     float: right;
-    padding-right: 2vh;
+    margin-right: 2vh;
 }
 
 .sl .sl-item .sl-time {
