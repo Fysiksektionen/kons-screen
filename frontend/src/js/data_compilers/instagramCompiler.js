@@ -2,7 +2,7 @@
 
 var compileInstagram = posts => {
     return {
-        instagram: posts.map(post => {
+        slides: posts.map(post => {
             const url = post.remotely_hosted ? post.url : "http://localhost:8888" + post.url
             return {
                 src: url,

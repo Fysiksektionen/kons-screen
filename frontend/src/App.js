@@ -3,6 +3,7 @@ import './css/screen.css';
 import './css/calendar.css';
 import './css/sl.css';
 import './css/watermark.css';
+import SlideShow from './components/SlideShow.js';
 const moment = require('moment-timezone')
 require('moment/locale/sv')
 moment.locale('sv')
@@ -87,25 +88,12 @@ class RightHeader extends Component {
     }
 }
 
-// class Slide extends Component {
-
-//     render() {
-//         return (
-
-//         )
-//     }
-// }
-
 class App extends Component {
     constructor (){
         super()
         this.state = {
             carousel_index:0,
             event: false,
-            image: {
-                src: "",
-                text: ""
-            },
             sl: {
                 rides: {
                     metros:[],
@@ -115,29 +103,14 @@ class App extends Component {
             calendar: {
                 events: []
             },
-            instagram: []
+            slides: []
         }
     }
 
     componentDidMount () {
-        getState().then(state => {this.setState(state)})
-            .then(() => {
-                return this.state.instagram.length ? this.setState({
-                    image: this.state.instagram[this.state.carousel_index]
-                })
-                : null
-            })
-            
+        getState().then(state=>{this.setState(state)})
         // Updatera allt state var 10 min för att hålla kalendern updaterad
         setInterval(() => getState().then(state => {this.setState(state)}), 1000*60);
-    
-        // Rotate the image every 30 seconds
-        setInterval(() => {
-            if (this.state.instagram.length) {
-                this.setState({ carousel_index: (this.state.carousel_index + 1 ) % this.state.instagram.length })
-                this.setState({ image: this.state.instagram[this.state.carousel_index] })
-            }
-        }, 10*1000)
     }
 
     render() {
@@ -173,22 +146,11 @@ class App extends Component {
                         </div>
                     </div>
                     <div id="left">
-                        {this.state.instagram.map((image,i) => 
-                            // <Slide props={...image} key={image._id}/>
-                            <div className="image" key={image._id} style={{"display":this.state.carousel_index===i ? "inline" : "none"}}>
-                                <img src={this.state.image.src} key={image._id} style={{"display":this.state.carousel_index===i ? "inline" : "none"}}  
-                                    alt={"Hoppsan, något gick fel. Maila något argt till webmaster@f.kth.se"} className="img-left"
-                                />
-                                <div className="left-shadow" key={image._id}  style={{"display":this.state.carousel_index===i ? "inline" : "none"}}></div>
-                                {image.src && image.text && this.state.carousel_index===i
-                                    ?   <div id="watermark" key={image._id}>
-                                            {/* <div class="wm-clock">{this.state.time}</div> */}
-                                            <div className="wm-text" key={image._id}>{image.text}</div>
-                                        </div>
-                                    : null
-                                }
-                            </div>
-                        )}
+                        {this.state.slides.length && <SlideShow slides={this.state.slides}/>}
+                        {/* hidden div to preload images into cache, hopefully*/}
+                        <div style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}}>
+                            {this.state.slides.map(slide => <img src={slide.src} onLoad={()=>console.log("loaded preloaded", slide)}/>)}
+                        </div>
                     </div>
                 </div>
             );
