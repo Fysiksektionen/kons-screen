@@ -146,11 +146,8 @@ class App extends Component {
                         </div>
                     </div>
                     <div id="left">
-                        {this.state.slides.length && <SlideShow slides={this.state.slides}/>}
-                        {/* hidden div to preload images into cache, hopefully*/}
-                        <div style={{'visibility': 'hidden', 'width': 0, 'height': 0, 'overflow': 'hidden'}}>
-                            {this.state.slides.map(slide => <img src={slide.src} onLoad={()=>console.log("loaded preloaded", slide)}/>)}
-                        </div>
+
+                        {this.state.slides.length ? <SlideShow slides={this.state.slides}/> : <div className="left-shadow"></div>}
                     </div>
                 </div>
             );

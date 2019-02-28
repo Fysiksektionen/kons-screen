@@ -49,7 +49,7 @@ def facebook():
 
 @app.route('/instagram')
 def instagram():
-    return data_endpoint("slides.json", BASE_URL + "konsol/api/screen/slides", remote=False)
+    return data_endpoint("slides.json", BASE_URL + "konsol/api/screen/slides")
 
 @app.route('/sektionskalendern')
 def sektionskalendern():

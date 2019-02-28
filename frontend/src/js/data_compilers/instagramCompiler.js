@@ -8,6 +8,7 @@ var compileInstagram = posts => {
                 src: url,
                 text: post.caption,
                 is_video: post.is_video,
+                fullscreen: post.fullscreen,
                 taken_at: post.created
             }
         })

@@ -27,8 +27,8 @@ html, body {
 
 #left {
     left:0;
+    z-index:10;
     text-align: center;
-    overflow: hidden;
     background: transparent;
 }
 
