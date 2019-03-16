@@ -1,24 +1,38 @@
 import React, {Component} from 'react';
 
-class SlideShow extends Component {
+const compileSlides = require('../js/data_compilers/instagramCompiler.js').compileInstagram
+const fetcher = require('../js/data_compilers/getState.js').fetcher
 
+class SlideShow extends Component {
     constructor(props){
         super(props)
-        this.state={slides:this.props.slides}
+        this.state={slides:[]}
         this.state.activeImage={src: "", text: ""}
         this.state.carousel_index=0
+
+        this.updateSlidesState=this.updateSlidesState.bind(this)
     }
-    
-    componentDidMount () {
-        // initialise image
-        this.setState({slides:this.state.slides.map(slide => {
-                if (slide.fullscreen) {slide.style = {width:"100vw","z-index":10}}
-                return slide
+
+    updateSlidesState () {
+        fetcher('/instagram').then(compileSlides).then(slides =>{
+            this.setState({slides}, () => {
+                this.setState({slides:this.state.slides.map(slide => {
+                    if (slide.fullscreen) {slide.style = {width:"100vw","z-index":10}}
+                    return slide
+                })}, () => {
+                    //after setting state,
+                    this.setState({ activeImage: {...this.state.slides[this.state.carousel_index]}})
+                })
             })
-        }, () => {
-            //callback
-            this.setState({ activeImage: {...this.state.slides[this.state.carousel_index]}})
         })
+    }
+
+    componentDidMount () {
+        // initialise slides
+        this.updateSlidesState()
+        // and check for new slides every 60 seconds
+        setInterval(this.updateSlidesState, 60*1000)
+
         // Rotate the image every 33 seconds (matches css animation as best as possible)
         setInterval(() => {
             if (this.state.slides.length) {

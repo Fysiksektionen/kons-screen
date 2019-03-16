@@ -13,7 +13,7 @@ app = Flask(__name__)
 REMOTE = any([arg == "--remotedb" for arg in sys.argv])
 
 # Should probably be something like https://f.kth.se/kons/
-BASE_URL = os.environ.get('KONS_SCREEN_PROXY_URL', "https://f.kth.se/")
+BASE_URL = os.environ.get('KONS_SCREEN_PROXY_SERVER', "https://f.kth.se/")
 
 def data_endpoint(filename, URL, remote=REMOTE):
     """

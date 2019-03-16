@@ -102,8 +102,7 @@ class App extends Component {
             },
             calendar: {
                 events: []
-            },
-            slides: []
+            }
         }
     }
 
@@ -146,8 +145,7 @@ class App extends Component {
                         </div>
                     </div>
                     <div id="left">
-
-                        {this.state.slides.length ? <SlideShow slides={this.state.slides}/> : <div className="left-shadow"></div>}
+                        <SlideShow slides={[]}/>
                     </div>
                 </div>
             );
