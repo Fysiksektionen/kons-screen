@@ -6,7 +6,7 @@ let getState
 
 beforeEach(() => {
     deps = {
-        sl: {}, cal: {}, fb: {}, ig: {}, fnews: {}
+        sl: {}, cal: {}, fb: {}, fnews: {}
     }
     // inject getState with fake dependencies
     getState = getStateFactory(deps)
@@ -28,16 +28,13 @@ it('correctly calls dependencies and appended results to state', () => {
     }
     deps.sl.fetcher = fakeFetchFactory("/sl-data")
     deps.cal.fetcher = fakeFetchFactory("/sektionskalendern")
-    deps.ig.fetcher = fakeFetchFactory("/instagram")
     deps.sl.compiler = fakeCompiler("sl")
     deps.cal.compiler = fakeCompiler("cal")
-    deps.ig.compiler = fakeCompiler("ig")
 
     // verify that each compiler was called (and result added to state)
     return getState().then(state => expect(state).toEqual({
             sl:"modified",
-            cal:"modified",
-            ig:"modified"
+            cal:"modified"
         })
     )
 });

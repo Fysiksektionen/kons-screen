@@ -1,17 +1,16 @@
 // Module containing functions which compile the Instagram data fetched.
 
 var compileInstagram = posts => {
-    return {
-        instagram: posts.map(post => {
-            const url = post.remotely_hosted ? post.url : "http://localhost:8888" + post.url
-            return {
-                src: url,
-                text: post.caption,
-                is_video: post.is_video,
-                taken_at: post.created
-            }
-        })
-    }
+    return posts.map(post => {
+        const url = post.remotely_hosted ? post.url : process.env.SERVER_URL + post.url
+        return {
+            src: url,
+            text: post.caption,
+            is_video: post.is_video,
+            fullscreen: post.fullscreen,
+            taken_at: post.created
+        }
+    })
 }
 
 module.exports = {compileInstagram}

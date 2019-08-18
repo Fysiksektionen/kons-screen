@@ -8,6 +8,7 @@ RUN JOBS=MAX npm install --production
 
 COPY . ./
 
+ENV SERVER_URL="https://f.kth.se"
 RUN npm run-script build
 RUN npm install -g serve
 ENV INITSYSTEM on

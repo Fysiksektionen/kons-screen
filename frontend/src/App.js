@@ -3,6 +3,7 @@ import './css/screen.css';
 import './css/calendar.css';
 import './css/sl.css';
 import './css/watermark.css';
+import SlideShow from './components/SlideShow.js';
 const moment = require('moment-timezone')
 require('moment/locale/sv')
 moment.locale('sv')
@@ -93,10 +94,6 @@ class App extends Component {
         this.state = {
             carousel_index:0,
             event: false,
-            image: {
-                src: "",
-                text: ""
-            },
             sl: {
                 rides: {
                     metros:[],
@@ -105,30 +102,14 @@ class App extends Component {
             },
             calendar: {
                 events: []
-            },
-            instagram: []
+            }
         }
     }
 
     componentDidMount () {
-        getState().then(state => {this.setState(state)})
-            .then(() => {
-                return this.state.instagram.length ? this.setState({
-                    image: this.state.instagram[this.state.carousel_index]
-                })
-                : null
-            })
-            
+        getState().then(state=>{this.setState(state)})
         // Updatera allt state var 10 min för att hålla kalendern updaterad
         setInterval(() => getState().then(state => {this.setState(state)}), 1000*60);
-    
-        // Rotate the image every 30 seconds
-        setInterval(() => {
-            if (this.state.instagram.length) {
-                this.setState({ carousel_index: (this.state.carousel_index + 1 ) % this.state.instagram.length })
-                this.setState({ image: this.state.instagram[this.state.carousel_index] })
-            }
-        }, 10*1000)
     }
 
     render() {
@@ -164,15 +145,7 @@ class App extends Component {
                         </div>
                     </div>
                     <div id="left">
-                        <img src={this.state.image.src} alt={"Hoppsan, något gick fel. Maila något argt till webmaster@f.kth.se"} className="img-left"/>
-                        <div className="left-shadow"></div>
-                        {this.state.image.src && this.state.image.text
-                            ?   <div id="watermark">
-                                    {/* <div class="wm-clock">{this.state.time}</div> */}
-                                    <div className="wm-text">{this.state.image.text}</div>
-                                </div>
-                            :   null
-                        }
+                        <SlideShow slides={[]}/>
                     </div>
                 </div>
             );

@@ -37,9 +37,7 @@ var getStateFactory = function (deps){
             deps.sl.fetcher("/sl-data").then(
                 deps.sl.compiler),
             deps.cal.fetcher("/sektionskalendern").then(
-                deps.cal.compiler),
-            deps.ig.fetcher( "/instagram").then(
-                deps.ig.compiler)
+                deps.cal.compiler)
         ]).then(responses => {
             let state = {}
             // Append each result to the state.
@@ -52,13 +50,12 @@ var getStateFactory = function (deps){
 var getState = getStateFactory({
     sl:{fetcher:fetcher, compiler: compileRides},
     cal:{fetcher:fetcher, compiler: compileCalendar},
-    fb:{fetcher:fetcher, compiler: compileFacebook},
-    ig:{fetcher:fetcher, compiler: compileInstagram},
     // TODO: fnews should fetch with an intermediary which parses XML to an object
     fnews:{fetcher:fetcher, compiler: compileFNews} 
 })
 
 module.exports = {
     getState,
-    getStateFactory
+    getStateFactory,
+    fetcher
 }
