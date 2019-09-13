@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [ $KONS_SCREEN_ENV == "production" ]; then 
+    # THIS IS NEEDED BECAUSE OF A RACE CONDITION ON STARTUP
+    # Could perhaps solve by trying to ping frontend:5000 for OK response
+    sleeping=40
+    echo "* wpe-init: Running since in production"
+    echo "* wpe-init: Sleeping for $sleeping seconds"
+    sleep $sleeping
+    echo "* wpe-init: Starting after $sleeping seconds of sleep"
+    fbcp &
+    WPELauncher $WPE_URL
+else
+    echo "* wpe-init: Not running since not in production"
+fi

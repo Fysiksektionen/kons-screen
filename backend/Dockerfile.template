@@ -1,0 +1,13 @@
+FROM resin/%%RESIN_MACHINE_NAME%%-python:3
+
+WORKDIR /usr/src/app/backend
+
+COPY ./requirements.txt /requirements.txt
+
+RUN pip install -r /requirements.txt
+
+COPY . ./
+ENV KONS_SCREEN_PROXY_SERVER="https://f.kth.se/"
+ENV INITSYSTEM on
+
+CMD ["python","-u","app.py", "--remotedb"]

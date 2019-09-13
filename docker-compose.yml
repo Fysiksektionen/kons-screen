@@ -1,0 +1,33 @@
+version: '2'
+services:
+  frontend:
+    build: ./frontend
+    privileged: true
+    depends_on:
+      - dataproxy
+    expose:
+      - "3000"
+    links: 
+      - dataproxy
+    restart: always
+  dataproxy:
+    build: ./backend
+    privileged: true
+    expose:
+      - "5000"
+    restart: always
+  wpe:
+    build: ./wpe
+    privileged: true
+    devices:
+      - "/dev/fb0:/dev/fb0"
+      - "/dev/vchiq:/dev/vchiq"
+    depends_on:
+      - frontend
+      - dataproxy
+    links:
+      - frontend
+      - dataproxy
+    restart: always
+    environment: 
+      - KONS_SCREEN_ENV=production

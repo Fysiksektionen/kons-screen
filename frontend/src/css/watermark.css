@@ -7,7 +7,6 @@
     background: #000000a0;
     padding: 4vh;
     text-align: center;
-    z-index: 1;
     color: white;
     text-shadow:    0.1vh 0 1vh #000000,
                     -0.1vh 0 1vh #000000,
@@ -19,7 +18,8 @@
     font-size: 14vh;
     margin: -2vh 0 -2vh 0;
 }
-.wm-date {
+.wm-text {
     font-size: 3vh;
     font-weight: 300;
+    opacity: 1;
 }

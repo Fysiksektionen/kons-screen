@@ -3,19 +3,32 @@ import './css/screen.css';
 import './css/calendar.css';
 import './css/sl.css';
 import './css/watermark.css';
-const compilers = require('./js/data_compilers.js')
+import SlideShow from './components/SlideShow.js';
+const moment = require('moment-timezone')
+require('moment/locale/sv')
+moment.locale('sv')
+
+const SLIcon = require('./img/icons/sl_icon.svg')
+const SLMetroIcon = require('./img/icons/sl_metro.svg')
+const SLBusIcon = require('./img/icons/sl_bus.svg')
+const SLTramIcon = require('./img/icons/sl_tram.svg')
+const CalendarIcon = require('./img/icons/calendar.svg')
+
+const getState = require('./js/data_compilers/getState').getState
 
 
 class SLItem extends Component {
     render() {return (
         <div className="sl-item">
-            <img src={require("./img/icons/sl_" + this.props.TransportMode + ".svg")} className="sl-icon"></img>
-            <span className="sl-line-number">{this.props.ride.LineNumber}</span>
-            <span className="sl-line-name">{this.props.ride.Destination}</span>
-            <span className="sl-right">
-                <span className="sl-stop">{this.props.ride.StopAreaName}</span>
-                <span className="sl-time">{this.props.ride.DisplayTime}</span>
-            </span>
+            <div className="sl-item-inner">
+                <img src={this.props.icon} className="sl-icon"></img>
+                <span className="sl-line-number">{this.props.ride.LineNumber}</span>
+                <span className="sl-line-name">{this.props.ride.Destination}</span>
+                <span className="sl-right">
+                    <span className="sl-stop">{this.props.ride.StopAreaName}</span>
+                    <span className="sl-time">{this.props.ride.DisplayTime}</span>
+                </span>
+            </div>
         </div>
     )}
 }
@@ -26,13 +39,13 @@ class SLDepartureSlide extends Component {
             <div className="sl-departure-type">
                 {this.props.rides.map((ride, i) =>
                     <SLItem ride={ride}
-                            TransportMode={this.props.TransportMode}/>
+                        icon={this.props.icon} key={ride.StopAreaName+ride.JourneyNumber+ride.Destination}/>
                 )}
                 {this.props.rides.length < 9
                     ? Array(9 - this.props.rides.length).fill().map((ride, i) =>
                         i == 0
-                            ? <SLItem ride={{Destination:"Inga fler avångar tillgängliga"}} TransportMode={this.props.TransportMode}/>
-                            : <SLItem ride={{}} TransportMode={this.props.TransportMode}/>
+                            ? <SLItem ride={{Destination:"Inga fler avångar tillgängliga"}} icon={this.props.icon}/>
+                            : <SLItem ride={{}} icon={this.props.icon}/>
                     )
                     :null
                 }
@@ -46,20 +59,30 @@ class CalendarItem extends Component {
     render() {
         return (
             <div className="cal-item">
-                <div className="cal-date">{this.props.item.date}</div>
-                <div className="cal-name">{this.props.item.name}</div>
+                <div className="cal-item-inner">
+                    <div className="cal-date">{this.props.item.date}</div>
+                    <div className="cal-name">{this.props.item.name}</div>
+                </div>
             </div>
         )
     }
 }
 
 class RightHeader extends Component {
+    constructor(props){
+        super(props)
+        this.state = { ticker_value : this.props.current.value() }
+        setInterval( () => 
+            this.setState({ ticker_value: this.props.current.value() }),
+            this.props.current.interval
+        )
+    }
     render() {
         return (
             <div className="right-header">
-            <img src={require(this.props.icon)} className="right-header-icon"></img>
+            <img src={this.props.icon} className="right-header-icon"></img>
             {this.props.title}
-            <span className="right-header-current">{this.props.current}</span>
+            <span className="right-header-current">{this.state.ticker_value}</span>
             </div>
         )
     }
@@ -69,13 +92,8 @@ class App extends Component {
     constructor (){
         super()
         this.state = {
+            carousel_index:0,
             event: false,
-            time: new Date().toLocaleTimeString().substr(0,8),
-            date: new Date().toDateString(),
-            image: {
-                url: "https://source.unsplash.com/random",
-                text: ""
-            },
             sl: {
                 rides: {
                     metros:[],
@@ -89,17 +107,9 @@ class App extends Component {
     }
 
     componentDidMount () {
-        compilers.getState().then(state => this.setState(state))
-
-        setInterval(() => {
-          compilers.getState().then(state => this.setState(state))
-      }, 10000);
-
-      setInterval(() =>
-        this.setState({
-            time: new Date().toLocaleTimeString().substr(0,8),
-            date: new Date().toDateString()
-        }), 500);
+        getState().then(state=>{this.setState(state)})
+        // Updatera allt state var 10 min för att hålla kalendern updaterad
+        setInterval(() => getState().then(state => {this.setState(state)}), 1000*60);
     }
 
     render() {
@@ -108,18 +118,24 @@ class App extends Component {
                     <div id="right">
                         <div id="top">
                             <div className="sl">
-                                <RightHeader title="Tidtabell" icon="./img/icons/sl_icon.svg" current={this.state.time}/>
+                                <RightHeader title="Tidtabell" icon={SLIcon} current={{
+                                    value:() => moment().tz('Europe/Stockholm').format('HH:mm:ss'),
+                                    interval:500}}
+                                />
                                 <div className="sl-items">
-                                    <SLDepartureSlide rides={this.state.sl.rides.metros} TransportMode="metro"/>
-                                    <SLDepartureSlide rides={this.state.sl.rides.trams} TransportMode="tram"/>
-                                    <SLDepartureSlide rides={this.state.sl.rides.buses} TransportMode="bus"/>
-                                    <SLDepartureSlide rides={this.state.sl.rides.metros} TransportMode="metro"/>
+                                    <SLDepartureSlide rides={this.state.sl.rides.metros} icon={SLMetroIcon}/>
+                                    <SLDepartureSlide rides={this.state.sl.rides.trams} icon={SLTramIcon}/>
+                                    <SLDepartureSlide rides={this.state.sl.rides.buses} icon={SLBusIcon}/>
+                                    <SLDepartureSlide rides={this.state.sl.rides.metros} icon={SLMetroIcon}/>
                                 </div>
                             </div>
                         </div>
                         <div id="bottom">
                             <div className="cal">
-                                <RightHeader title="Kalender" icon="./img/icons/calendar.svg" current={this.state.date}/>
+                                <RightHeader title="Kalender" icon={CalendarIcon} current={{
+                                    value:() => moment().tz('Europe/Stockholm').format('dddd D MMMM YYYY'),
+                                    interval:60*1000}}
+                                />
                                 <div className="cal-items">
                                     {this.state.calendar.events.length
                                         ? this.state.calendar.events.map(item => <CalendarItem item={item}/>)
@@ -129,8 +145,7 @@ class App extends Component {
                         </div>
                     </div>
                     <div id="left">
-                        <img src={this.state.image.url} alt="Hoppsan, något gick fel. Maila något argt till webmaster@f.kth.se" className="img-left"/>
-                        <div className="left-shadow"></div>
+                        <SlideShow slides={[]}/>
                     </div>
                 </div>
             );

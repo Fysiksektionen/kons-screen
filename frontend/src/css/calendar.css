@@ -11,7 +11,14 @@
 }
 
 .cal-item {
-    font-size: 2.6vh;
+    font-size: 2.59vh;
+    height: 4.897vh;
+    clear: both;
+}
+.cal-item .sl-item-inner {
+    height:100%;
+    width:100%;
+    padding: 0.69vh 0
 }
 
 .cal-item:nth-child(even) {
@@ -24,14 +31,19 @@
 }
 
 .cal-date {
-    width: 28vh;
-    text-align: right;
+    width: 35vh;
+    text-align: left;
+    margin-left: 2vh;
     height: 100%;
     font-weight: 300;
 }
 
+.cal-date:first-letter {    
+    text-transform:capitalize;
+}
+
 .cal-name {
-    padding-left: 2vh;
+    padding-left: 0.1vh;
 }
 
 .cal-time {
