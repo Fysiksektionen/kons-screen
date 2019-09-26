@@ -40,8 +40,7 @@ if __name__ == "__main__":
     from common.paths import DB_PATH
     from common.writer import write_json
 
-    calendar_id = "e17rpovh5v7j79fpp74d1gker8@group.calendar.google.com"    
-    
+    calendar_id = "fysiksektionen.se_0187vbmdcivl8mtio142e23cas@group.calendar.google.com"
     events = list_calendar_events(calendar_id, limit=10, parser=validate_and_parse)
 
     # If validate_and_parse did not return False.
