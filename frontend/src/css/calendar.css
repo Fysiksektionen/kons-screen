@@ -31,9 +31,9 @@
 }
 
 .cal-date {
-    width: 35vh;
+    width: 36vh;
     text-align: left;
-    margin-left: 2vh;
+    margin-left: 1vw;
     height: 100%;
     font-weight: 300;
 }
@@ -41,10 +41,10 @@
 .cal-date:first-letter {    
     text-transform:capitalize;
 }
-
+/* 
 .cal-name {
-    padding-left: 0.1vh;
-}
+    padding-left: 2vh;
+} */
 
 .cal-time {
     font-style: italic;
