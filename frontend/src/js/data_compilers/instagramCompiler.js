@@ -2,7 +2,7 @@
 
 var compileInstagram = posts => {
     return posts.map(post => {
-        const url = post.remotely_hosted ? post.url : process.env.SERVER_URL + post.url
+        const url = post.remotely_hosted ? post.url : "https://f.kth.se" + post.url
         return {
             src: url,
             text: post.caption,
