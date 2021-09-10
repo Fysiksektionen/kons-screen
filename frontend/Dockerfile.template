@@ -1,4 +1,4 @@
-FROM resin/%%RESIN_MACHINE_NAME%%-node:8-slim
+FROM resin/%%RESIN_MACHINE_NAME%%-node:10.10-slim
 
 WORKDIR /usr/src/app/frontend
 

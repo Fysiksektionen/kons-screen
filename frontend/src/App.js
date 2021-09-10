@@ -44,8 +44,8 @@ class SLDepartureSlide extends Component {
                 {this.props.rides.length < 9
                     ? Array(9 - this.props.rides.length).fill().map((ride, i) =>
                         i == 0
-                            ? <SLItem ride={{Destination:"Inga fler avångar tillgängliga"}} icon={this.props.icon}/>
-                            : <SLItem ride={{}} icon={this.props.icon}/>
+                            ? <SLItem key="no more departures" ride={{Destination:"Inga fler avångar tillgängliga"}} icon={this.props.icon}/>
+                            : <SLItem key={i} ride={{}} icon={this.props.icon}/>
                     )
                     :null
                 }
@@ -138,7 +138,7 @@ class App extends Component {
                                 />
                                 <div className="cal-items">
                                     {this.state.calendar.events.length
-                                        ? this.state.calendar.events.map(item => <CalendarItem item={item}/>)
+                                        ? this.state.calendar.events.map(item => <CalendarItem item={item} key={item.name}/>)
                                         : <p className="error-no-info">Ingen information tillgängling</p>}
                                 </div>
                             </div>
