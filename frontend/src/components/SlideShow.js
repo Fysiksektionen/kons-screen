@@ -17,7 +17,7 @@ class SlideShow extends Component {
         fetcher('/instagram').then(compileSlides).then(slides =>{
             this.setState({slides}, () => {
                 this.setState({slides:this.state.slides.map(slide => {
-                    if (slide.fullscreen) {slide.style = {width:"100vw","z-index":10}}
+                    if (slide.fullscreen) {slide.style = {width:"100vw",zIndex:10}}
                     return slide
                 })}, () => {
                     //after setting state,

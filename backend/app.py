@@ -5,12 +5,13 @@ import requests
 
 from flask import Flask, Response
 
-from APIs.common.paths import DB_PATH
-
 app = Flask(__name__)
 
 # Check if remotedb is passed as an argument.
 REMOTE = any([arg == "--remotedb" for arg in sys.argv])
+
+# only used if --remotedb is not passed.
+DB_PATH="./APIs/db/"
 
 # Should probably be something like https://f.kth.se/kons/
 BASE_URL = os.environ.get('KONS_SCREEN_PROXY_SERVER', "https://f.kth.se/")
